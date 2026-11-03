@@ -28,11 +28,15 @@ jobs:
         run: pip install -r autovinder/scan/requirements.txt
       - name: Test inkoop- en taxatiemodel
         run: pytest -q autovinder/scan/tests
-      - name: Scan Marktplaats Auto's
+      - name: Scan Marktplaats en gekoppelde Facebook Marketplace
         run: python autovinder/scan/scanner.py
         env:
           AUTOVINDER_MAX_SCAN_PRICE: '5000'
           AUTOVINDER_MAX_COMPARABLE_PRICE: '12500'
+          AUTOVINDER_FB_LISTINGS_PER_CITY: '10'
+          AUTOVINDER_FB_MAX_PRICE: '5000'
+          AUTOVINDER_FB_COST_CAP_USD: '0.12'
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
       - name: Publiceer autodeals in AutoVinder-feed
         shell: bash
         run: |
