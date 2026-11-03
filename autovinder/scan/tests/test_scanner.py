@@ -80,3 +80,21 @@ def test_brand_parser():
     assert canonical_make_model("Opel Corsa 2010 benzine")==("opel","corsa")
     assert mileage("220.000 km") == 220000
     assert mileage("105000 kilometer") == 105000
+
+
+def test_suspicious_teaser_price_remains_visible_but_is_never_alerted():
+    cheap=listing("m999",price=199)
+    assert cheap["price_unverified"] is True
+    comp=[listing(f"m100{i}",price=1850+100*i) for i in range(4)]
+    ranked=sort_deals([value_deal(d,[cheap]+comp,repair=250,other=175) for d in [cheap]+comp])
+    focus=next(d for d in ranked if d["id"]=="mp:m999")
+    assert focus["alert_candidate"] is False
+    assert "Prijs eerst controleren" in focus["deal_label"]
+
+
+def test_non_running_engine_is_high_risk():
+    row=parse_listing({"itemId":"m1234567890","title":"Fiat Panda 2010 motor niet goed",
+                       "description":"Moet worden gerepareerd",
+                       "vipUrl":"/v/auto-s/m1234567890",
+                       "priceInfo":{"priceCents":35000,"priceType":"FIXED"}})
+    assert row["damage"] and row["high_risk"]
