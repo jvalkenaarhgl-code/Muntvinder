@@ -182,6 +182,28 @@ public final class MainActivity extends Activity {
         detail(card,source.equals("Catawiki")?"HUIDIG BOD":priceLabel,money(price)+(fixed?" · vaste prijs":""),DARK);
         if(total!=null)detail(card,fixed?"GESCHATTE TOTALE INKOOP":"TOTAAL BIJ GETOOND BOD (NIET GEGARANDEERD)",money(total),DARK);
         detail(card,"GESCHATTE MARKTPLAATS-DOORVERKOOP",lo==null?"Onvoldoende vergelijkingen":money(lo)+" – "+money(hi),GREEN);
+
+        Double shopPrice=number(d,"shop_price"),shopDifference=number(d,"shop_difference");
+        String shopName=d.optString("shop_name","");
+        if(shopPrice != null && !shopName.isEmpty() && !shopName.equals("null")) {
+            detail(card,"LAAGSTE GEVONDEN WEBSHOPPRIJS",money(shopPrice)+" · "+shopName,GREEN);
+            if(shopDifference!=null) {
+                detail(card,"VERSCHIL MET WEBSHOP (GEEN WINST)",money(shopDifference),shopDifference>=0?GREEN:RED);
+            }
+            String stock=d.optString("shop_availability","");
+            String shopNote=d.optString("shop_note","");
+            if(!stock.equals("beschikbaar")) shopNote="Voorraad niet bevestigd. "+shopNote;
+            if(!shopNote.isEmpty()) {add(card,text(shopNote,11,MUTED,false));spacer(card,8);}
+            String shopUrl=d.optString("shop_url","");
+            if(shopUrl.startsWith("https://")){
+                Button shopButton=button("Bekijk gevonden webshopprijs ↗",0xFFE7F0EB,GREEN,()->openUrl(shopUrl));
+                add(card,shopButton);spacer(card,11);
+            }
+        } else {
+            add(card,text("Webshopvergelijking: "+d.optString("shop_note","geen passende winkelprijs gevonden"),11,MUTED,false));
+            spacer(card,8);
+        }
+
         Double lowProfit=number(d,"profit_low"), highProfit=number(d,"profit_high");
         if(lowProfit!=null)detail(card,fixed?"MOGELIJKE MARGE (EXCL. EVENTUELE VERKOOPKOSTEN)":"HYPOTHETISCHE MARGE BIJ GETOOND BOD",money(lowProfit)+" tot "+money(highProfit),lowProfit>=0?GREEN:RED);
         int count=d.optInt("comparison_count");
