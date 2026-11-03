@@ -208,8 +208,8 @@ public final class MainActivity extends Activity {
         spacer(labels,4);
         JSONArray ys=d.optJSONArray("years");
         String years=ys!=null && ys.length()==1?ys.optString(0):"";
-        int count=d.optInt("count",1);
-        String kindLabel=bundle?("▦  BUNDEL"+(count>1?" · "+count+" SETS":" · MEERDERE SETS"))
+        int numberOfSets=d.optInt("count",1);
+        String kindLabel=bundle?("▦  BUNDEL"+(numberOfSets>1?" · "+numberOfSets+" SETS":" · MEERDERE SETS"))
                               :("●  LOSSE SET"+(!years.isEmpty()?" · "+years:""));
         TextView chip=text(kindLabel,12,bundle?0xFF764B0D:GREEN,true);
         chip.setBackground(rounded(bundle?0xFFFFEAC1:0xFFE1F1E7,9));
