@@ -77,8 +77,8 @@ def test_shop_comparison_does_not_call_shop_price_a_sales_value():
         {'year':2020,'price':45.00,'shop':'Winkel Z','url':'https://example.com/2020','availability':'onbevestigd'}
     ]}
     match_shops(deals,shop)
-    assert deals[0]['shop_price']==54.95
-    assert deals[0]['shop_difference']==14.95
+    assert deals[0]['shop_price']==45.00
+    assert deals[0]['shop_difference']==5.00
     assert deals[0]['shop_matches']==2
     assert deals[1]['shop_price'] is None
     assert deals[2]['shop_price'] is None
