@@ -337,37 +337,31 @@ def previous_feed():
 
 
 def facebook_entries(previous, session, current_hour):
-    """Fetch Facebook on 4 UTC hours daily and reuse at most 24h of results."""
+    """Gratis openbare zoekindex hoogstens iedere zes uur; geen Facebook-API."""
     from facebook_marketplace import fetch as fetch_fb
-    token=bool(os.getenv("APIFY_TOKEN","").strip())
-    if not token:
-        return [],{"status":"niet_geconfigureerd",
-                   "count":0,
-                   "info":"APIFY_TOKEN ontbreekt; geen Facebook-advertenties verzonnen"}
     prior_status=previous.get("facebook_status") or {}
     last_checked=str(prior_status.get("checked_at") or "")
     previous_fb=[d for d in (previous.get("deals") or [])
                  if isinstance(d,dict) and d.get("source")=="Facebook Marketplace"]
-    still_recent=False
+    hours_old=10_000
     if last_checked:
         try:
             last=datetime.fromisoformat(last_checked.replace("Z","+00:00"))
-            still_recent=0<=(datetime.now(timezone.utc)-last).total_seconds()<24*3600
+            hours_old=(datetime.now(timezone.utc)-last).total_seconds()/3600
         except (ValueError,TypeError):pass
-
-    should_scan=(os.getenv("AUTOVINDER_FB_FORCE","")=="1"
-                 or not still_recent
-                 or current_hour in (0,6,12,18))
-    if should_scan:
+    was_free='gratis' in str(prior_status.get('provider') or '').lower()
+    need_scan=(os.getenv("AUTOVINDER_FB_FORCE","")=="1" or
+               not was_free or hours_old>=6)
+    if need_scan:
         listings,status=fetch_fb(session)
         if status.get("status") in ("ok","geen_passende_advertenties"):
             return listings,status
-        status["cached_results"]=len(previous_fb) if still_recent else 0
-        return (previous_fb if still_recent else []),status
-    prior_status=dict(prior_status)
-    prior_status["status"]="bewaarde_resultaten"
-    prior_status["count"]=len(previous_fb)
-    return previous_fb,prior_status
+        status["cached_results"]=len(previous_fb) if was_free and hours_old<48 else 0
+        return (previous_fb if was_free and hours_old<48 else []),status
+    cached=dict(prior_status)
+    cached["status"]="bewaarde_resultaten"
+    cached["count"]=len(previous_fb)
+    return previous_fb,cached
 
 
 def run(session=None):
@@ -407,9 +401,7 @@ def run(session=None):
           "default_filters":DEFAULT_FILTERS,
           "source_info":{
               "Marktplaats":"automatisch; websitezoekendpoint zonder garantie",
-              "Facebook Marketplace":("automatisch via Apify, externe provider met mogelijke kosten"
-                    if os.getenv("APIFY_TOKEN","") else
-                    "automatische koppeling klaar, maar APIFY_TOKEN nog niet ingesteld")},
+              "Facebook Marketplace":"gratis ontdekking via openbare zoekindex; onvolledig, prijzen niet bevestigd"},
           "valuation_notice":"75–88% van mediaan van actieve vergelijkbare vraagprijzen; geen gerealiseerde verkoopprijs. "
                              "Reparatie en andere kosten zijn instelbare aannames."}
     OUTPUT.parent.mkdir(parents=True,exist_ok=True)
