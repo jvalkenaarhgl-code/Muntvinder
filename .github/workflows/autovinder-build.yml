@@ -30,8 +30,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          FEED_URL="https://raw.githubusercontent.com/\${GITHUB_REPOSITORY}/main/autovinder/docs/feed.json"
-          gradle -p autovinder/android --no-daemon "-PAUTOVINDER_FEED_URL=\${FEED_URL}" :app:assembleDebug
+          FEED_URL="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/main/autovinder/docs/feed.json"
+          gradle -p autovinder/android --no-daemon "-PAUTOVINDER_FEED_URL=${FEED_URL}" :app:assembleDebug
       - name: Downloadbare APK
         uses: actions/upload-artifact@v4
         with:
