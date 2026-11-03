@@ -1,0 +1,10 @@
+<resources>
+  <style name="AutoTheme" parent="android:style/Theme.Material.Light.NoActionBar">
+    <item name="android:fontFamily">sans</item>
+    <item name="android:colorAccent">#C09542</item>
+    <item name="android:statusBarColor">#0D322A</item>
+    <item name="android:navigationBarColor">#0D322A</item>
+    <item name="android:windowLightStatusBar">false</item>
+  </style>
+  <string name="app_name">AutoVinder</string>
+</resources>
