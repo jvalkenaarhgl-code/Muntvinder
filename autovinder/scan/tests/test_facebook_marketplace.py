@@ -1,109 +1,117 @@
 import sys
 from pathlib import Path
 from unittest.mock import patch
-sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
-
-from facebook_marketplace import normalize, fetch, input_payload
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from facebook_marketplace import normalize_result, amount, fetch, QUERIES
 import scanner
 
-def facebook_example(*, amount=950,currency="EUR",odometer=190000,unit="km"):
+
+def indexed_result():
     return {
-        "id":"1234567890123456",
-        "url":"https://www.facebook.com/marketplace/item/1234567890123456/",
-        "title":"Opel Corsa 2010 met deuk",
-        "description":"Heeft deuk aan portier. Rijdt prima. Benzine",
-        "price":{"amount":amount,"currency":currency,"formatted":"€950"},
-        "location":{"city":"Almelo","state":"Overijssel"},
-        "images":["https://scontent-ams2-1.xx.fbcdn.net/car/42.jpg"],
-        "vehicle":{"make":"Opel","model":"Corsa","year":2010,
-                   "odometer":{"value":odometer,"unit":unit},
-                   "fuel":"benzine"},
-        "is_live":True,"is_sold":False,"is_pending":False,
+        "title":"Opel Corsa 2010 190.000 km €1.250 - Facebook Marketplace",
+        "description":"Opel Corsa rijdt goed, kleine deuk in portier",
+        "link":"https://www.facebook.com/marketplace/item/1234567890123456/"
     }
 
-def test_facebook_vehicle_price_mileage_and_photo():
-    item=normalize(facebook_example())
-    assert item["source"]=="Facebook Marketplace"
-    assert item["price"]==950
-    assert item["make"]=="Opel" and item["model"]=="Corsa"
-    assert item["mileage"]==190000
-    assert item["year"]==2010
-    assert item["damage"] is True
-    assert item["image_url"].startswith("https://scontent")
-    assert item["id"]=="fb:1234567890123456"
-    assert item["city"]=="Almelo"
 
-def test_no_currency_confusion_or_sold_or_no_car():
-    assert normalize(facebook_example(currency="USD")) is None
-    item=facebook_example()
-    item["is_sold"]=True
-    assert normalize(item) is None
-    item=facebook_example()
-    item["url"]="https://untrusted.example/marketplace/item/1234567890123456/"
-    assert normalize(item) is None
-    item=facebook_example()
-    item["title"]="Houten bureau 2010"
-    item["vehicle"]={}
-    assert normalize(item) is None
+def test_only_real_indexed_marketplace_link_and_explicit_euro_price():
+    d=normalize_result(indexed_result())
+    assert d is not None
+    assert d["id"]=="fb:1234567890123456"
+    assert d["price"]==1250.0
+    assert d["year"]==2010
+    assert d["mileage"]==190000
+    assert d["source"]=="Facebook Marketplace"
+    assert d["price_unverified"] is True
+    assert d["image_url"] is None
+    assert d["facebook_discovery"]=="publieke_zoekindex"
 
-def test_american_miles_conversion():
-    item=normalize(facebook_example(odometer=100000,unit="miles"))
-    assert item["mileage"]==160934
 
-def test_downpayment_is_not_treated_as_full_price():
-    item=facebook_example()
-    item["description"]="€950 aanbetaling op leaseovereenkomst"
-    assert normalize(item) is None
+def test_reject_missing_price_non_car_and_untrusted_url():
+    d=indexed_result()
+    d["title"]="Opel Corsa 2010 - Facebook Marketplace"
+    assert normalize_result(d) is None
+    d=indexed_result()
+    d["link"]="https://other.example/marketplace/item/1234567890123456/"
+    assert normalize_result(d) is None
+    d=indexed_result()
+    d["title"]="Tafel antiek 2010 €500"
+    assert normalize_result(d) is None
+    d=indexed_result()
+    d["link"]="https://www.facebook.com/groups/12345678/posts/123456789"
+    assert normalize_result(d) is None
 
-def test_token_is_required_and_never_logged():
-    class Session:
-        def post(self,*args,**kwargs):
-            raise AssertionError("Should not call API")
-    data,status=fetch(Session(),token="")
-    assert data==[]
-    assert status["status"]=="niet_geconfigureerd"
 
-def test_authenticated_api_integration_stub(monkeypatch):
+def test_euro_price_parser_rejects_unqualified_numbers():
+    assert amount("€ 1.500")==1500.0
+    assert amount("EUR 950")==950.0
+    assert amount("€ 9.000")==None
+    assert amount("2010 220.000 km")==None
+
+
+def test_free_search_uses_public_index_and_no_api_token():
+    rss='''<?xml version="1.0"?><rss><channel><item>
+        <title>Opel Corsa 2010 190.000 km €1.250 - Facebook Marketplace</title>
+        <description>Goede auto, deuk in portier</description>
+        <link>https://www.facebook.com/marketplace/item/1234567890123456/</link>
+        </item></channel></rss>'''
     class Response:
-        status_code=200
+        content=rss.encode("utf-8")
         def raise_for_status(self): pass
-        def json(self):return [facebook_example(),facebook_example()]  # de-dup
     class Session:
-        def post(self,url,**kwargs):
-            assert url.startswith("https://api.apify.com/v2/actors/")
-            assert kwargs["headers"]["Authorization"]=="Bearer sample-token"
-            assert kwargs["params"]["maxTotalChargeUsd"]=="0.12"
-            assert kwargs["json"]["vehicleSearches"]
+        def __init__(self):self.calls=0
+        def get(self,url,**kwargs):
+            assert url=="https://www.bing.com/search"
+            assert kwargs["params"]["format"]=="rss"
+            assert "Authorization" not in kwargs.get("headers",{})
+            self.calls+=1
             return Response()
-    monkeypatch.setenv("AUTOVINDER_FB_COST_CAP_USD","0.12")
-    data,status=fetch(Session(),token="sample-token")
-    assert len(data)==1
-    assert status["count"]==1
-    assert "sample-token" not in repr(status)
+    session=Session()
+    deals,status=fetch(session)
+    assert session.calls==len(QUERIES)
+    assert len(deals)==1
+    assert status["status"]=="ok"
+    assert "gratis" in status["provider"]
+    assert "token" not in str(status).lower()
 
-def test_same_conservative_resale_model_for_facebook(monkeypatch,tmp_path):
+
+def test_empty_rss_does_not_invent_ads():
+    class Response:
+        content=b'<?xml version="1.0"?><rss><channel></channel></rss>'
+        def raise_for_status(self):pass
+    class Session:
+        def get(self,*args,**kwargs):return Response()
+    deals,status=fetch(Session())
+    assert deals==[]
+    assert status["status"]=="geen_passende_advertenties"
+
+
+def test_indexed_snippet_price_not_alertworthy_even_with_good_comps():
+    fb=normalize_result(indexed_result())
     mp=[scanner.parse_listing({
-        "itemId":f"m123456789{i}",
+        "itemId":f"m12345678{i}",
         "title":"Opel Corsa 2010 180000 km",
-        "vipUrl":f"/v/auto-s/m123456789{i}",
+        "vipUrl":f"/v/auto-s/m12345678{i}",
         "priceInfo":{"priceCents":p*100,"priceType":"FIXED"}
-        }) for i,p in enumerate([1800,2200,2400,2500])]
-    facebook=normalize(facebook_example())
+    }) for i,p in enumerate([1900,2100,2400,2600])]
     assert all(mp)
-    with patch.object(scanner,"get_market",return_value=(mp,[],2)),\
-         patch.object(scanner,"facebook_entries",return_value=([facebook],{"status":"ok","count":1})),\
-         patch.object(scanner,"OUTPUT",tmp_path/"feed.json"):
-        out=scanner.run()
-    d=next(x for x in out["deals"] if x["source"]=="Facebook Marketplace")
-    assert d["comparables"]>=3
-    assert d["resale_low"] is not None
-    assert d["profit_low"] is not None
-    assert out["source_counts"]["Facebook Marketplace"]==1
-    assert out["facebook_status"]["status"]=="ok"
+    item=scanner.value_deal(fb,mp,repair=100,other=100)
+    ranked=scanner.sort_deals([item])
+    assert ranked[0]["profit_low"] is not None
+    assert ranked[0]["alert_candidate"] is False
+    assert ranked[0]["price_unverified"] is True
 
-def test_apify_budget_and_locations():
-    payload=input_payload()
-    assert payload["maxPrice"]<=5000
-    assert payload["fetchDetails"] is True
-    assert payload["searchRadiusKm"]==65
-    assert len(payload["vehicleSearches"])>=3
+
+def test_previous_free_results_reused_without_paid_service():
+    found=normalize_result(indexed_result())
+    prev={"facebook_status":{"status":"ok","count":1,
+          "checked_at":"2099-01-01T00:00:00+00:00",
+          "provider":"gratis openbare zoekmachine-index"},
+          "deals":[found]}
+    # Future timestamp is not a valid recent timestamp; simulate current time.
+    from datetime import datetime,timezone
+    prev["facebook_status"]["checked_at"]=datetime.now(timezone.utc).isoformat()
+    with patch("facebook_marketplace.fetch",side_effect=AssertionError("No new query")):
+        deals,status=scanner.facebook_entries(prev,None,1)
+    assert len(deals)==1
+    assert status["status"]=="bewaarde_resultaten"
