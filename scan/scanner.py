@@ -18,6 +18,7 @@ from urllib.parse import urljoin
 
 import requests
 from bs4 import BeautifulSoup
+from shop_prices import load_shop_prices, match_shops
 
 HERE = Path(__file__).resolve().parent.parent
 DEST = HERE / 'docs' / 'feed.json'
@@ -249,8 +250,25 @@ def run(session=None):
         output={'generated_at':now,'deals':existing,'stale':bool(existing),
                 'errors':errors or ['Geen aanbiedingen opgehaald'], 'source_status':'FOUT'}
     else:
-        output={'generated_at':now,'deals':calc_market(list(deals.values())),'stale':False,
-                'errors':errors,'source_status':'GEDEELTELIJK' if errors else 'OK'}
+        assessed = calc_market(list(deals.values()))
+        try:
+            catalog = load_shop_prices(session)
+            match_shops(assessed, catalog)
+            shop_status = {
+                'checked_at': catalog.get('checked_at'),
+                'shops': catalog.get('checked_shops', []),
+                'errors': catalog.get('errors', []),
+                'outdated': catalog.get('outdated', False),
+                'number_of_prices': len(catalog.get('offers', [])),
+            }
+        except (OSError, ValueError, requests.RequestException, RuntimeError) as err:
+            shop_status = {'checked_at': None, 'shops': [],
+                           'errors': [f'Winkelvergelijking tijdelijk niet beschikbaar: {err}'],
+                           'number_of_prices': 0}
+            match_shops(assessed, {})
+        output={'generated_at':now,'deals':assessed,'stale':False,
+                'errors':errors,'source_status':'GEDEELTELIJK' if errors else 'OK',
+                'shop_status':shop_status}
     DEST.parent.mkdir(parents=True,exist_ok=True)
     temp=DEST.with_suffix('.tmp')
     temp.write_text(json.dumps(output,ensure_ascii=False,indent=2),encoding='utf8')
