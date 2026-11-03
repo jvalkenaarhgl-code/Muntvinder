@@ -18,7 +18,7 @@ from urllib.parse import urljoin
 
 import requests
 from bs4 import BeautifulSoup
-from shop_prices import load_shop_prices, match_shops
+from shop_prices import load_shop_prices, match_shops, refine_resale_with_shops
 
 HERE = Path(__file__).resolve().parent.parent
 DEST = HERE / 'docs' / 'feed.json'
@@ -266,6 +266,7 @@ def run(session=None):
                            'errors': [f'Winkelvergelijking tijdelijk niet beschikbaar: {err}'],
                            'number_of_prices': 0}
             match_shops(assessed, {})
+        assessed = refine_resale_with_shops(assessed)
         output={'generated_at':now,'deals':assessed,'stale':False,
                 'errors':errors,'source_status':'GEDEELTELIJK' if errors else 'OK',
                 'shop_status':shop_status}
