@@ -1,17 +1,19 @@
 # Muntvinder 2.0 – automatische Nederlandse proofset-zoeker
 
-**Versie:** 2.1 technisch bouwproject (niet vooraf gebouwde APK). Dit is een nieuwe, zelfstandige Android-app met cloudscanner; de geüploade APK is alleen gebruikt om het oude gedrag te onderzoeken. De bestaande APK is niet rechtstreeks gewijzigd of opnieuw ondertekend.
+**Versie:** 2.2 met webshopvergelijking. De Android APK is succesvol gebouwd via GitHub Actions. Het project gebruikt een nieuwe, zelfstandige Android-app met cloudscanner en schrijft echte scanresultaten naar GitHub.
 
 ## Wat doet de scanner?
 
 - Marktplaats: Nederlandse **losse proofsets én proofsetbundels**, ook guldensets. Combineert zoekresultaten op **laagste prijs** en **nieuwste** advertentie. Geen maximum jaartal of verplichte minimale winst.
 - Catawiki: **uitsluitend bundels** met Nederlandse proofsets; losse veilingen worden genegeerd.
 - Toont echte advertentietitel, vraagprijs of huidig bod, link, setjaren, indicatieve totale inkoop, verwachte Marktplaats-doorverkoopprijs en mogelijke marge.
-- Vergelijking per exact jaar en type (gulden/euro), alleen met **vaste Marktplaats-vraagprijzen** van vergelijkbare losse proofsets. Voor de indicatie wordt expliciet de **aanname 80–95% van de mediane vraagprijs** gebruikt. Dit is géén bewezen verkoopprijs. Bij minder dan 3 vergelijkingen per set wordt **'onvoldoende vergelijkingen'** getoond, nooit een verzonnen prijs.
+- Vergelijking per exact jaar en type (gulden/euro), alleen met **vaste Marktplaats-vraagprijzen** van vergelijkbare losse proofsets. Voor de indicatie wordt expliciet de **aanname 80–95% van de mediane vraagprijs** gebruikt. Dit is géén bewezen verkoopprijs. Bij 1 of 2 vergelijkingen per set wordt de schatting als **zeer onzeker** gemarkeerd; bij 0 vergelijkingen wordt geen doorverkoopprijs getoond.
 - Bundels worden waar mogelijk opgeteld uit losse setwaardes. Speciale edities, incomplete bundels en onduidelijke lotbeschrijvingen worden **niet** als gewone sets gewaardeerd.
 - Marktplaats-advertenties met `MIN_BID`/`FAST_BID` zijn een **biedprijs** en geen vaste koopprijs. Catawiki-startbiedingen worden nooit als huidig bod gepresenteerd.
 - Catawiki totaalprijs = huidig bod + 9% kopersbescherming + € 3 + **aangenomen € 12 verzendkosten** (zelf aanpassen). Het daadwerkelijke winnende bod en de verzendkosten moeten bij Catawiki worden gecontroleerd.
 - De volgorde geeft prioriteit aan het gunstigste verschil tegenover vergelijkbare vraagprijzen. **Geen minimale nettowinst, ROI of jaartalfilter.** Bij gebrek aan vergelijkingen verschijnen goedkopere aanbiedingen met waarschuwing.
+- Bij iedere geschikte losse proofset staat de **laagste webshopprijs binnen de gecontroleerde winkels** met een directe link en het prijsverschil. De winkelvergelijker controleert momenteel Bildtmunt, Hansmunt, De Amsterdamse Munt en Theo Peters. Bij bundels en bijzondere sets worden geen losse setprijzen samengevoegd. Niet iedere winkel kan elk jaartal leveren.
+- Winkelprijzen zijn **vraagprijzen exclusief verzending**. Als voorraad niet blijkt uit de pagina, staat dit expliciet als onbevestigd; geen globale claim dat heel internet is vergeleken. Prijzen worden maximaal elke 6 uur opnieuw opgehaald.
 - Favorieten en advertentielinks in Android-app. **Geen Telegram en standaard géén pushmeldingen**.
 
 ## Installeren en automatisch laten zoeken
@@ -51,11 +53,13 @@ python -m pytest scan/tests -q
 python scan/scanner.py
 ```
 
-Alle 8 unit tests op lokale, fictieve *testfixtures* zijn uitgevoerd en geslaagd. **Geen live website-toegang of Android APK-compilatie gevalideerd** in de bouwomgeving; eventuele nieuwe platform- of parserschommelingen zijn daardoor nog mogelijk.
+De GitHub-workflow voert unit tests uit voor advertenties, webshopprijzen, onderscheid tussen complete/onvolledige sets en biedprijzen. De Android-debug-APK is met GitHub Actions daadwerkelijk gecompileerd. Live bronnen blijven afhankelijk van bereikbaarheid en actuele paginavormgeving.
 
 ## Bestanden
 
 - `scan/scanner.py`: bronnen, filterbeleid, vergelijking, marge, foutmeldingen
+- `scan/shop_prices.py`: controleerbare webshopprijzen, matching, voorraadstatus en cache
+- `docs/shop_prices.json`: bewaarde winkelprijsvermeldingen en controledata
 - `.github/workflows/scan.yml`: geautomatiseerde cloudscan om de 30 minuten
 - `.github/workflows/build-apk.yml`: bouwt een installeerbare Android-debug-APK via GitHub Actions
 - `docs/feed.json`: initiële lege feed, automatisch gevuld na succesvolle scan
