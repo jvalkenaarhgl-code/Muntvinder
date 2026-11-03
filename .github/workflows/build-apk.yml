@@ -31,9 +31,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          OWNER="${GITHUB_REPOSITORY%/*}"
-          REPO="${GITHUB_REPOSITORY#*/}"
-          FEED_URL="https://${OWNER,,}.github.io/${REPO,,}/feed.json"
+          FEED_URL="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/main/docs/feed.json"
           echo "Gebruikte feed: ${FEED_URL}"
           gradle -p android --no-daemon "-PMUNTVINDER_FEED_URL=${FEED_URL}" :app:assembleDebug
       - uses: actions/upload-artifact@v4
