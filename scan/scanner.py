@@ -14,7 +14,7 @@ import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlparse
 
 import requests
 from bs4 import BeautifulSoup
@@ -33,7 +33,7 @@ HEADERS = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KH
 YEAR = re.compile(r'(?<!\d)(19[5-9]\d|20[0-2]\d)(?!\d)')
 PROOF = re.compile(r'\b(proof\s*sets?|proofjaarsets?|proof\s*jaarsets?|proefsets?|jaarsets?\s+proof)\b',re.I)
 NETHERLANDS = re.compile(r'\b(nederland(?:se)?|netherlands|holland|knm)\b',re.I)
-BUNDLE = re.compile(r'\b(bundel|partij|partijtje|collectie|combinatie|meerdere|sets?\s*\(?[2-9]\b|[2-9]\s*(?:stuks|sets?|jaarsets?|proofsets?|verschillende)|serie(?:s|n))\b',re.I)
+BUNDLE = re.compile(r'\b(bundels?|partijen?|partijtjes?|collectie(?:s)?|combinatie|meerdere|diverse\s+(?:jaren|sets?|proofsets?)|sets?\s*\(?\d{1,2}\b|\d{1,2}\s*(?:stuks|sets?|jaarsets?|proofsets?|verschillende)|serie(?:s|n))\b',re.I)
 SPECIAL = re.compile(r'\b(transitie(?:set)?|transition|tokyo|geesink|gekleurde|colored|jubileum|special(?:e)?|kleurset|goodedoelenset|goede doelen)\b',re.I)
 EXCLUDED = re.compile(r'\b(niet\s+proof|bu\.?(?:nc)?\s+set|miniatuur|replica|losse\s+munt|alleen\s+de\s+doos|leeg\s+album|fiji|vatican|vaticaan|belgie|belgië|frankrijk|finland|san marino)\b',re.I)
 
@@ -57,7 +57,7 @@ def identify(title: str, desc: str = '') -> dict | None:
     if not ys: return None
     special = bool(SPECIAL.search(title))
     bundle = bool(BUNDLE.search(title)) or len(ys) > 1
-    m = re.search(r'\b(\d{1,2})\s*(?:proofsets?|sets?|jaarsets?)\b', title, re.I)
+    m = re.search(r'\b(\d{1,3})\s*(?:proofsets?|sets?|jaarsets?)\b', title, re.I)
     count = max(len(ys), int(m[1]) if m else 1)
     bundle = bundle or count > 1
     typ = 'special' if special else ('gulden' if max(ys) <= 2001 else 'euro' if min(ys) >= 2002 else 'gemengd')
@@ -76,6 +76,52 @@ def mp_price(obj: dict):
         return round(cents/100,2),kind
     except (ValueError,TypeError): return None,kind
 
+def clean_image_url(value: str) -> str | None:
+    """Alleen originele HTTPS-foto's van bekende Marktplaats/Catawiki-CDN's."""
+    if not isinstance(value, str):
+        return None
+    value = value.strip()
+    if value.startswith('//'):
+        value = 'https:' + value
+    if value.startswith('http://'):
+        value = 'https://' + value[len('http://'):]
+    if '#' in value:  # Niet-geïnstantieerde Marktplaats thumbnailtemplate
+        return None
+    parsed = urlparse(value)
+    host = (parsed.hostname or '').lower()
+    allowed = ('marktplaats.com', 'marktplaats.nl',
+               'catawiki.com', 'catawiki.net', 'catawiki.nl', 'ebayimg.com')
+    if parsed.scheme != 'https' or not any(host == d or host.endswith('.'+d) for d in allowed):
+        return None
+    return value if len(value) <= 1500 else None
+
+
+def mp_images(obj: dict) -> list[str]:
+    """De niet-officiële zoek-API levert pictures[] én imageUrls[]; beide ondersteunen."""
+    result = []
+    for item in (obj.get('pictures') or [])[:12]:
+        if isinstance(item, str):
+            candidates = [item]
+        elif isinstance(item, dict):
+            candidates = [item.get(k) for k in ('largeUrl','mediumUrl','extraExtraLargeUrl',
+                                                  'smallUrl','extraSmallUrl','url')]
+        else:
+            continue
+        for candidate in candidates:
+            u = clean_image_url(candidate)
+            if u:
+                if u not in result:
+                    result.append(u)
+                break
+    for item in (obj.get('imageUrls') or [])[:12]:
+        if isinstance(item, dict):
+            item = item.get('url') or item.get('mediumUrl')
+        u = clean_image_url(item)
+        if u and u not in result:
+            result.append(u)
+    return result[:8]
+
+
 def mp_listing(obj: dict) -> dict | None:
     title = str(obj.get('title') or '')
     desc = str(obj.get('description') or '')
@@ -93,6 +139,7 @@ def mp_listing(obj: dict) -> dict | None:
         item = match[0] if match else url
     return {'id':'mp:'+item,'source':'Marktplaats','title':title,'description':desc[:500],
             **info, 'price':price, 'price_kind':kind,'url':url,
+            'image_urls':mp_images(obj), 'image_url':next(iter(mp_images(obj)), None),
             'price_note':'Vraagprijs' if kind == 'FIXED' else 'Vraag-/biedprijs: controleren' if price is not None else 'Prijs onbekend'}
 
 def fetch_mp(session: requests.Session) -> list[dict]:
@@ -139,11 +186,17 @@ def parse_catawiki_catalog(html: str, base_url: str):
         seen.add(url)
         yield {'id':'cw:'+re.search(r'/l/(\d+)',url)[1], 'source':'Catawiki',
                'title':title, 'description':'',**info,'price':None,'price_kind':'BID',
-               'url':url, 'price_note':'Huidig bod nog niet geverifieerd'}
+               'url':url, 'image_urls':[], 'image_url':None,
+               'price_note':'Huidig bod nog niet geverifieerd'}
 
 def parse_catawiki_lot(html: str, listing: dict) -> dict:
     soup = BeautifulSoup(html,'html.parser')
     text = soup.get_text('\n',strip=True)
+    thumb = soup.select_one('meta[property="og:image"][content], meta[name="twitter:image"][content]')
+    image = clean_image_url(thumb.get('content','')) if thumb else None
+    if image:
+        listing['image_url'] = image
+        listing['image_urls'] = [image]
     # 'Startbod €1' is geen 'Huidig bod'. Toon pas een bedrag bij expliciet huidig bod.
     m = re.search(r'Huidig\s+bod\s*\n?\s*€\s*([\d.,]+)',text,re.I)
     if m:
