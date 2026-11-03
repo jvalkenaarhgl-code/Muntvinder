@@ -122,6 +122,8 @@ public final class MainActivity extends Activity {
                 intPref(prefs(),"repair",250)-intPref(prefs(),"other_costs",175):Double.NaN;
     }
     private double localScore(JSONObject d){
+        // Extreem lage, niet geverifieerde bedragen nooit als topdeal presenteren.
+        if(d.optBoolean("price_unverified"))return -1000.0;
         double low=netLow(d);
         if(Double.isFinite(low)) {
             double score=low>0?200+Math.min(low,3000)/14:60+low/30;
