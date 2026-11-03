@@ -29,6 +29,8 @@ jobs:
           test -f .github/workflows/build-apk.yml
           test -f .github/workflows/scan.yml
           rm -rf payload
+          # GitHub Actions tokens mogen geen nieuwe workflows pushen; die voegen we via de ChatGPT GitHub-koppeling toe.
+          rm -f .github/workflows/build-apk.yml .github/workflows/scan.yml
 
       - name: Publiceer broncode in de repository
         shell: bash
