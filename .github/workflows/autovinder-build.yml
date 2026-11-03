@@ -1,0 +1,40 @@
+name: AutoVinder - bouw Android APK
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'autovinder/android/**'
+      - '.github/workflows/autovinder-build.yml'
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Installeer Android SDK 35
+        run: |
+          SDKMANAGER=/usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager
+          test -x "$SDKMANAGER"
+          "$SDKMANAGER" --sdk_root=/usr/local/lib/android/sdk 'platforms;android-35' 'build-tools;35.0.0'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.10.2'
+      - name: Bouw AutoVinder APK met live feed
+        shell: bash
+        run: |
+          set -euo pipefail
+          FEED_URL="https://raw.githubusercontent.com/\${GITHUB_REPOSITORY}/main/autovinder/docs/feed.json"
+          gradle -p autovinder/android --no-daemon "-PAUTOVINDER_FEED_URL=\${FEED_URL}" :app:assembleDebug
+      - name: Downloadbare APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: AutoVinder-APK
+          path: autovinder/android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
