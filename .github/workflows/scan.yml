@@ -1,0 +1,49 @@
+name: Zoek Nederlandse proofsets
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/scan.yml'
+  schedule:
+    - cron: '7,37 * * * *'
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: muntvinder-pages
+  cancel-in-progress: false
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r scan/requirements.txt
+      - name: Bewaar eerdere scan als tijdelijke fallback
+        continue-on-error: true
+        run: |
+          REPO_NAME="${GITHUB_REPOSITORY#*/}"
+          OWNER="${GITHUB_REPOSITORY%/*}"
+          curl --silent --show-error --fail --location --max-time 15 \
+            "https://${OWNER,,}.github.io/${REPO_NAME,,}/feed.json" \
+            -o docs/feed.json || true
+      - name: Scan aanbiedingen
+        continue-on-error: true
+        env:
+          REEF_API_KEY: ${{ secrets.REEF_API_KEY }}
+          CW_SHIPPING_ESTIMATE: '12'
+          MP_SHIPPING_ESTIMATE: '0'
+        run: python scan/scanner.py
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+      - id: deployment
+        uses: actions/deploy-pages@v4
