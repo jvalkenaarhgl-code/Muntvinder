@@ -176,13 +176,19 @@ public final class MainActivity extends Activity {
 
         String kind=d.optString("price_kind");
         Double price=number(d,"price"), total=number(d,"purchase_total"),lo=number(d,"resale_low"),hi=number(d,"resale_high");
-        detail(card,source.equals("Catawiki")?"HUIDIG BOD":"VRAAGPRIJS / BOD",money(price)+(kind.equals("FIXED")?" · vaste prijs":""),DARK);
-        if(total!=null)detail(card,"GESCHATTE TOTALE INKOOP",money(total),DARK);
+        boolean fixed=kind.equals("FIXED");
+        String priceLabel=fixed?"VASTE VRAAGPRIJS":
+                          kind.equals("MIN_BID")||kind.equals("FAST_BID")?"BIEDPRIJS — GEEN KOOPPRIJS":"PRIJS / BOD";
+        detail(card,source.equals("Catawiki")?"HUIDIG BOD":priceLabel,money(price)+(fixed?" · vaste prijs":""),DARK);
+        if(total!=null)detail(card,fixed?"GESCHATTE TOTALE INKOOP":"TOTAAL BIJ GETOOND BOD (NIET GEGARANDEERD)",money(total),DARK);
         detail(card,"GESCHATTE MARKTPLAATS-DOORVERKOOP",lo==null?"Onvoldoende vergelijkingen":money(lo)+" – "+money(hi),GREEN);
         Double lowProfit=number(d,"profit_low"), highProfit=number(d,"profit_high");
-        if(lowProfit!=null)detail(card,"MOGELIJKE MARGE (EXCL. EVENTUELE VERKOOPKOSTEN)",money(lowProfit)+" tot "+money(highProfit),lowProfit>=0?GREEN:RED);
+        if(lowProfit!=null)detail(card,fixed?"MOGELIJKE MARGE (EXCL. EVENTUELE VERKOOPKOSTEN)":"HYPOTHETISCHE MARGE BIJ GETOOND BOD",money(lowProfit)+" tot "+money(highProfit),lowProfit>=0?GREEN:RED);
         int count=d.optInt("comparison_count");
-        add(card,text(count>0?"Gebaseerd op minimaal "+count+" vergelijkbare actieve vraagprijzen":"Geen betrouwbare waardeschatting: nog te weinig gelijkwaardige aanbiedingen",11,MUTED,false));
+        add(card,text(count>0?"Gebaseerd op slechts "+count+" vergelijkbare actieve vraagprijs"+(count==1?"":"en")+" — geen bewezen verkoopwaarde":"Geen betrouwbare waardeschatting: nog te weinig gelijkwaardige aanbiedingen",11,MUTED,false));
+        spacer(card,6);
+        String valuationNote=d.optString("resale_note","");
+        if(!valuationNote.isEmpty()) add(card,text(valuationNote,11,MUTED,false));
         spacer(card,8);
         String footnote=d.optString("purchase_note",d.optString("price_note",""));
         if(!footnote.isEmpty()) add(card,text(footnote,11,MUTED,false));
@@ -226,7 +232,7 @@ public final class MainActivity extends Activity {
         EditText edit=new EditText(this);edit.setText(FeedClient.url(this));
         edit.setSingleLine(false);edit.setMinLines(2);
         edit.setInputType(InputType.TYPE_CLASS_TEXT|InputType.TYPE_TEXT_VARIATION_URI);
-        edit.setHint("https://gebruikersnaam.github.io/muntvinder/feed.json");
+        edit.setHint("https://raw.githubusercontent.com/gebruikersnaam/Muntvinder/main/docs/feed.json");
         LinearLayout body=vertical();pad(body,18,12);
         add(body,text("De app gebruikt standaard een ingebouwde gegevensbron. Alleen om van scanner te wisselen hoef je hier een andere HTTPS-link op te geven. Android kan automatische verversingen uitstellen.",13,MUTED,false));
         spacer(body,12);add(body,edit);
