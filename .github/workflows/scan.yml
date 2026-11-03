@@ -25,7 +25,9 @@ jobs:
         with:
           python-version: '3.12'
       - name: Installeer scan-afhankelijkheden
-        run: pip install -r scan/requirements.txt
+        run: pip install -r scan/requirements.txt pytest
+      - name: Controleer de prijzen en advertentiefilters
+        run: python -m pytest scan/tests -q
       - name: Scan Marktplaats en Catawiki
         env:
           REEF_API_KEY: ${{ secrets.REEF_API_KEY }}
