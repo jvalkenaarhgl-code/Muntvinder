@@ -19,7 +19,7 @@ from bs4 import BeautifulSoup
 ROOT = Path(__file__).resolve().parent.parent
 CACHE = ROOT / 'docs' / 'shop_prices.json'
 CACHE_SECONDS = 6 * 3600
-CACHE_SCHEMA = 2
+CACHE_SCHEMA = 3
 
 SHOPS = [
     ('Bildtmunt', 'https://www.bildtmunt.com/nederlandse-munten-knm/proof-sets-nederland'),
@@ -82,11 +82,11 @@ def parse_euros(text: str) -> float | None:
 def pick_card(anchor):
     """Zoek de productkaart, nooit een volledige catalogus met meerdere sets."""
     chosen = None
-    for el in [anchor, *list(anchor.parents)[:6]]:
+    for el in [anchor, *list(anchor.parents)[:12]]:
         if el.name in ('body', 'html', 'section', 'main', 'ul', 'ol'):
             break
         full_text = el.get_text(' ', strip=True)
-        if len(full_text) > 850 or len(el.select('a[href]')) > 9:
+        if len(full_text) > 2200 or len(el.select('a[href]')) > 9:
             break
         # Beschrijvingen met andere jaren behoren tot een andere productkaart.
         other_titles = [
