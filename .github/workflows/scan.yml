@@ -42,6 +42,8 @@ jobs:
           MP_SHIPPING_ESTIMATE: '0'
         run: python scan/scanner.py
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: docs
