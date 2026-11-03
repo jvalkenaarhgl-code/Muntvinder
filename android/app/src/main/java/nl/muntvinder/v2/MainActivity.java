@@ -1,5 +1,6 @@
 package nl.muntvinder.v2;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -9,11 +10,14 @@ import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Build;
+import android.content.pm.PackageManager;
 import android.text.InputType;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
@@ -59,6 +63,7 @@ public final class MainActivity extends Activity {
         getWindow().setNavigationBarColor(GREEN);
         ScanJobService.schedule(this);
         draw();
+        maybeAskNotificationPermission();
         if (!FeedClient.url(this).isEmpty()) refreshOnline(false);
     }
     @Override protected void onResume() { super.onResume(); if (frame != null) render(); }
@@ -219,7 +224,15 @@ public final class MainActivity extends Activity {
         TextView star=text(isFav?"★":"☆",26,GOLD,true);pad(star,10,2);
         star.setOnClickListener(v->toggleFavorite(d.optString("id")));
         top.addView(star);add(card,top);spacer(card,12);
-        add(card,text(d.optString("title"),17,DARK,true));spacer(card,10);
+        add(card,text(d.optString("title"),17,DARK,true));spacer(card,6);
+        String opportunity=d.optString("deal_label","");
+        int position=d.optInt("deal_position",0);
+        if(!opportunity.isEmpty()) {
+            String prefix=position>0 && position<=3?"#"+position+" · ":"";
+            add(card,text(prefix+opportunity,12,
+                position==1 && d.optBoolean("alert_candidate",false)?GREEN:MUTED,true));
+            spacer(card,9);
+        }
         showCardPhoto(card,d);
 
         String kind=d.optString("price_kind");
@@ -376,19 +389,46 @@ public final class MainActivity extends Activity {
             });
         },"muntvinder-refresh").start();
     }
+    private void maybeAskNotificationPermission() {
+        if (Build.VERSION.SDK_INT >= 33
+                && checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED
+                && !FeedClient.prefs(this).getBoolean("deal_notification_permission_asked", false)) {
+            FeedClient.prefs(this).edit().putBoolean("deal_notification_permission_asked", true).apply();
+            requestPermissions(new String[]{Manifest.permission.POST_NOTIFICATIONS}, 41027);
+        }
+    }
     private void settings() {
         EditText edit=new EditText(this);edit.setText(FeedClient.url(this));
         edit.setSingleLine(false);edit.setMinLines(2);
         edit.setInputType(InputType.TYPE_CLASS_TEXT|InputType.TYPE_TEXT_VARIATION_URI);
         edit.setHint("https://raw.githubusercontent.com/gebruikersnaam/Muntvinder/main/docs/feed.json");
         LinearLayout body=vertical();pad(body,18,12);
-        add(body,text("De app gebruikt standaard een ingebouwde gegevensbron. Alleen om van scanner te wisselen hoef je hier een andere HTTPS-link op te geven. Android kan automatische verversingen uitstellen.",13,MUTED,false));
-        spacer(body,12);add(body,edit);
-        new AlertDialog.Builder(this).setTitle("Automatisch scannen instellen").setView(body)
+        CheckBox notifications=new CheckBox(this);
+        notifications.setText("Meldingen voor nieuwe topdeals");
+        notifications.setChecked(DealNotifications.enabled(this));
+        CheckBox bids=new CheckBox(this);
+        bids.setText("Ook interessante biedingen melden");
+        bids.setChecked(DealNotifications.bidsEnabled(this));
+        add(body,text("Nieuwe deals komen bovenaan. Bij een nieuwe topdeal kan Android maximaal één melding per 12 uur sturen; de eerste download geeft geen oude meldingen. De telefoon controleert ongeveer elke 30 minuten en kan controles uitstellen door batterijbesparing.",12,MUTED,false));
+        spacer(body,10);add(body,notifications);add(body,bids);
+        spacer(body,8);
+        add(body,text("Gegevensbron (standaard automatisch ingesteld)",12,MUTED,true));
+        spacer(body,6);add(body,edit);
+        new AlertDialog.Builder(this).setTitle("Muntvinder-instellingen").setView(body)
             .setNegativeButton("Annuleren",null)
             .setPositiveButton("Opslaan",(dialog,which)->{
-                try {FeedClient.saveUrl(this,edit.getText().toString().trim());ScanJobService.schedule(this);render();refreshOnline(true);}
-                catch(IllegalArgumentException e) {Toast.makeText(this,e.getMessage(),Toast.LENGTH_LONG).show();}
+                try {
+                    FeedClient.saveUrl(this,edit.getText().toString().trim());
+                    FeedClient.prefs(this).edit()
+                        .putBoolean(DealNotifications.KEY_ENABLED,notifications.isChecked())
+                        .putBoolean(DealNotifications.KEY_BIDS,bids.isChecked()).apply();
+                    if(notifications.isChecked() && !DealNotifications.notificationsAllowed(this)) {
+                        Toast.makeText(this,"Sta meldingen toe in Android-instellingen als ze zijn geblokkeerd.",Toast.LENGTH_LONG).show();
+                    }
+                    ScanJobService.schedule(this);render();refreshOnline(true);
+                } catch(IllegalArgumentException e) {
+                    Toast.makeText(this,e.getMessage(),Toast.LENGTH_LONG).show();
+                }
             }).show();
     }
 }
