@@ -1,0 +1,23 @@
+plugins { id 'com.android.application' }
+android {
+  namespace 'nl.muntvinder.v2'
+  compileSdk 35
+  buildFeatures { buildConfig true }
+  defaultConfig {
+    applicationId 'nl.muntvinder.v2'
+    minSdk 26
+    targetSdk 35
+    versionCode 3
+    versionName '2.1'
+    // De feed-URL wordt tijdens de build ingebakken. Geen handmatige installatie-instelling.
+    def feed = (project.findProperty('MUNTVINDER_FEED_URL') ?: '').toString()
+    if (feed && !(feed ==~ /https:\/\/[a-zA-Z0-9._\/-]+/)) {
+      throw new GradleException('Ongeldige HTTPS-URL naar de scan-feed')
+    }
+    buildConfigField 'String', 'DEFAULT_FEED_URL', '"' + feed + '"'
+  }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_17
+    targetCompatibility JavaVersion.VERSION_17
+  }
+}
