@@ -181,7 +181,7 @@ public final class MainActivity extends Activity {
                           kind.equals("MIN_BID")||kind.equals("FAST_BID")?"BIEDPRIJS — GEEN KOOPPRIJS":"PRIJS / BOD";
         detail(card,source.equals("Catawiki")?"HUIDIG BOD":priceLabel,money(price)+(fixed?" · vaste prijs":""),DARK);
         if(total!=null)detail(card,fixed?"GESCHATTE TOTALE INKOOP":"TOTAAL BIJ GETOOND BOD (NIET GEGARANDEERD)",money(total),DARK);
-        detail(card,"GESCHATTE MARKTPLAATS-DOORVERKOOP",lo==null?"Onvoldoende vergelijkingen":money(lo)+" – "+money(hi),GREEN);
+        detail(card,"VOORZICHTIGE DOORVERKOOPINDICATIE",lo==null?"Onvoldoende betrouwbare gegevens":money(lo)+" – "+money(hi),GREEN);
 
         Double shopPrice=number(d,"shop_price"),shopDifference=number(d,"shop_difference");
         String shopName=d.optString("shop_name","");
@@ -192,7 +192,7 @@ public final class MainActivity extends Activity {
             }
             String stock=d.optString("shop_availability","");
             String shopNote=d.optString("shop_note","");
-            if(!stock.equals("beschikbaar")) shopNote="Voorraad niet bevestigd. "+shopNote;
+            // De scanner vermeldt voorraadonzekerheid al in shop_note.
             if(!shopNote.isEmpty()) {add(card,text(shopNote,11,MUTED,false));spacer(card,8);}
             String shopUrl=d.optString("shop_url","");
             if(shopUrl.startsWith("https://")){
@@ -207,7 +207,7 @@ public final class MainActivity extends Activity {
         Double lowProfit=number(d,"profit_low"), highProfit=number(d,"profit_high");
         if(lowProfit!=null)detail(card,fixed?"MOGELIJKE MARGE (EXCL. EVENTUELE VERKOOPKOSTEN)":"HYPOTHETISCHE MARGE BIJ GETOOND BOD",money(lowProfit)+" tot "+money(highProfit),lowProfit>=0?GREEN:RED);
         int count=d.optInt("comparison_count");
-        add(card,text(count>0?"Gebaseerd op slechts "+count+" vergelijkbare actieve vraagprijs"+(count==1?"":"en")+" — geen bewezen verkoopwaarde":"Geen betrouwbare waardeschatting: nog te weinig gelijkwaardige aanbiedingen",11,MUTED,false));
+        add(card,text(count>0?"Vergelijkingsbasis: "+count+" vaste Marktplaats-vraagprijs"+(count==1?"":"en")+"; geen gerealiseerde verkopen.":"Geen voldoende vergelijkbare Marktplaats-vraagprijzen.",11,MUTED,false));
         spacer(card,6);
         String valuationNote=d.optString("resale_note","");
         if(!valuationNote.isEmpty()) add(card,text(valuationNote,11,MUTED,false));
