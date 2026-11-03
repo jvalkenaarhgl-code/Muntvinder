@@ -19,6 +19,7 @@ from bs4 import BeautifulSoup
 ROOT = Path(__file__).resolve().parent.parent
 CACHE = ROOT / 'docs' / 'shop_prices.json'
 CACHE_SECONDS = 6 * 3600
+CACHE_SCHEMA = 2
 
 SHOPS = [
     ('Bildtmunt', 'https://www.bildtmunt.com/nederlandse-munten-knm/proof-sets-nederland'),
@@ -149,6 +150,8 @@ def cached_shops(max_age: int = CACHE_SECONDS) -> dict | None:
         return None
     try:
         doc = json.loads(CACHE.read_text(encoding='utf-8'))
+        if doc.get('schema_version') != CACHE_SCHEMA:
+            return None
         timestamp = datetime.fromisoformat(doc['checked_at'])
         age = (datetime.now(timezone.utc) - timestamp).total_seconds()
         if 0 <= age <= max_age and isinstance(doc.get('offers'), list):
@@ -188,6 +191,7 @@ def load_shop_prices(session: requests.Session) -> dict:
             stale['errors'] = errors
             return stale
     data = {
+        'schema_version': CACHE_SCHEMA,
         'checked_at': datetime.now(timezone.utc).isoformat(timespec='seconds'),
         'offers': list(offers.values()),
         'checked_shops': sorted(reachable),
