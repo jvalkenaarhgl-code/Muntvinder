@@ -291,7 +291,8 @@ def sort_deals(items):
         if d.get("price_unverified"):score-=120;label="Prijs eerst controleren — mogelijk lokbedrag"
         d["deal_score"]=round(score,2)
         d["deal_label"]=label
-    items.sort(key=lambda x:(-x["deal_score"],x["price"],x["id"]))
+    # Lokprijzen altijd onder geverifieerde vraagprijzen plaatsen, ook met positieve rekensom.
+    items.sort(key=lambda x:(bool(x.get("price_unverified")),-x["deal_score"],x["price"],x["id"]))
     for i,d in enumerate(items):
         d["rank"]=i+1
         d["alert_candidate"]=(i<3 and d.get("profit_low") is not None and d["profit_low"]>0
@@ -321,7 +322,7 @@ def shortlist(deals, max_items=430):
         put(d)
     for d in deals:put(d)
     return sorted(selected.values(),
-                  key=lambda d:(-d["deal_score"],d["price"],d["id"]))
+                  key=lambda d:(bool(d.get("price_unverified")),-d["deal_score"],d["price"],d["id"]))
 
 def run(session=None):
     session=session or requests.Session()
