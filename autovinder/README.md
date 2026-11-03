@@ -1,4 +1,4 @@
-# AutoVinder 1.0 — inkoop en verkoop van goedkope occasions
+# AutoVinder 1.2 — inkoop en verkoop van goedkope occasions
 
 **AutoVinder is een aparte Android-app naast Muntvinder** (app-id: nl.autovinder.app).
 Broncode, workflows en JSON-feed staan in de map \`autovinder/\` van dezelfde GitHub-repository.
@@ -18,22 +18,15 @@ Broncode, workflows en JSON-feed staan in de map \`autovinder/\` van dezelfde Gi
 - Bij een nieuwe onderbouwde topdeal kan een Android-melding volgen: maximaal één per twaalf uur; Android kan achtergrondcontroles uitstellen. Geen betaalde AI of Telegram vereist.
 - Marktplaats-foto's en advertentielinks zijn te openen in de app.
 
-## Facebook Marketplace
-De scanner heeft nu een **optionele automatische koppeling** met de externe Apify-actor [parsebird/facebook-marketplace-scraper](https://apify.com/parsebird/facebook-marketplace-scraper). Dit is **geen officiële Meta-API**. Meta kan automatische toegang beperken en verbiedt niet-toegestane scraping in haar gebruiksvoorwaarden. Er wordt geen Facebook-accountwachtwoord of cookie gebruikt.
+## Facebook Marketplace — volledig gratis (beperkte openbare vondsten)
 
-De koppeling is standaard **NIET actief**: zonder API-token worden geen Facebook-advertenties opgehaald en wordt er niets in rekening gebracht. De gebruiker kan daarnaast handmatig een Marketplace-advertentie bewaren, inclusief een eigen (ongecontroleerde) verkoopinschatting.
+De scanner gebruikt **geen Apify, geen betaalde API, geen abonnement, geen Facebook-wachtwoord en geen cookie**. Een beperkte, gratis methode zoekt maximaal achtmaal per zes uur in een publiek toegankelijke **zoekmachine-RSS-index** naar Facebook Marketplace-autoadvertenties. Er worden geen verzoeken naar Facebook zelf gestuurd.
 
-### Automatische Facebook-scan activeren
+**Beperking:** een zoekmachine indexeert slechts een klein deel van Marketplace; resultaten kunnen oud of onvolledig zijn. Het is dus niet hetzelfde als volledig en actueel Facebook Marketplace doorzoeken. Als er geen geschikte Facebook-advertenties zijn gevonden, blijft de Facebook-lijst leeg en geeft AutoVinder de bronstatus aan. De bot verzint geen auto's.
 
-1. Maak een account aan via https://console.apify.com/ en lees de prijsvoorwaarden van de actor.
-2. Kopieer in Apify Console onder **Settings / API & Integrations** je persoonlijke API-token. Deel dit token niet in de chat of Android-app.
-3. Ga naar https://github.com/jvalkenaarhgl-code/Muntvinder/settings/secrets/actions/new .
-4. Vul bij **Name** exact `APIFY_TOKEN` in en zet je token onder **Secret**. Sla het op.
-5. De volgende GitHub-scan activeert Facebook automatisch. Controleer via **AutoVinder → Facebook** of de feed een actuele Facebook-status en echte advertenties bevat. Het eerste ophalen kan even duren. Je kunt eventueel via GitHub Actions de workflow handmatig starten.
+Uit zoekresultaten worden alleen echte `facebook.com/marketplace/item/<nummer>`-links met herkenbaar automodel en expliciete prijs verwerkt. De prijzen zijn **ongeverifieerd** en worden nooit als betrouwbare topdeal of basis voor pushmeldingen behandeld. Kilometers en bouwjaar kunnen ontbreken; in dat geval kan de Android-filter `onbekende km-stand toestaan` helpen om zulke aanbiedingen te zien. Je kunt ook nog steeds een Facebook-advertentie handmatig toevoegen en zelf de gegevens invullen.
 
-De backend vraagt standaard maximaal 10 autoadvertenties in vijf Nederlandse regio's per run op. Er staat een Apify-uitgavenplafond van **$0,12 per run** in de API-aanroep (geen maandplafond). Facebook wordt rond vier UTC-uren per dag opnieuw gevraagd; tussendoor worden recente resultaten hergebruikt. Bij vier runs per dag is het theoretische totaal tot circa **$14,40 per 30 dagen**, afhankelijk van de Apify-facturatie en de actor. De gebruiker autoriseert eventuele externe kosten zelf door zijn token te koppelen. Het Apify-account kan gratis proefcredits bevatten; blijvend gratis is niet gegarandeerd.
-
-De Android-app gebruikt dezelfde bronfilter voor beide bronnen. Facebook-vermeldingen met ontbrekende kilometerstand krijgen geen betrouwbare doorverkoopwaarde en verdwijnen standaard onder de filter `km onbekend`, tenzij deze optie wordt ingeschakeld. De vraagprijsschatting is op Marktplaats-vergelijkingen gebaseerd, niet op echte verkooptransacties.
+De automatische Marktplaats-scanner blijft de belangrijkste bron voor onderbouwde waarderingen. Voor Facebook-resultaten gebruikt de app dezelfde voorzichtige modelvergelijking met Marktplaats-vraagprijzen en onderscheidt ze de ongeverifieerde koopprijs. Alle functies blijven kosteloos zolang standaard GitHub Actions in een openbare repository wordt gebruikt.
 
 ## Techniek en onderhoud
 - \`autovinder/scan/scanner.py\` — Python-scanner en prijsanalyse.
@@ -50,6 +43,6 @@ Een knop **Verversen** haalt de recent gepubliceerde feed op; hij start niet met
 - Marktplaats gebruikt een niet-officieel openbaar zoekendpoint; het formaat en de toegang kunnen veranderen.
 - Vergelijkingen zijn **vraagprijzen**, geen gerealiseerde verkopen. Bij minder dan drie vergelijkbare vaste vraagprijzen wordt een onbekende doorverkoopprijs getoond.
 - Een aanbod kan een incorrecte of onvolledige vraagprijs tonen. AutoVinder markeert verdachte lage bedragen.
-- Facebook Marketplace is **optioneel automatisch via een aparte Apify-dienst** als `APIFY_TOKEN` is geconfigureerd; zonder token blijft alleen de handmatige zoek- en bewaarmogelijkheid.
+- Facebook Marketplace werkt alleen als openbare zoekmachines recente, geschikte Marketplace-links teruggeven. Geen volledige Marketplace-toegang, geen betaalde diensten.
 - Android-push is lokaal via periodieke achtergrondcontrole, geen instant Firebase-serverpush.
 - Verkoop je structureel auto's met winstoogmerk, controleer dan vooraf belasting-, consumentenrechtelijke en RDW-verplichtingen.
