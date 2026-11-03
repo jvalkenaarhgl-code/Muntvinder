@@ -54,7 +54,12 @@ def exact_year(title: str) -> int | None:
     years = YEAR_RE.findall(clean)
     if len(years) != 1:
         return None
-    return int(years[0])
+    year = int(years[0])
+    # Euromunten 1999–2001 zijn geen gewone guldenproofsets.
+    # De scanner noemt deze vroege jaren gulden; match nooit een euromuntenserie.
+    if year < 2002 and not re.search(r'gulden|guldens', clean, re.I):
+        return None
+    return year
 
 
 def parse_euros(text: str) -> float | None:
