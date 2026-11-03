@@ -341,8 +341,68 @@ def refine_resale_with_shops(deals: list[dict]) -> list[dict]:
         else:
             d['profit_low'] = d['profit_high'] = d['discount_ratio'] = d['rank'] = None
 
-    return sorted(deals, key=lambda d: (
-        0 if d['rank'] is not None else 1,
-        -(d['rank'] if d['rank'] is not None else -9),
-        d.get('purchase_total') if d.get('purchase_total') is not None else 1e10
+    return rank_opportunities(deals)
+
+
+def rank_opportunities(deals: list[dict]) -> list[dict]:
+    """Rangschik op koopkans, niet simpelweg op hoogste (onzekere) winstmarge.
+
+    Positief conservatief prijsverschil telt zwaar, maar een bod telt nooit
+    als gegarandeerde aankoop. Onbekende waarden blijven zichtbaar en
+    krijgen niet zomaar een (verzonnen) winstscore.
+    """
+    for deal in deals:
+        purchase = deal.get('purchase_total')
+        shop_price = deal.get('shop_price')
+        profit_low = deal.get('profit_low')
+        profit_high = deal.get('profit_high')
+        comparable_count = int(deal.get('comparison_count') or 0)
+        fixed = deal.get('price_kind') == 'FIXED'
+        bid = deal.get('price_kind') in ('MIN_BID', 'FAST_BID', 'BID')
+        confidence = min(comparable_count, 3) / 3
+        discount = 0
+        if shop_price is not None and purchase is not None and shop_price > 0:
+            discount = (shop_price - purchase) / shop_price
+
+        if profit_low is not None and profit_low > 0 and purchase is not None:
+            # Conservatieve positieve marge; een MIN_BID heeft uitvoeringsrisico.
+            score = (200 + 40 * min(profit_low / max(purchase, 1), 2)
+                     + 8 * min(profit_low, 100) / 100
+                     + 10 * confidence + (8 if fixed else -8 if bid else 0))
+            label = 'Mogelijke koopkans' if fixed else 'Interessant bod — prijs kan oplopen'
+        elif shop_price is not None and purchase is not None and discount > 0:
+            # Ook bespreekbaar als schatting ontbreekt; shopverschil is GEEN winst.
+            score = 100 + 45 * min(discount, 1) + 8 * confidence + (6 if fixed else -6 if bid else 0)
+            label = 'Onderhandelingskans — winkelprijs is geen verkoopwaarde'
+        elif profit_high is not None and profit_high > 0 and purchase is not None:
+            score = 75 + 10 * min(profit_high / max(purchase, 1), 1) + confidence
+            label = 'Onzekere koopkans'
+        elif profit_high is None:
+            score = 35 + 8 * confidence - (min(purchase or 1000, 1000) / 1000)
+            label = 'Prijs onbekend te beoordelen'
+        else:
+            score = 5 + max(-25, 25 * (deal.get('discount_ratio') or -1))
+            label = 'Geen aantoonbaar voordeel bij deze vraag-/biedprijs'
+
+        deal['deal_score'] = round(score, 2)
+        deal['deal_label'] = label
+
+    deals.sort(key=lambda d: (
+        -d['deal_score'],
+        d.get('purchase_total') if d.get('purchase_total') is not None else 1e10,
+        str(d.get('id') or '')
     ))
+    for position, deal in enumerate(deals):
+        deal['deal_position'] = position + 1
+        # Geen harde minimale euro-/ROI-drempel: positieve conservatieve
+        # marge kan ook €1 zijn. Wel aantoonbare basis en alleen top-3.
+        deal['alert_candidate'] = bool(
+            position < 3
+            and deal.get('profit_low') is not None
+            and deal['profit_low'] > 0
+            and (deal.get('comparison_count') or 0) >= 1
+            and (deal.get('shop_price') is not None or (deal.get('comparison_count') or 0) >= 3)
+            and deal.get('price_kind') in ('FIXED', 'MIN_BID', 'FAST_BID')
+            and deal.get('source') == 'Marktplaats'
+        )
+    return deals
