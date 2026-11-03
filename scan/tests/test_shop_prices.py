@@ -82,3 +82,32 @@ def test_shop_comparison_does_not_call_shop_price_a_sales_value():
     assert deals[0]['shop_matches']==2
     assert deals[1]['shop_price'] is None
     assert deals[2]['shop_price'] is None
+
+
+def test_herdenkingsmunt_2_euro_200_jaar_not_read_as_200_euro_price():
+    html = """
+    <ul class="products">
+      <li class="product outofstock">
+        <a href="https://hansmunt.nl/proof-2013">
+          <h2>Euromunten / Nederland / 2013 / Proof Set / Incl 2€ 200 Jaar Nederland</h2>
+        </a>
+        <span>Melding bij beschikbaarheid</span>
+      </li>
+      <li class="product outofstock">
+        <a href="https://hansmunt.nl/proof-2012">
+          <h2>Euromunten / Nederland / 2012 / Proof Set / Incl 2€ 10 Jaar Euro</h2>
+        </a>
+        <span>Melding bij beschikbaarheid</span>
+      </li>
+      <li class="product">
+        <a href="https://hansmunt.nl/proof-2011">
+          <h2>Euromunten / Nederland / 2011 / Proof Set / Incl 2€ Erasmus</h2>
+        </a>
+        <span class="price">€69,95</span>
+        <span>In winkelwagen</span>
+      </li>
+    </ul>
+    """
+    offers = parse_catalog(html, "Hansmunt", "https://hansmunt.nl/nl/proof/")
+    assert [o["year"] for o in offers] == [2011]
+    assert offers[0]["price"] == 69.95
