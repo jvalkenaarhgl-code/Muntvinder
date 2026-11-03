@@ -175,7 +175,7 @@ public final class MainActivity extends Activity {
 
         LinearLayout content=vertical();pad(content,15,14);
         summary=text("Advertenties laden…",15,INK,true);add(content,summary);gap(content,8);
-        add(content,text("Marktplaats automatisch · Facebook Marketplace automatisch na Apify-koppeling",11,MUTED,false));
+        add(content,text("Marktplaats automatisch · Facebook via gratis publieke zoekindex (beperkte dekking)",11,MUTED,false));
         gap(content,12);
         LinearLayout tabs=new LinearLayout(this);tabs.setOrientation(0);
         for(String filter:new String[]{"Alles","Marktplaats","Facebook","Bewaard"}){
@@ -249,13 +249,11 @@ public final class MainActivity extends Activity {
             String state=facebook.optString("status","");
             String message="";
             switch(state){
-                case "ok": message="Facebook automatisch gescand: "+facebook.optInt("count",0)+" auto's";break;
-                case "bewaarde_resultaten":message="Facebook: resultaten van de vorige automatische scan";break;
-                case "geen_passende_advertenties":message="Facebook gescand: geen passende auto's gevonden";break;
-                case "niet_geconfigureerd":message="Facebook automatisch nog niet actief: Apify-token ontbreekt op GitHub";break;
-                case "toegang_geweigerd":message="Facebook-koppeling niet actief: controleer Apify-token";break;
-                case "fout":message="Facebook-provider tijdelijk niet bereikbaar";break;
-                default:message="Facebook-status onbekend";break;
+                case "ok": message="Gratis Facebook-zoekindex: "+facebook.optInt("count",0)+" mogelijke advertenties (prijs niet geverifieerd)";break;
+                case "bewaarde_resultaten":message="Facebook: eerder gevonden openbare zoekresultaten";break;
+                case "geen_passende_advertenties":message="Facebook: geen passende openbaar geïndexeerde advertenties; zoeken op Facebook zelf blijft mogelijk";break;
+                case "fout":message="Gratis Facebook-zoekindex tijdelijk niet bereikbaar";break;
+                default:message="Facebook: beperkte openbare zoekresultaten";break;
             }
             add(listArea,text(message,11,state.equals("ok")?GREEN:MUTED,false));
             gap(listArea,7);
