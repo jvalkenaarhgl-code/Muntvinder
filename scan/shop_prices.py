@@ -19,7 +19,7 @@ from bs4 import BeautifulSoup
 ROOT = Path(__file__).resolve().parent.parent
 CACHE = ROOT / 'docs' / 'shop_prices.json'
 CACHE_SECONDS = 6 * 3600
-CACHE_SCHEMA = 3
+CACHE_SCHEMA = 4
 
 SHOPS = [
     ('Bildtmunt', 'https://www.bildtmunt.com/nederlandse-munten-knm/proof-sets-nederland'),
@@ -190,6 +190,19 @@ def load_shop_prices(session: requests.Session) -> dict:
                     if len(candidates) >= 3:
                         break
                 print('Winkelvergelijking diagnostics:',name, repr(candidates))
+                for a in soup.select('a[href]'):
+                    label = ' '.join(a.stripped_strings)
+                    if exact_year(label) is None:
+                        continue
+                    chain = []
+                    for depth, el in enumerate([a, *list(a.parents)[:11]]):
+                        t = el.get_text(' ', strip=True)
+                        chain.append((depth, el.name, ' '.join(el.get('class', []))[:55],
+                                      len(t), len(el.select('a[href]')), len(MONEY_RE.findall(t)), t[-75:]))
+                        if el.name in ('body', 'html'):
+                            break
+                    print('Winkelvergelijking DOM:',name, repr(chain))
+                    break
             reachable.add(name)
             for offer in parsed:
                 k = (name, offer['year'])
