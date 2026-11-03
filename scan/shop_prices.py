@@ -19,7 +19,7 @@ from bs4 import BeautifulSoup
 ROOT = Path(__file__).resolve().parent.parent
 CACHE = ROOT / 'docs' / 'shop_prices.json'
 CACHE_SECONDS = 6 * 3600
-CACHE_SCHEMA = 4
+CACHE_SCHEMA = 5
 
 SHOPS = [
     ('Bildtmunt', 'https://www.bildtmunt.com/nederlandse-munten-knm/proof-sets-nederland'),
@@ -40,10 +40,10 @@ REJECT_RE = re.compile(
 SOLD_OUT_RE = re.compile(
     r'uitverkocht|sold\s*out|out\s*of\s*stock|'
     r'melding\s+bij\s+beschikbaarheid|houd\s+mij\s+op\s+de\s+hoogte|'
-    r'niet\s+op\s+voorraad|not\s+in\s+stock', re.I
+    r'niet\s+op\s+voorraad|not\s+in\s+stock|stuur\s+bericht\s+bij\s+voorraad', re.I
 )
 STOCK_RE = re.compile(
-    r'in\s+winkelwagen|op\s+voorraad|add\s+to\s+cart|bestellen|'
+    r'in\s+winkelwagen|in\s+winkelmand|op\s+voorraad|add\s+to\s+cart|bestellen|'
     r'toevoegen\s+aan\s+winkelwagen|in\s+stock', re.I
 )
 
@@ -83,7 +83,7 @@ def pick_card(anchor):
     """Zoek de productkaart, nooit een volledige catalogus met meerdere sets."""
     chosen = None
     for el in [anchor, *list(anchor.parents)[:12]]:
-        if el.name in ('body', 'html', 'section', 'main', 'ul', 'ol'):
+        if el.name in ('body', 'html', 'main', 'ul', 'ol'):
             break
         full_text = el.get_text(' ', strip=True)
         if len(full_text) > 2200 or len(el.select('a[href]')) > 9:
