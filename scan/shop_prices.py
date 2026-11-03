@@ -253,15 +253,17 @@ def match_shops(deals: list[dict], catalog: dict) -> None:
         if not choices:
             d['shop_note'] = 'Geen overeenkomende webshopprijs gevonden bij gecontroleerde winkels'
             continue
-        # Voorkeur voor expliciet op voorraad. Anders prijs wel tonen met status niet bevestigd.
+        # Toon daadwerkelijk de LAAGSTE vermelde winkelprijs.
+        # Voorraadonzekerheid apart melden, niet stilzwijgend duurdere prijs kiezen.
+        chosen = choices[0]
         available = [o for o in choices if o.get('availability') == 'beschikbaar']
-        chosen = min(available, key=lambda x: x['price']) if available else choices[0]
         d['shop_price'] = chosen['price']
         d['shop_name'] = chosen['shop']
         d['shop_url'] = chosen['url']
         d['shop_availability'] = chosen['availability']
         d['shop_matches'] = len(choices)
-        d['shop_note'] = ('Goedkoopste gevonden bevestigde voorraadprijs bij gecontroleerde winkels; verzending niet meegerekend'
-                         if available else 'Winkelprijs gevonden, actuele voorraad niet bevestigd; verzending niet meegerekend')
+        d['shop_note'] = ('Laagste gevonden webshopprijs binnen gecontroleerde winkels; voorraad vermeld, verzending niet meegerekend'
+                         if chosen.get('availability') == 'beschikbaar' else
+                         'Laagste gevonden webshopprijs; actuele voorraad niet bevestigd, verzending niet meegerekend')
         if d.get('purchase_total') is not None:
             d['shop_difference'] = round(chosen['price'] - d['purchase_total'], 2)
