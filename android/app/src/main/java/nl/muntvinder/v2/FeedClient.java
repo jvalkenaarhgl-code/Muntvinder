@@ -60,6 +60,8 @@ final class FeedClient {
                 throw new Exception("Onverwacht feedformaat; eerdere aanbiedingen blijven bewaard");
             prefs(ctx).edit().putString(KEY_JSON, obj.toString()).putLong(KEY_SYNC, System.currentTimeMillis())
                     .remove(KEY_ERROR).apply();
+            // Ook bij een periodieke achtergrondcontrole nieuwe topdeals melden.
+            DealNotifications.onNewFeed(ctx, obj);
             return obj;
         } finally { connection.disconnect(); }
     }
