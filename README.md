@@ -16,6 +16,14 @@
 - Winkelprijzen zijn **vraagprijzen exclusief verzending**. Als voorraad niet blijkt uit de pagina, staat dit expliciet als onbevestigd; geen globale claim dat heel internet is vergeleken. Prijzen worden maximaal elke 6 uur opnieuw opgehaald.
 - Favorieten en advertentielinks in Android-app. **Geen Telegram en standaard géén pushmeldingen**.
 
+## Foto's en herkenbare aanbiedingen (versie 2.4)
+
+- Marktplaats-foto's komen rechtstreeks uit de originele zoekresultaten (pictures[] of imageUrls[]). Als een advertentie foto's bevat, toont de app de eerste foto boven de prijsinformatie.
+- Tik op de foto voor de grote afbeelding en blader met **Vorige** en **Volgende** door maximaal acht foto's per advertentie. Afbeeldingen laden alleen wanneer ze in beeld komen.
+- Gebruik de afzonderlijke filters **Alles | Losse sets | Bundels** om snel te wisselen. Daaronder kies je **Alle bronnen | Marktplaats | Catawiki | ★ Bewaard**.
+- Een **gele bundelmarkering** geeft aan dat de tekst meerdere sets noemt; een **groene markering** geeft een losse set aan. Aantal sets of jaartal verschijnt waar bekend.
+- De indeling is afgeleid uit advertentietitel en beschrijving. Controleer altijd de foto's, het werkelijke aantal sets en de staat. Niet elke afbeelding is beschikbaar; dan blijft de advertentie gewoon zichtbaar.
+
 ## Installeren en automatisch laten zoeken
 
 De broncode en automatische workflows zijn ingericht in de repository
