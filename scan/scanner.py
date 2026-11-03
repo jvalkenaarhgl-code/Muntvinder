@@ -85,6 +85,8 @@ def mp_listing(obj: dict) -> dict | None:
     path = str(obj.get('vipUrl') or obj.get('vip_url') or obj.get('url') or '')
     url = urljoin('https://www.marktplaats.nl/',path) if path else ('https://link.marktplaats.nl/'+item if item else '')
     if not url.startswith('https://') or 'marktplaats.nl' not in url: return None
+    # Externe veilingadvertenties met /a123... zijn geen normale Marktplaats-koopadvertenties.
+    if re.search(r'/a\d{7,}',url) or re.search(r'zonder\s+minimumprijs|geen\s+minimumprijs',title,re.I): return None
     if not item:
         match = re.search(r'm\d{7,12}',url)
         item = match[0] if match else url
@@ -181,7 +183,7 @@ def calc_market(deals: list[dict]) -> list[dict]:
 
     def estimate(year, typ, own_id):
         prices = [x['price'] for x in comparables.get((year,typ),[]) if x['id'] != own_id]
-        if len(prices)<3: return None
+        if len(prices)<1: return None
         median = statistics.median(prices)
         # 80%-95% zijn UITDRUKKELIJK aannames op basis van actuele vraagprijzen,
         # geen bewezen verkoopprijzen. Wordt in UI duidelijk benoemd.
@@ -197,8 +199,10 @@ def calc_market(deals: list[dict]) -> list[dict]:
         d['comparison_count'] = min((r[2] for r in refs),default=0)
         d['resale_low'] = round(sum(r[0] for r in refs),2) if refs else None
         d['resale_high'] = round(sum(r[1] for r in refs),2) if refs else None
-        d['resale_note'] = ('Schatting: 80–95% van mediane actieve Marktplaats-vraagprijzen. Geen gerealiseerde verkoopprijzen.'
-                            if refs else 'Te weinig gelijkwaardige advertenties voor betrouwbare schatting')
+        d['resale_note'] = (('Zeer onzekere indicatie: slechts %d vergelijkbare vaste vraagprijs(en) per set. 80–95%% van de mediane vraagprijs; geen gerealiseerde verkoopprijs.' % d['comparison_count'])
+                            if refs and d['comparison_count']<3 else
+                            'Indicatie: 80–95% van mediane actieve Marktplaats-vraagprijzen. Geen gerealiseerde verkoopprijzen.'
+                            if refs else 'Geen voldoende gelijkwaardige advertenties voor prijsindicatie')
         price = d['price']
         if price is None: d['purchase_total'] = None
         elif d['source']=='Catawiki':
@@ -245,7 +249,7 @@ def run(session=None):
         output={'generated_at':now,'deals':existing,'stale':bool(existing),
                 'errors':errors or ['Geen aanbiedingen opgehaald'], 'source_status':'FOUT'}
     else:
-        output={'generated_at':now,'deals':calc_market(list(deals.values())),'stale':bool(errors),
+        output={'generated_at':now,'deals':calc_market(list(deals.values())),'stale':False,
                 'errors':errors,'source_status':'GEDEELTELIJK' if errors else 'OK'}
     DEST.parent.mkdir(parents=True,exist_ok=True)
     temp=DEST.with_suffix('.tmp')
