@@ -74,19 +74,25 @@ def parse_euros(text: str) -> float | None:
 
 
 def pick_card(anchor):
-    """Kleinste productcontainer met exact één prijs. Geen productgrid als container."""
-    for el in [anchor, *list(anchor.parents)[:5]]:
+    """Zoek de productkaart, nooit een volledige catalogus met meerdere sets."""
+    chosen = None
+    for el in [anchor, *list(anchor.parents)[:6]]:
         if el.name in ('body', 'html', 'section', 'main', 'ul', 'ol'):
             break
         full_text = el.get_text(' ', strip=True)
-        if len(full_text) > 750:
+        if len(full_text) > 850 or len(el.select('a[href]')) > 9:
             break
-        if not MONEY_RE.search(full_text):
-            continue
-        if len(el.select('a[href]')) > 8:
+        # Beschrijvingen met andere jaren behoren tot een andere productkaart.
+        other_titles = [
+            a for a in el.select('a[href]')
+            if exact_year(' '.join(a.stripped_strings) or a.get('title','')) is not None
+            and urljoin('https://example.com/',a.get('href','')) != urljoin('https://example.com/',anchor.get('href',''))
+        ]
+        if other_titles:
             break
-        return el
-    return None
+        if MONEY_RE.search(full_text):
+            chosen = el
+    return chosen
 
 
 def parse_catalog(html: str, name: str, url: str) -> list[dict]:
@@ -110,10 +116,15 @@ def parse_catalog(html: str, name: str, url: str) -> list[dict]:
         # Voorraadstatus van zo klein mogelijke productkaart, niet het hele assortiment.
         if SOLD_OUT_RE.search(card_text):
             continue
-        amount_node = card.select_one('.price ins, ins .amount, .price .sale-price, .price .amount, .price')
+        amount_node = card.select_one('.price ins, ins .amount, .price .sale-price, .price .amount, .product-price, .price, [itemprop="price"]')
         price = parse_euros(amount_node.get_text(' ', strip=True)) if amount_node else None
         if price is None:
-            price = parse_euros(card_text)
+            # Verwijder titels vóór we naar een prijs zoeken; '2€ 200 Jaar Nederland'
+            # is de naam van een herdenkingsmunt, NIET de webshopprijs!
+            copy = BeautifulSoup(str(card), 'html.parser')
+            for link in copy.select('a'):
+                link.decompose()
+            price = parse_euros(copy.get_text(' ', strip=True))
         if price is None:
             continue
         is_stock_confirmed = bool(STOCK_RE.search(card_text))
