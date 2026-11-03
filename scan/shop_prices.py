@@ -267,3 +267,82 @@ def match_shops(deals: list[dict], catalog: dict) -> None:
                          'Laagste gevonden webshopprijs; actuele voorraad niet bevestigd, verzending niet meegerekend')
         if d.get('purchase_total') is not None:
             d['shop_difference'] = round(chosen['price'] - d['purchase_total'], 2)
+
+
+def refine_resale_with_shops(deals: list[dict]) -> list[dict]:
+    """Begrens onzekere Marktplaats-vraagprijsschattingen met echte winkelvermeldingen.
+
+    De 75-90%-band is een expliciet conservatieve AANNAME, geen gemeten
+    transactieprijs. We verzinnen geen marge als er geen vergelijkbare
+    Marktplaats-vraagprijs én geen betrouwbaar identificeerbaar winkelproduct is.
+    """
+    for d in deals:
+        retail = d.get('shop_price')
+        comparable_count = int(d.get('comparison_count') or 0)
+        old_low, old_high = d.get('resale_low'), d.get('resale_high')
+        has_retail = (
+            retail is not None and isinstance(retail, (float, int))
+            and 0 < retail < 5000
+            and not d.get('bundle')
+            and d.get('set_type') not in ('special', 'gemengd')
+            and len(d.get('years', [])) == 1
+        )
+
+        if has_retail:
+            # Ook bij onbevestigde voorraad voorzichtig naar beneden begrenzen,
+            # met een aparte waarschuwing; beschikbaarheid is NIET gegarandeerd.
+            retail_low = round(retail * .75, 2)
+            retail_high = round(retail * .90, 2)
+            if comparable_count >= 1 and old_low is not None and old_high is not None:
+                d['resale_low'] = min(old_low, retail_low)
+                d['resale_high'] = min(old_high, retail_high)
+                d['resale_low'] = min(d['resale_low'], d['resale_high'])
+                d['resale_basis'] = 'marktplaats_en_webshop'
+                d['resale_note'] = (
+                    f'Voorzichtige scenario-inschatting, geen gerealiseerde verkoopprijs. '
+                    f'Marktplaats: {comparable_count} vergelijkbare vaste vraagprijs(en). '
+                    f'Bovengrens: 90% van gevonden webshopprijs van €{retail:.2f}; '
+                    f'ondergrens maximaal 75%. '
+                    + ('Webshopvoorraad niet bevestigd; prijsplafond is onzeker. '
+                       if d.get('shop_availability') != 'beschikbaar' else '')
+                    + 'Controleer altijd dezelfde uitvoering en verzendkosten.'
+                )
+            else:
+                # Een winkelvraagprijs alleen bewijst geen verkoopwaarde.
+                d['resale_low'] = d['resale_high'] = None
+                d['resale_basis'] = 'onbekend'
+                d['resale_note'] = (
+                    'Wel een webshopprijs gevonden, maar geen vergelijkbare vaste '
+                    'Marktplaats-vraagprijzen. Doorverkoopprijs en marge onbekend.'
+                )
+        elif comparable_count < 3:
+            # Eén of twee losse vraagprijzen zonder webshopanker zijn geen marktwaarde.
+            d['resale_low'] = d['resale_high'] = None
+            d['resale_basis'] = 'onbekend'
+            d['resale_note'] = (
+                'Te weinig vergelijkbare Marktplaats-vraagprijzen en geen geschikte '
+                'webshopprijs. Geen betrouwbare doorverkoop- of winstschatting.'
+            )
+        else:
+            d['resale_basis'] = 'marktplaats_alleen'
+            d['resale_note'] = (
+                f'Slechts een marktindicatie op basis van {comparable_count} actieve '
+                'vaste Marktplaats-vraagprijzen, niet van gerealiseerde verkopen. '
+                'Geen overeenkomende webshopprijs gevonden om de schatting te begrenzen.'
+            )
+
+        total = d.get('purchase_total')
+        low, high = d.get('resale_low'), d.get('resale_high')
+        if total is not None and low is not None and high is not None:
+            d['profit_low'] = round(low - total, 2)
+            d['profit_high'] = round(high - total, 2)
+            d['discount_ratio'] = round(1 - total/max(high, 1), 4)
+            d['rank'] = d['discount_ratio']
+        else:
+            d['profit_low'] = d['profit_high'] = d['discount_ratio'] = d['rank'] = None
+
+    return sorted(deals, key=lambda d: (
+        0 if d['rank'] is not None else 1,
+        -(d['rank'] if d['rank'] is not None else -9),
+        d.get('purchase_total') if d.get('purchase_total') is not None else 1e10
+    ))
