@@ -166,13 +166,13 @@ def parse_listing(raw):
     pics=extract_images(raw)
     seller=raw.get("seller") or {}
     return {
-        "id":"mp:"+item,"source":"Marktplaats","title":title,"description":desc[:380],
+        "id":"mp:"+item,"source":"Marktplaats","title":title,"description":desc[:170],
         "make":make.title(),"model":model.upper() if model.isdigit() else model.capitalize(),
         "year":year,"mileage":km,"price":price,"price_kind":kind,
         "fuel":attrs.get("brandstof") or attrs.get("fuel") or "",
         "transmission":attrs.get("transmissie") or attrs.get("transmission") or "",
         "city":town,"postcode":postcode,"url":link,
-        "image_url":pics[0] if pics else None,"image_urls":pics[:3],
+        "image_url":pics[0] if pics else None,"image_urls":pics[:2],
         "damage":damage,"high_risk":highrisk,
         "price_unverified":questionable_price,
         "price_warning":"Extreem lage vraagprijs of mogelijk placeholder; controleer werkelijke koopsom" if questionable_price else "",
@@ -244,7 +244,7 @@ def value_deal(item,all_items,repair=250,other=175):
     matches=comparables_for(item,all_items)
     result=dict(item)
     result["comparables"]=len(matches)
-    result["comparable_asking_prices"]=sorted([d["price"] for d in matches])[:12]
+    result["comparable_asking_prices"]=sorted([d["price"] for d in matches])[:5]
     result["resale_low"]=result["resale_high"]=None
     result["profit_low"]=result["profit_high"]=None
     result["profit_note"]="Geen betrouwbare doorverkoopschatting: te weinig vergelijkbare auto's met bouwjaar en km-stand."
@@ -300,6 +300,29 @@ def sort_deals(items):
                               and not d.get("price_unverified"))
     return items
 
+def shortlist(deals, max_items=430):
+    """Beperk de publieke mobiele feed zodat de app snel synchroniseert.
+
+    De bovenste 260 beste kansen blijven behouden. Vul aan met goedkope
+    aanbiedingen over verschillende prijsklassen, voor instelbare filters.
+    Deze steekproef is niet de volledige Marktplaats-markt.
+    """
+    if len(deals)<=max_items:return deals
+    selected={}
+    def put(x):
+        if len(selected)<max_items:selected.setdefault(x["id"],x)
+    for x in deals[:260]:put(x)
+    bands=[(100,500),(500,1000),(1000,1500),(1500,2500),(2500,5000)]
+    for lo,hi in bands:
+        subset=sorted((x for x in deals if lo<=x["price"]<hi),
+                      key=lambda x:(x["price"],-x["deal_score"]))
+        for d in subset[:26]:put(d)
+    for d in (x for x in deals if x["damage"] and not x["high_risk"]):
+        put(d)
+    for d in deals:put(d)
+    return sorted(selected.values(),
+                  key=lambda d:(-d["deal_score"],d["price"],d["id"]))
+
 def run(session=None):
     session=session or requests.Session()
     session.headers.update(HEADERS)
@@ -308,7 +331,7 @@ def run(session=None):
     try:
         all_items,errors,reqs=get_market(session)
         candidates=[d for d in all_items if d["price"]<=MAX_COLLECT_PRICE]
-        deals=sort_deals([value_deal(d,all_items) for d in candidates])
+        deals=shortlist(sort_deals([value_deal(d,all_items) for d in candidates]))
     except (requests.RequestException,RuntimeError,ValueError) as ex:
         errors.append("Autobron: "+str(ex));deals=[];reqs=0
     if not deals:
