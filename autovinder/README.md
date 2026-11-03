@@ -6,7 +6,7 @@ Broncode, workflows en JSON-feed staan in de map \`autovinder/\` van dezelfde Gi
 ## Wat werkt er?
 
 - De automatische Marktplaats-scanner zoekt specifiek in de categorie Auto's (91).
-- Verzamelt goedkope advertenties tot **€5.000** en extra vergelijkingsadvertenties tot **€12.500** (backend-scanbereik, niet de standaard ingestelde inkoopprijs).
+- Doorzoekt goedkope advertenties tot **€5.000** en extra vergelijkingsadvertenties tot **€12.500**. De telefoon ontvangt een **selectie van maximaal 430 advertenties** (beste kansen plus goedkope opties uit diverse prijsklassen), niet iedere Marktplaats-advertentie. Dit houdt de mobiele feed klein.
 - Zoekt via algemene auto-aanbiedingen plus 12 populaire goedkope merken/modellen.
 - Filtert verdachte lease-, aanbetalings- en onderdelenadvertenties. Extreem lage vermelde prijzen (onder €300) krijgen een waarschuwing en gelden niet als onderbouwde koopsom.
 - Herkent, waar de advertentiegegevens beschikbaar zijn: bouwjaar, kilometerstand, model, foto's, bronlink, locatie en eventuele technische schade.
