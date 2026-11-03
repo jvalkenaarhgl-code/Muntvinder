@@ -14,17 +14,19 @@
 - De volgorde geeft prioriteit aan het gunstigste verschil tegenover vergelijkbare vraagprijzen. **Geen minimale nettowinst, ROI of jaartalfilter.** Bij gebrek aan vergelijkingen verschijnen goedkopere aanbiedingen met waarschuwing.
 - Favorieten en advertentielinks in Android-app. **Geen Telegram en standaard géén pushmeldingen**.
 
-## Zo laat je het automatisch draaien
+## Installeren en automatisch laten zoeken
 
-**Je hebt een GitHub-account nodig.** De scanner draait niet in ChatGPT en draait ook niet zelfstandig in de APK als er geen feed beschikbaar is.
+De broncode en automatische workflows zijn ingericht in de repository
+`jvalkenaarhgl-code/Muntvinder`. Er zijn geen Codex-credits nodig.
 
-1. Maak op GitHub een nieuwe, bij voorkeur **publieke**, repository, bijvoorbeeld `muntvinder`.
-2. Zet de bestanden in deze ZIP in de root van die repository (inclusief `.github/workflows/scan.yml`, `scan/` en `docs/feed.json`).
-3. Ga naar **Settings → Pages → Build and deployment → Source: GitHub Actions**. GitHub Pages moet actief zijn voor de eerste scan.
-4. Activeer **Actions** en ga naar `Zoek Nederlandse proofsets` → **Run workflow**. De scan publiceert `docs/feed.json` direct via GitHub Pages. Daarna wordt ongeveer elke 30 minuten gescand (de GitHub-scheduler kan vertraagd starten). De publieke feed wordt `https://JOUW-GEBRUIKERSNAAM.github.io/muntvinder/feed.json` (pas de repositorienaam aan indien anders).
-5. Ga naar **Actions → Bouw Android APK → Run workflow**. Wacht tot de build in GitHub gereed is en download de workflow-artifact **Muntvinder-v2-APK**. Daarin zit de installeerbare `app-debug.apk`. Je hebt dus zelf geen Android Studio nodig. Als alternatief kan een ontwikkelaar de `android`-map lokaal met Android Studio, SDK 35 en JDK 17 bouwen. De bron-ZIP bevat nog geen vooraf gebouwde APK.
-6. Pak de gedownloade GitHub-artifact uit en installeer de geproduceerde APK op je Android-telefoon. Dit is `nl.muntvinder.v2` en kan **naast** de oude APK blijven staan, zodat de originele installatie niet verloren gaat.
-7. Open Muntvinder v2 en druk op **Verversen**. **Geen feed-URL invoeren:** de APK is bij deze GitHub-bouw automatisch voorzien van de URL naar je eigen gepubliceerde scan-feed. De app leest die ongeveer elke 30 minuten wanneer Android dat toestaat; het echte zoeken gebeurt op GitHub Actions.
+1. Ga naar **Actions → Bouw Android APK** voor nieuwe builds. De meest recente geslaagde run heeft de downloadbare artifact **Muntvinder-v2-APK** met `app-debug.apk`.
+2. Installeer de APK op je Android-telefoon. De applicatie gebruikt de pakketnaam `nl.muntvinder.v2` en kan naast de oude Muntvinder blijven staan.
+3. Open de app en druk op **Verversen**. De standaard feed-URL is automatisch ingebouwd:
+   `https://raw.githubusercontent.com/jvalkenaarhgl-code/Muntvinder/main/docs/feed.json`.
+4. De GitHub-workflow **Zoek Nederlandse proofsets** draait ongeveer elke 30 minuten. GitHub kan geplande runs vertragen. De workflow schrijft de nieuwste resultaten in `docs/feed.json` op de standaardbranch. **GitHub Pages is niet nodig.**
+5. Bekijk de JSON-feed in `docs/feed.json`. Onbekende doorverkoopprijzen worden niet verzonnen; bij één of twee vergelijkingen wordt de berekende prijs duidelijk als **zeer onzeker** gemarkeerd.
+
+**Huidige beperkingen (3 november 2026):** Marktplaats leverde 84 zichtbare resultaten in de eerste succesvolle scan. Catawiki gaf HTTP 403 en kon daarom nog geen bundels leveren. De openbare Marktplaats-zoekendpoint is niet officieel ondersteund en kan eveneens wijzigen. Een succesvolle build bewijst niet dat live databronnen blijvend werken.
 
 ### Als je een stabielere Marktplaats-bron wilt
 
@@ -34,8 +36,8 @@ Catawiki wordt gelezen via de publiek zichtbare categorie- en veilingpagina's en
 
 ### Fouten en betrouwbaarheid
 
-- De app kan zonder koppeling nog geen actuele resultaten tonen. `docs/feed.json` begint daarom met een **lege lijst**; er zijn geen verzonnen aanbiedingen.
-- Als een bron niet reageert, wordt een foutmelding gepubliceerd en staan gevonden aanbiedingen expliciet als *niet volledig actueel*. Als beide bronnen falen, blijven eventueel oudere resultaten zichtbaar, duidelijk als verouderd.
+- De app leest de publieke GitHub-feed. Bij de start is de feed leeg; een geslaagde scanner-run vult deze uitsluitend met gevonden advertenties.
+- Als één bron niet reageert, verschijnt een foutmelding en een status *gedeeltelijk*. De wel gevonden advertenties zijn vers opgehaald. Als beide bronnen falen, blijven eventueel oudere resultaten zichtbaar, duidelijk als verouderd.
 - De ingestelde 30-minuten-cyclus is geen garantie dat Android/GitHub exact op dat tijdstip draait.
 - Vraagprijzen zijn **geen gerealiseerde verkoopprijzen**; winstberekeningen zijn indicatief, zonder kosten om de spullen vervolgens door te verkopen. Een aanbieder kan een advertentie intrekken of de prijs veranderen.
 - Een advertentie kan onvolledig zijn, meerdere munten i.p.v. complete sets bevatten of verkocht zijn. Altijd de advertentie en foto's controleren.
