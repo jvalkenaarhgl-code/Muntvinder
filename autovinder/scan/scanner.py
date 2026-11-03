@@ -312,7 +312,11 @@ def shortlist(deals, max_items=430):
     selected={}
     def put(x):
         if len(selected)<max_items:selected.setdefault(x["id"],x)
-    for x in deals[:260]:put(x)
+    # Bewaar expliciet ruimte voor echte Facebook-aanbiedingen.
+    for x in deals[:220]:put(x)
+    for x in (d for d in deals if d.get("source")=="Facebook Marketplace"):
+        if sum(1 for row in selected.values() if row.get("source")=="Facebook Marketplace")>=90:break
+        put(x)
     bands=[(100,500),(500,1000),(1000,1500),(1500,2500),(2500,5000)]
     for lo,hi in bands:
         subset=sorted((x for x in deals if lo<=x["price"]<hi),
@@ -324,31 +328,89 @@ def shortlist(deals, max_items=430):
     return sorted(selected.values(),
                   key=lambda d:(bool(d.get("price_unverified")),-d["deal_score"],d["price"],d["id"]))
 
+def previous_feed():
+    if not OUTPUT.exists():return {}
+    try:
+        previous=json.loads(OUTPUT.read_text(encoding="utf8"))
+        return previous if isinstance(previous,dict) else {}
+    except (ValueError,OSError):return {}
+
+
+def facebook_entries(previous, session, current_hour):
+    """Fetch Facebook on 4 UTC hours daily and reuse at most 24h of results."""
+    from facebook_marketplace import fetch as fetch_fb
+    token=bool(os.getenv("APIFY_TOKEN","").strip())
+    if not token:
+        return [],{"status":"niet_geconfigureerd",
+                   "count":0,
+                   "info":"APIFY_TOKEN ontbreekt; geen Facebook-advertenties verzonnen"}
+    prior_status=previous.get("facebook_status") or {}
+    last_checked=str(prior_status.get("checked_at") or "")
+    previous_fb=[d for d in (previous.get("deals") or [])
+                 if isinstance(d,dict) and d.get("source")=="Facebook Marketplace"]
+    still_recent=False
+    if last_checked:
+        try:
+            last=datetime.fromisoformat(last_checked.replace("Z","+00:00"))
+            still_recent=0<=(datetime.now(timezone.utc)-last).total_seconds()<24*3600
+        except (ValueError,TypeError):pass
+
+    should_scan=(os.getenv("AUTOVINDER_FB_FORCE","")=="1"
+                 or not still_recent
+                 or current_hour in (0,6,12,18))
+    if should_scan:
+        listings,status=fetch_fb(session)
+        if status.get("status") in ("ok","geen_passende_advertenties"):
+            return listings,status
+        status["cached_results"]=len(previous_fb) if still_recent else 0
+        return (previous_fb if still_recent else []),status
+    prior_status=dict(prior_status)
+    prior_status["status"]="bewaarde_resultaten"
+    prior_status["count"]=len(previous_fb)
+    return previous_fb,prior_status
+
+
 def run(session=None):
     session=session or requests.Session()
     session.headers.update(HEADERS)
     now=datetime.now(timezone.utc).isoformat(timespec="seconds")
+    previous=previous_feed()
     errors=[]
     try:
         all_items,errors,reqs=get_market(session)
-        candidates=[d for d in all_items if d["price"]<=MAX_COLLECT_PRICE]
-        deals=shortlist(sort_deals([value_deal(d,all_items) for d in candidates]))
+        mp_candidates=[d for d in all_items if d["price"]<=MAX_COLLECT_PRICE]
     except (requests.RequestException,RuntimeError,ValueError) as ex:
-        errors.append("Autobron: "+str(ex));deals=[];reqs=0
+        errors.append("Marktplaats-bron: "+str(ex))
+        all_items=[];mp_candidates=[];reqs=0
+    facebook,fb_status=facebook_entries(previous,session,datetime.now(timezone.utc).hour)
+    if fb_status.get("status") in ("fout","toegang_geweigerd"):
+        errors.append("Facebook: "+fb_status.get("error","Provider tijdelijk niet beschikbaar"))
+    # Facebook-advertenties krijgen dezelfde conservatieve waardering als
+    # Marktplaats-auto's, op basis van Marktplaats-vraagprijzen van hetzelfde model.
+    comparison_data=[d for d in all_items if d.get("source")=="Marktplaats"]
+    collected={d["id"]:d for d in mp_candidates+facebook if d.get("id")}
+    ranked=sort_deals([value_deal(d,comparison_data) for d in collected.values()])
+    deals=shortlist(ranked)
     if not deals:
-        previous=[]
-        if OUTPUT.exists():
-            try:previous=json.loads(OUTPUT.read_text(encoding="utf8")).get("deals",[])
-            except (ValueError,OSError):pass
-        status="FOUT";deals=previous;stale=bool(previous)
+        previous_deals=previous.get("deals") or []
+        status="FOUT"
+        deals=previous_deals
+        stale=bool(previous_deals)
     else:
-        status="GEDEELTELIJK" if errors else "OK";stale=False
+        status="GEDEELTELIJK" if errors else "OK"
+        stale=False
     data={"generated_at":now,"source_status":status,"stale":stale,
           "errors":errors,"deals":deals,"requests_done":reqs,
+          "facebook_status":fb_status,
+          "source_counts":{"Marktplaats":sum(d["source"]=="Marktplaats" for d in deals),
+                           "Facebook Marketplace":sum(d["source"]=="Facebook Marketplace" for d in deals)},
           "default_filters":DEFAULT_FILTERS,
-          "source_info":{"Marktplaats":"automatisch; websitezoekendpoint zonder garantie",
-                         "Facebook Marketplace":"handmatige zoeklink, geen automatische scan"},
-          "valuation_notice":"75–88% van mediaan van actuele vraagprijzen; geen gerealiseerde verkoopprijs. "
+          "source_info":{
+              "Marktplaats":"automatisch; websitezoekendpoint zonder garantie",
+              "Facebook Marketplace":("automatisch via Apify, externe provider met mogelijke kosten"
+                    if os.getenv("APIFY_TOKEN","") else
+                    "automatische koppeling klaar, maar APIFY_TOKEN nog niet ingesteld")},
+          "valuation_notice":"75–88% van mediaan van actieve vergelijkbare vraagprijzen; geen gerealiseerde verkoopprijs. "
                              "Reparatie en andere kosten zijn instelbare aannames."}
     OUTPUT.parent.mkdir(parents=True,exist_ok=True)
     tmp=OUTPUT.with_suffix(".tmp")
