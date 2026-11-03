@@ -111,3 +111,31 @@ def test_herdenkingsmunt_2_euro_200_jaar_not_read_as_200_euro_price():
     offers = parse_catalog(html, "Hansmunt", "https://hansmunt.nl/nl/proof/")
     assert [o["year"] for o in offers] == [2011]
     assert offers[0]["price"] == 69.95
+
+
+def test_lightspeed_gallery_cards_and_sold_out():
+    html = """
+    <div class="home_page_listing">
+      <section class="products_gallery_row">
+        <div class="products_gallery_header">
+          <div class="products_gallery_row_name product_name_default">
+            <a class="products_name_link" href="/proofset-2018">Proofset Nederland 2018</a>
+          </div>
+        </div>
+        <div class="products_gallery_row_price">Prijs: 124,00 <span>€124,00</span></div>
+        <span>In winkelmand</span>
+      </section>
+      <section class="products_gallery_row">
+        <div class="products_gallery_row_name">
+          <a href="/proofset-2019">Proofset Nederland 2019</a>
+        </div>
+        <div class="products_gallery_row_price">Prijs: 20,00 <span>€20,00</span></div>
+        <span>Uitverkocht</span>
+      </section>
+    </div>
+    """
+    rows = parse_catalog(html, "De Amsterdamse Munt", "https://www.deamsterdamsemunt.nl/shop")
+    assert len(rows) == 1
+    assert rows[0]["year"] == 2018
+    assert rows[0]["price"] == 124.00
+    assert rows[0]["availability"] == "beschikbaar"
