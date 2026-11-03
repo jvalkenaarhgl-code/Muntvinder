@@ -176,6 +176,20 @@ def load_shop_prices(session: requests.Session) -> dict:
             if response.status_code != 200:
                 raise RuntimeError(f'HTTP {response.status_code}')
             parsed = parse_catalog(response.text, name, url)
+            print(f'Winkelvergelijking {name}: {len(parsed)} verifieerbare productvermeldingen')
+            if not parsed:
+                soup = BeautifulSoup(response.text, 'html.parser')
+                candidates = []
+                for a in soup.select('a[href]'):
+                    label = ' '.join(a.stripped_strings)
+                    if YEAR_RE.search(label) and PROOFSET_RE.search(label) and len(label) < 130:
+                        parent = a.parent
+                        candidates.append((label[:75], parent.name if parent else '', 
+                                           ' '.join(parent.get('class', [])) if parent else '',
+                                           parent.get_text(' ', strip=True)[:180] if parent else ''))
+                    if len(candidates) >= 3:
+                        break
+                print('Winkelvergelijking diagnostics:',name, repr(candidates))
             reachable.add(name)
             for offer in parsed:
                 k = (name, offer['year'])
