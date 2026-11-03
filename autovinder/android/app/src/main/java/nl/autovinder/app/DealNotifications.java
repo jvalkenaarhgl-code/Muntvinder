@@ -62,7 +62,7 @@ final class DealNotifications {
             if(!Double.isFinite(low)||!Double.isFinite(buy))continue;
             double costs=prefs.getInt("repair",250)+prefs.getInt("other_costs",175);
             if(low-buy-costs<=0)continue;
-            if(d.optInt("comparables",0)<3 || d.optBoolean("high_risk",false))continue;
+            if(d.optInt("comparables",0)<3 || d.optBoolean("high_risk",false) || d.optBoolean("price_unverified",false))continue;
             if(!"FIXED".equals(d.optString("price_kind")))continue;
             best=d;break; // feed staat gesorteerd, eerste geschikte nieuwe aanbieding
         }
