@@ -128,10 +128,12 @@ public final class MainActivity extends Activity {
             if(d.optBoolean("high_risk"))score-=40;
             if(d.optBoolean("damage"))score-=8;
             if(d.optBoolean("manual_resale"))score-=18;
+            if(d.optBoolean("price_unverified"))score-=180;
             return score;
         }
         return 15+Math.max(0,(1500-d.optDouble("price",1500))/250)
-                   -(d.optBoolean("high_risk")?20:0);
+                   -(d.optBoolean("high_risk")?20:0)
+                   -(d.optBoolean("price_unverified")?100:0);
     }
 
     @Override public void onCreate(Bundle state){
@@ -302,6 +304,10 @@ public final class MainActivity extends Activity {
             gap(c,10);
         }
         String risk=d.optString("damage_note","");
+        if(d.optBoolean("price_unverified")){
+            add(c,text("⚠ Vraagprijs mogelijk een lokbedrag of placeholder: eerst de echte verkoopprijs controleren.",12,RED,true));
+            gap(c,8);
+        }
         if(d.optBoolean("high_risk")) {
             add(c,text("⚠ HOOG RISICO: "+risk+"; niet automatisch als winstgevende deal zien.",12,RED,true));
             gap(c,8);
