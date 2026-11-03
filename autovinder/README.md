@@ -19,7 +19,21 @@ Broncode, workflows en JSON-feed staan in de map \`autovinder/\` van dezelfde Gi
 - Marktplaats-foto's en advertentielinks zijn te openen in de app.
 
 ## Facebook Marketplace
-**Niet automatisch gescand.** Meta verbiedt dataverzameling zonder toestemming; er is geen algemene, officieel toegankelijke Marketplace-listings-API voor deze scanner. De app biedt een Facebook Marketplace-zoekknop en laat je een gevonden Facebook-advertentie via link, titel, vraagprijs, bouwjaar, kilometerstand en eventueel een **zelf ingevoerde** doorverkoopprijs bewaren. De zelf ingevoerde schatting krijgt een duidelijke vermelding en wordt niet aangezien voor een geverifieerde taxatie. Er wordt niet ingelogd of een captcha omzeild.
+De scanner heeft nu een **optionele automatische koppeling** met de externe Apify-actor [parsebird/facebook-marketplace-scraper](https://apify.com/parsebird/facebook-marketplace-scraper). Dit is **geen officiële Meta-API**. Meta kan automatische toegang beperken en verbiedt niet-toegestane scraping in haar gebruiksvoorwaarden. Er wordt geen Facebook-accountwachtwoord of cookie gebruikt.
+
+De koppeling is standaard **NIET actief**: zonder API-token worden geen Facebook-advertenties opgehaald en wordt er niets in rekening gebracht. De gebruiker kan daarnaast handmatig een Marketplace-advertentie bewaren, inclusief een eigen (ongecontroleerde) verkoopinschatting.
+
+### Automatische Facebook-scan activeren
+
+1. Maak een account aan via https://console.apify.com/ en lees de prijsvoorwaarden van de actor.
+2. Kopieer in Apify Console onder **Settings / API & Integrations** je persoonlijke API-token. Deel dit token niet in de chat of Android-app.
+3. Ga naar https://github.com/jvalkenaarhgl-code/Muntvinder/settings/secrets/actions/new .
+4. Vul bij **Name** exact `APIFY_TOKEN` in en zet je token onder **Secret**. Sla het op.
+5. De volgende GitHub-scan activeert Facebook automatisch. Controleer via **AutoVinder → Facebook** of de feed een actuele Facebook-status en echte advertenties bevat. Het eerste ophalen kan even duren. Je kunt eventueel via GitHub Actions de workflow handmatig starten.
+
+De backend vraagt standaard maximaal 10 autoadvertenties in vijf Nederlandse regio's per run op. Er staat een Apify-uitgavenplafond van **$0,12 per run** in de API-aanroep (geen maandplafond). Facebook wordt rond vier UTC-uren per dag opnieuw gevraagd; tussendoor worden recente resultaten hergebruikt. Bij vier runs per dag is het theoretische totaal tot circa **$14,40 per 30 dagen**, afhankelijk van de Apify-facturatie en de actor. De gebruiker autoriseert eventuele externe kosten zelf door zijn token te koppelen. Het Apify-account kan gratis proefcredits bevatten; blijvend gratis is niet gegarandeerd.
+
+De Android-app gebruikt dezelfde bronfilter voor beide bronnen. Facebook-vermeldingen met ontbrekende kilometerstand krijgen geen betrouwbare doorverkoopwaarde en verdwijnen standaard onder de filter `km onbekend`, tenzij deze optie wordt ingeschakeld. De vraagprijsschatting is op Marktplaats-vergelijkingen gebaseerd, niet op echte verkooptransacties.
 
 ## Techniek en onderhoud
 - \`autovinder/scan/scanner.py\` — Python-scanner en prijsanalyse.
@@ -36,6 +50,6 @@ Een knop **Verversen** haalt de recent gepubliceerde feed op; hij start niet met
 - Marktplaats gebruikt een niet-officieel openbaar zoekendpoint; het formaat en de toegang kunnen veranderen.
 - Vergelijkingen zijn **vraagprijzen**, geen gerealiseerde verkopen. Bij minder dan drie vergelijkbare vaste vraagprijzen wordt een onbekende doorverkoopprijs getoond.
 - Een aanbod kan een incorrecte of onvolledige vraagprijs tonen. AutoVinder markeert verdachte lage bedragen.
-- Facebook Marketplace wordt uitsluitend als **handmatige zoek- en bewaarmogelijkheid** aangeboden.
+- Facebook Marketplace is **optioneel automatisch via een aparte Apify-dienst** als `APIFY_TOKEN` is geconfigureerd; zonder token blijft alleen de handmatige zoek- en bewaarmogelijkheid.
 - Android-push is lokaal via periodieke achtergrondcontrole, geen instant Firebase-serverpush.
 - Verkoop je structureel auto's met winstoogmerk, controleer dan vooraf belasting-, consumentenrechtelijke en RDW-verplichtingen.
