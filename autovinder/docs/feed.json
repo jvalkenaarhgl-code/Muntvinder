@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T21:50:07+00:00",
+  "generated_at": "2026-11-03T21:55:57+00:00",
   "source_status": "OK",
   "stale": false,
   "errors": [],
@@ -19754,9 +19754,14 @@
   ],
   "requests_done": 28,
   "facebook_status": {
-    "status": "niet_geconfigureerd",
+    "status": "geen_passende_advertenties",
     "count": 0,
-    "info": "APIFY_TOKEN ontbreekt; geen Facebook-advertenties verzonnen"
+    "checked_at": "2026-11-03T21:56:23+00:00",
+    "provider": "gratis openbare zoekmachine-index, geen Facebook-API",
+    "queries": 8,
+    "failed_queries": 0,
+    "note": "Resultaten zijn mogelijk oud/onvolledig; prijzen en voorraad ongeverifieerd",
+    "error": ""
   },
   "source_counts": {
     "Marktplaats": 430,
@@ -19776,7 +19781,7 @@
   },
   "source_info": {
     "Marktplaats": "automatisch; websitezoekendpoint zonder garantie",
-    "Facebook Marketplace": "automatische koppeling klaar, maar APIFY_TOKEN nog niet ingesteld"
+    "Facebook Marketplace": "gratis ontdekking via openbare zoekindex; onvolledig, prijzen niet bevestigd"
   },
   "valuation_notice": "75–88% van mediaan van actieve vergelijkbare vraagprijzen; geen gerealiseerde verkoopprijs. Reparatie en andere kosten zijn instelbare aannames."
 }
