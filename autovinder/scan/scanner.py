@@ -26,9 +26,11 @@ YEAR=re.compile(r"(?<!\d)(?:19[89]\d|20[0-2]\d)(?!\d)")
 KM=re.compile(r"(?<!\d)(\d{1,3}(?:[., ]\d{3})+|\d{4,6})\s*(?:km\b|kilometer)",re.I)
 DAMAGE=re.compile(r"\b(schade|deuk|blikschade|motorschade|storing|kapot|defect|"
                   r"motorlamp|start\s+niet|loopt\s+niet|afgekeurd|geen\s+apk|"
+                  r"zonder\s+(?:geldige\s+)?apk|motor\s+niet\s+goed|"
                   r"roest|aanrijding|versnellingsbak|koppeling\s+slipt)\b",re.I)
-HIGH_RISK=re.compile(r"motorschade|motor\s+kapot|distributie|versnellingsbak\s+kapot|"
-                     r"start\s+niet|loopt\s+niet|total\s+loss|afgekeurd|sloop",re.I)
+HIGH_RISK=re.compile(r"motorschade|motor\s+(?:kapot|niet\s+goed)|distributie|"
+                     r"versnellingsbak\s+kapot|start\s+niet|loopt\s+niet|"
+                     r"zonder\s+(?:geldige\s+)?apk|total\s+loss|afgekeurd|sloop",re.I)
 BLOCK=re.compile(r"\b(gezocht|zoektocht|onderdelen|losse\s+velgen|motorblok\s+los|"
                  r"aanbetaling|per\s+maand|maandbedrag|private\s+lease|"
                  r"financial\s+lease|gezocht\s+auto)\b",re.I)
@@ -157,18 +159,24 @@ def parse_listing(raw):
     risktext=title+" "+desc[:350]
     damage=bool(DAMAGE.search(risktext))
     highrisk=bool(HIGH_RISK.search(risktext))
+    # Extreem lage 'autoprijzen' zijn vaak placeholders, geen geverifieerde koopsommen.
+    questionable_price=bool(price<300 or re.search(
+        r'vanafprijs|advertentieprijs|richtprijs|aanbetaling|prijs\s+op\s+aanvraag',risktext,re.I))
     if re.search(r"\bgeen\s+schade\b",risktext,re.I) and not HIGH_RISK.search(risktext):damage=False
     pics=extract_images(raw)
     seller=raw.get("seller") or {}
     return {
-        "id":"mp:"+item,"source":"Marktplaats","title":title,"description":desc[:700],
+        "id":"mp:"+item,"source":"Marktplaats","title":title,"description":desc[:380],
         "make":make.title(),"model":model.upper() if model.isdigit() else model.capitalize(),
         "year":year,"mileage":km,"price":price,"price_kind":kind,
         "fuel":attrs.get("brandstof") or attrs.get("fuel") or "",
         "transmission":attrs.get("transmissie") or attrs.get("transmission") or "",
         "city":town,"postcode":postcode,"url":link,
-        "image_url":pics[0] if pics else None,"image_urls":pics,
-        "damage":damage,"high_risk":highrisk,"damage_note":"Mogelijke ernstige technische schade; monteurcontrole nodig" if highrisk else
+        "image_url":pics[0] if pics else None,"image_urls":pics[:3],
+        "damage":damage,"high_risk":highrisk,
+        "price_unverified":questionable_price,
+        "price_warning":"Extreem lage vraagprijs of mogelijk placeholder; controleer werkelijke koopsom" if questionable_price else "",
+        "damage_note":"Mogelijke ernstige technische schade; monteurcontrole nodig" if highrisk else
                                              "Schade/gebrek genoemd; reparatiekosten eerst bepalen" if damage else "",
         "seller_name":seller.get("sellerName") or "",
         "is_bid":kind!="FIXED",
@@ -224,7 +232,7 @@ def comparables_for(item,all_items):
     for other in all_items:
         if other["id"]==item["id"] or other["make"]!=item["make"] or other["model"]!=item["model"]:
             continue
-        if other.get("price_kind")!="FIXED" or other.get("damage") or other.get("high_risk"):continue
+        if other.get("price_kind")!="FIXED" or other.get("damage") or other.get("high_risk") or other.get("price_unverified"):continue
         if other.get("year") is None or other.get("mileage") is None:continue
         if abs(other["year"]-item["year"])>2:continue
         allowed=max(50000,round(item["mileage"]*.28))
@@ -278,8 +286,9 @@ def sort_deals(items):
         else:
             score=10+min(max(d.get("profit_high") or -1000,-1000),0)/150
             label="Geen positieve onderbouwde marge"
-        if d.get("high_risk"):score-=28
+        if d.get("high_risk"):score-=45
         elif d.get("damage"):score-=8
+        if d.get("price_unverified"):score-=120;label="Prijs eerst controleren — mogelijk lokbedrag"
         d["deal_score"]=round(score,2)
         d["deal_label"]=label
     items.sort(key=lambda x:(-x["deal_score"],x["price"],x["id"]))
@@ -287,7 +296,8 @@ def sort_deals(items):
         d["rank"]=i+1
         d["alert_candidate"]=(i<3 and d.get("profit_low") is not None and d["profit_low"]>0
                               and d.get("comparables",0)>=3 and not d.get("high_risk")
-                              and d.get("price_kind")=="FIXED")
+                              and d.get("price_kind")=="FIXED"
+                              and not d.get("price_unverified"))
     return items
 
 def run(session=None):
