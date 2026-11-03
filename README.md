@@ -16,6 +16,17 @@
 - Winkelprijzen zijn **vraagprijzen exclusief verzending**. Als voorraad niet blijkt uit de pagina, staat dit expliciet als onbevestigd; geen globale claim dat heel internet is vergeleken. Prijzen worden maximaal elke 6 uur opnieuw opgehaald.
 - Favorieten en advertentielinks in Android-app. **Geen Telegram en standaard géén pushmeldingen**.
 
+## Beste koopkansen en meldingen (versie 2.5)
+
+- De scanner rangschikt de aanbiedingen aan de hand van een **voorzichtige mogelijke marge**, het voordeel tegenover een passende webshop, het aantal vergelijkbare Marktplaats-vraagprijzen en of het om een bod of een vaste koopprijs gaat.
+- Een bod is **geen gegarandeerde aankoop**, en een webshopvraagprijs is geen gerealiseerde Marktplaats-verkoopwaarde. Ook aantrekkelijke biedingen worden daardoor iets voorzichtiger gescoord.
+- Onvoldoende onderbouwde aanbiedingen blijven zichtbaar; er is **geen minimumwinst of minimaal rendement om in de lijst te komen**. Bij een positieve, conservatief berekende marge mag zelfs een kleine kans worden gemeld.
+- De Android-app toont de reden van de rangschikking en een top-3-positie.
+- Na iedere achtergrondfeed-verversing vergelijkt de telefoon de advertentie-ID's met eerder geziene advertenties. Alleen nieuwe top-3-aanbiedingen met positieve conservatieve marge en ten minste één gelijkwaardige vraagprijs komen in aanmerking voor een melding.
+- **Maximaal één Android-systeemmelding per twaalf uur.** De eerste succesvolle feed-download vormt de beginsituatie en verstuurt geen meldingen over oude advertenties. De app onthoudt geziene advertentie-ID's.
+- Android controleert de feed ongeveer elke 30 minuten via JobScheduler, maar batterijbesparing, offline zijn en Android Doze kunnen dit uitstellen. **Dit is een lokale Android-melding, geen realtime Firebase-cloudpush.** Voor Android 13+ moet de gebruiker notificatietoestemming geven.
+- Onder Instellingen kunnen meldingen en meldingen voor biedadvertenties afzonderlijk worden in- of uitgeschakeld. Geen Telegram-abonnement of betaalde AI nodig.
+
 ## Foto's en herkenbare aanbiedingen (versie 2.4)
 
 - Marktplaats-foto's komen rechtstreeks uit de originele zoekresultaten (pictures[] of imageUrls[]). Als een advertentie foto's bevat, toont de app de eerste foto boven de prijsinformatie.
