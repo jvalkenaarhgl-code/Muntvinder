@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
@@ -15,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.HorizontalScrollView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -29,7 +31,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Locale;
 import java.util.Set;
 
@@ -41,8 +46,11 @@ public final class MainActivity extends Activity {
     private final NumberFormat euros = NumberFormat.getCurrencyInstance(new Locale("nl", "NL"));
     private LinearLayout frame, listArea;
     private TextView statusText, countText;
-    private String selected = "Alles";
+    private String selectedSource = "Alle bronnen";
+    private String selectedType = "Alles";
     private boolean favoritesOnly = false;
+    private ScrollView scrollRoot;
+    private final Map<ImageView, String> photosPending = new HashMap<>();
     private boolean busy = false;
 
     @Override protected void onCreate(Bundle b) {
@@ -83,6 +91,8 @@ public final class MainActivity extends Activity {
     private void draw() {
         ScrollView scroll=new ScrollView(this);scroll.setFillViewport(true);scroll.setBackgroundColor(BG);
         frame=vertical();scroll.addView(frame);setContentView(scroll);
+        scrollRoot = scroll;
+        scroll.setOnScrollChangeListener((View v,int sx,int sy,int oldX,int oldY)->loadVisiblePhotos());
 
         LinearLayout top=vertical();top.setBackgroundColor(GREEN);pad(top,18,18);
         add(top,text("MUNTVINDER",12,GOLD,true));spacer(top,5);
@@ -100,17 +110,36 @@ public final class MainActivity extends Activity {
         statusText=text("",12,MUTED,false);add(status,statusText);
         countText=text("",20,DARK,true);spacer(status,7);add(status,countText);add(frame,status);
 
-        HorizontalScrollView horizontal=new HorizontalScrollView(this);horizontal.setHorizontalScrollBarEnabled(false);
-        LinearLayout tabs=new LinearLayout(this);tabs.setOrientation(LinearLayout.HORIZONTAL);pad(tabs,14,4);
-        for(String tab:new String[]{"Alles","Marktplaats","Catawiki","Bewaard"}) {
-            boolean active=tab.equals(selected) || (favoritesOnly && tab.equals("Bewaard"));
+        LinearLayout filterArea=vertical();pad(filterArea,12,4);
+        add(filterArea,text("TYPE AANBIEDING",10,MUTED,true));
+        HorizontalScrollView kindScroll=new HorizontalScrollView(this);
+        kindScroll.setHorizontalScrollBarEnabled(false);
+        LinearLayout kindTabs=new LinearLayout(this);kindTabs.setOrientation(LinearLayout.HORIZONTAL);
+        for(String tab:new String[]{"Alles","Losse sets","Bundels"}) {
+            boolean active=selectedType.equals(tab);
             Button btn=button(tab,active?GREEN:LIGHT,active?Color.WHITE:MUTED,()->{
-                selected=tab;favoritesOnly=tab.equals("Bewaard");draw();
+                selectedType=tab;draw();
             });
-            LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-2,px(42));p.setMargins(px(4),0,px(4),0);
-            tabs.addView(btn,p);
+            LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-2,px(43));
+            p.setMargins(px(3),px(6),px(4),px(5));kindTabs.addView(btn,p);
         }
-        horizontal.addView(tabs);add(frame,horizontal);
+        kindScroll.addView(kindTabs);add(filterArea,kindScroll);
+        add(filterArea,text("BRON EN FAVORIETEN",10,MUTED,true));
+        HorizontalScrollView sourceScroll=new HorizontalScrollView(this);
+        sourceScroll.setHorizontalScrollBarEnabled(false);
+        LinearLayout tabs=new LinearLayout(this);tabs.setOrientation(LinearLayout.HORIZONTAL);
+        for(String tab:new String[]{"Alle bronnen","Marktplaats","Catawiki","★ Bewaard"}) {
+            boolean isSaved=tab.equals("★ Bewaard");
+            boolean active=isSaved?favoritesOnly:(!favoritesOnly && tab.equals(selectedSource));
+            Button btn=button(tab,active?GREEN:LIGHT,active?Color.WHITE:MUTED,()->{
+                if(isSaved) favoritesOnly=true;
+                else {favoritesOnly=false;selectedSource=tab;}
+                draw();
+            });
+            LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-2,px(42));
+            p.setMargins(px(3),px(6),px(4),px(4));tabs.addView(btn,p);
+        }
+        sourceScroll.addView(tabs);add(filterArea,sourceScroll);add(frame,filterArea);
         listArea=vertical();pad(listArea,16,12);add(frame,listArea);
         render();
     }
@@ -122,6 +151,7 @@ public final class MainActivity extends Activity {
     private void render() {
         if (listArea==null)return;
         listArea.removeAllViews();
+        photosPending.clear();
         JSONObject feed=getFeed();JSONArray raw=feed.optJSONArray("deals");
         List<JSONObject> items=new ArrayList<>();
         Set<String> fav=favorites();
@@ -129,11 +159,15 @@ public final class MainActivity extends Activity {
             JSONObject d=raw.optJSONObject(i);if(d==null)continue;
             String source=d.optString("source");
             if(favoritesOnly && !fav.contains(d.optString("id")))continue;
-            if(!favoritesOnly && !selected.equals("Alles") && !source.equals(selected))continue;
+            if(!favoritesOnly && !selectedSource.equals("Alle bronnen") && !source.equals(selectedSource))continue;
+            if(selectedType.equals("Bundels") && !d.optBoolean("bundle"))continue;
+            if(selectedType.equals("Losse sets") && d.optBoolean("bundle"))continue;
             items.add(d);
         }
         // Volgorde in feed is best-buy rank, fallback laagste totaalprijs.
-        countText.setText(items.size()+" koopkansen"+(favoritesOnly?" bewaard":" gevonden"));
+        int bundles=0;
+        for(JSONObject d:items)if(d.optBoolean("bundle"))bundles++;
+        countText.setText(items.size()+" advertenties · "+(items.size()-bundles)+" losse · "+bundles+" bundels");
         String generated=feed.optString("generated_at", "");
         String errors=feed.optJSONArray("errors")!=null && feed.optJSONArray("errors").length()>0
                 ? " · Bronmelding: "+feed.optJSONArray("errors").optString(0):"";
@@ -149,7 +183,8 @@ public final class MainActivity extends Activity {
             for(JSONObject d:items)dealCard(d,fav.contains(d.optString("id")));
         }
         spacer(listArea,22);
-        add(listArea,text("Doorverkoopprijzen zijn indicaties op basis van actuele VRAAGprijzen, geen bewezen transacties. Controleer staat, volledigheid, verzendkosten en beschikbaarheid voor aankoop.",11,MUTED,false));
+        add(listArea,text("Foto's komen van de originele advertentie. Het type bundel/losse set wordt uit de tekst afgeleid; controleer de foto's en beschrijving. Doorverkoop is een indicatie, geen bewezen transactie.",11,MUTED,false));
+        if(scrollRoot != null) listArea.post(this::loadVisiblePhotos);
     }
     private void note(String message,int color) {
         LinearLayout l=vertical();pad(l,14,14);l.setBackground(rounded(LIGHT,12));
@@ -166,13 +201,26 @@ public final class MainActivity extends Activity {
     private void dealCard(JSONObject d, boolean isFav) {
         LinearLayout card=vertical();pad(card,15,15);card.setBackground(rounded(LIGHT,16));
         String source=d.optString("source");
+        boolean bundle=d.optBoolean("bundle");
         LinearLayout top=new LinearLayout(this);top.setGravity(Gravity.CENTER_VERTICAL);
-        TextView chip=text(source+(d.optBoolean("bundle")?" · BUNDEL":" · LOSSE SET"),11,GREEN,true);
-        top.addView(chip,new LinearLayout.LayoutParams(0,-2,1));
+        LinearLayout labels=vertical();
+        add(labels,text(source.toUpperCase(Locale.ROOT),10,MUTED,true));
+        spacer(labels,4);
+        JSONArray ys=d.optJSONArray("years");
+        String years=ys!=null && ys.length()==1?ys.optString(0):"";
+        int count=d.optInt("count",1);
+        String kindLabel=bundle?("▦  BUNDEL"+(count>1?" · "+count+" SETS":" · MEERDERE SETS"))
+                              :("●  LOSSE SET"+(!years.isEmpty()?" · "+years:""));
+        TextView chip=text(kindLabel,12,bundle?0xFF764B0D:GREEN,true);
+        chip.setBackground(rounded(bundle?0xFFFFEAC1:0xFFE1F1E7,9));
+        pad(chip,9,6);
+        labels.addView(chip,new LinearLayout.LayoutParams(-2,-2));
+        top.addView(labels,new LinearLayout.LayoutParams(0,-2,1));
         TextView star=text(isFav?"★":"☆",26,GOLD,true);pad(star,10,2);
         star.setOnClickListener(v->toggleFavorite(d.optString("id")));
-        top.addView(star);add(card,top);spacer(card,7);
-        add(card,text(d.optString("title"),16,DARK,true));spacer(card,12);
+        top.addView(star);add(card,top);spacer(card,12);
+        add(card,text(d.optString("title"),17,DARK,true));spacer(card,10);
+        showCardPhoto(card,d);
 
         String kind=d.optString("price_kind");
         Double price=number(d,"price"), total=number(d,"purchase_total"),lo=number(d,"resale_low"),hi=number(d,"resale_high");
@@ -219,6 +267,84 @@ public final class MainActivity extends Activity {
         add(card,go);
         add(listArea,card);spacer(listArea,13);
     }
+    /** Laad alleen afbeeldingen die in beeld staan: geen tientallen downloads bij openen. */
+    private void loadVisiblePhotos() {
+        if(scrollRoot == null)return;
+        Rect visible=new Rect();
+        Iterator<Map.Entry<ImageView,String>> it=photosPending.entrySet().iterator();
+        while(it.hasNext()) {
+            Map.Entry<ImageView,String> entry=it.next();
+            ImageView image=entry.getKey();
+            if(image.isAttachedToWindow() && image.getGlobalVisibleRect(visible)) {
+                PhotoLoader.load(image,entry.getValue());
+                it.remove();
+            }
+        }
+    }
+    private List<String> adImages(JSONObject d) {
+        List<String> urls=new ArrayList<>();
+        JSONArray all=d.optJSONArray("image_urls");
+        if(all!=null) for(int i=0;i<Math.min(8,all.length());i++) {
+            String url=all.optString(i,"");
+            if(url.startsWith("https://") && !urls.contains(url))urls.add(url);
+        }
+        if(urls.isEmpty()) {
+            String one=d.optString("image_url","");
+            if(one.startsWith("https://"))urls.add(one);
+        }
+        return urls;
+    }
+    private void showCardPhoto(LinearLayout card,JSONObject d) {
+        List<String> pictures=adImages(d);
+        if(pictures.isEmpty())return;
+        ImageView preview=new ImageView(this);
+        preview.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        preview.setBackground(rounded(0xFFE8EEE9,12));
+        preview.setClipToOutline(true);
+        card.addView(preview,new LinearLayout.LayoutParams(-1,px(182)));
+        photosPending.put(preview,pictures.get(0));
+        preview.setContentDescription("Open advertentiefoto's");
+        preview.setOnClickListener(v->openGallery(d));
+        spacer(card,6);
+        if(pictures.size()>1) {
+            Button allPhotos=button("▧  Bekijk alle "+pictures.size()+" advertentiefoto's",0xFFE8EEE9,GREEN,()->openGallery(d));
+            add(card,allPhotos);spacer(card,8);
+        }
+    }
+    private void openGallery(JSONObject d) {
+        List<String> pictures=adImages(d);
+        if(pictures.isEmpty()){openUrl(d.optString("url"));return;}
+        LinearLayout body=vertical();pad(body,12,14);
+        ImageView full=new ImageView(this);
+        full.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        full.setBackground(rounded(0xFFE8EEE9,8));
+        body.addView(full,new LinearLayout.LayoutParams(-1,px(330)));
+        spacer(body,12);
+        LinearLayout controls=new LinearLayout(this);controls.setGravity(Gravity.CENTER_VERTICAL);
+        Button previous=button("‹ Vorige",0xFFE8EEE9,GREEN,()->{});
+        TextView counter=text("",13,DARK,true);counter.setGravity(Gravity.CENTER);
+        Button next=button("Volgende ›",0xFFE8EEE9,GREEN,()->{});
+        controls.addView(previous,new LinearLayout.LayoutParams(0,px(45),1));
+        controls.addView(counter,new LinearLayout.LayoutParams(0,-2,1));
+        controls.addView(next,new LinearLayout.LayoutParams(0,px(45),1));
+        add(body,controls);
+        final int[] index={0};
+        Runnable update=()->{
+            counter.setText((index[0]+1)+" / "+pictures.size());
+            PhotoLoader.load(full,pictures.get(index[0]));
+            previous.setEnabled(index[0]>0);
+            next.setEnabled(index[0]<pictures.size()-1);
+        };
+        previous.setOnClickListener(v->{if(index[0]>0){index[0]--;update.run();}});
+        next.setOnClickListener(v->{if(index[0]<pictures.size()-1){index[0]++;update.run();}});
+        new AlertDialog.Builder(this).setTitle("Advertentiefoto's")
+            .setView(body)
+            .setNegativeButton("Sluiten",null)
+            .setPositiveButton("Bekijk advertentie",(dialog,which)->openUrl(d.optString("url")))
+            .show();
+        update.run();
+    }
+
     private Set<String> favorites() {
         return new HashSet<>(FeedClient.prefs(this).getStringSet("favorites",Collections.emptySet()));
     }
