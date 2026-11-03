@@ -175,7 +175,7 @@ public final class MainActivity extends Activity {
 
         LinearLayout content=vertical();pad(content,15,14);
         summary=text("Advertenties laden…",15,INK,true);add(content,summary);gap(content,8);
-        add(content,text("Bron: Marktplaats automatisch · Facebook Marketplace handmatig",11,MUTED,false));
+        add(content,text("Marktplaats automatisch · Facebook Marketplace automatisch na Apify-koppeling",11,MUTED,false));
         gap(content,12);
         LinearLayout tabs=new LinearLayout(this);tabs.setOrientation(0);
         for(String filter:new String[]{"Alles","Marktplaats","Facebook","Bewaard"}){
@@ -236,8 +236,30 @@ public final class MainActivity extends Activity {
             if(comp!=0)return comp;
             return Double.compare(a.optDouble("price",1e7),b.optDouble("price",1e7));
         });
-        summary.setText(displayed.size()+" auto's · max "+money(intPref(prefs(),"max_price",1500))+
-             " · max "+intStr(intPref(prefs(),"max_km",250000))+" km");
+        int mpCount=0, fbCount=0;
+        for(JSONObject x:displayed){
+            if(x.optString("source","").startsWith("Facebook"))fbCount++;
+            else if(x.optString("source","").equals("Marktplaats"))mpCount++;
+        }
+        summary.setText(displayed.size()+" auto's · "+mpCount+" Marktplaats · "+fbCount+" Facebook"+
+            " · max "+money(intPref(prefs(),"max_price",1500))+
+            " · max "+intStr(intPref(prefs(),"max_km",250000))+" km");
+        JSONObject facebook=feed.optJSONObject("facebook_status");
+        if(facebook!=null) {
+            String state=facebook.optString("status","");
+            String message="";
+            switch(state){
+                case "ok": message="Facebook automatisch gescand: "+facebook.optInt("count",0)+" auto's";break;
+                case "bewaarde_resultaten":message="Facebook: resultaten van de vorige automatische scan";break;
+                case "geen_passende_advertenties":message="Facebook gescand: geen passende auto's gevonden";break;
+                case "niet_geconfigureerd":message="Facebook automatisch nog niet actief: Apify-token ontbreekt op GitHub";break;
+                case "toegang_geweigerd":message="Facebook-koppeling niet actief: controleer Apify-token";break;
+                case "fout":message="Facebook-provider tijdelijk niet bereikbaar";break;
+                default:message="Facebook-status onbekend";break;
+            }
+            add(listArea,text(message,11,state.equals("ok")?GREEN:MUTED,false));
+            gap(listArea,7);
+        }
         String generated=feed.optString("generated_at","");
         if(!generated.isEmpty()) {
             String msg="Laatste scan: "+generated.replace('T',' ').replace("+00:00"," UTC");
