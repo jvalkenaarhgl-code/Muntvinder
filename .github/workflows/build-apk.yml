@@ -21,7 +21,9 @@ jobs:
           java-version: '17'
       - name: Android SDK 35 (standaard GitHub-runner)
         run: |
-          sdkmanager 'platforms;android-35' 'build-tools;35.0.0'
+          SDKMANAGER=/usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager
+          test -x "$SDKMANAGER"
+          "$SDKMANAGER" --sdk_root=/usr/local/lib/android/sdk 'platforms;android-35' 'build-tools;35.0.0'
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.10.2'
