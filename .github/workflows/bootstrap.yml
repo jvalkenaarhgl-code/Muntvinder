@@ -1,0 +1,79 @@
+name: Eerste installatie Muntvinder
+on:
+  push:
+    paths:
+      - '.github/workflows/bootstrap.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  installatie-en-apk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Controleer en pak volledige broncode uit
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat payload/part0{0,1,2,3}.b64 | base64 --decode > /tmp/muntvinder-source.tar.xz
+          echo 'fb3964aba7a42084022d4f24787e1cc598d5013154aa5a51ea9cf952afe73b3e  /tmp/muntvinder-source.tar.xz' | sha256sum -c -
+          tar -xJf /tmp/muntvinder-source.tar.xz
+          test -f android/app/src/main/java/nl/muntvinder/v2/MainActivity.java
+          test -f scan/scanner.py
+          test -f .github/workflows/build-apk.yml
+          test -f .github/workflows/scan.yml
+          rm -rf payload
+
+      - name: Publiceer broncode in de repository
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Importeer volledige Muntvinder 2.1 app en scanner"
+            git push origin HEAD:main
+          fi
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test scanner
+        run: |
+          python -m pip install -r scan/requirements.txt pytest
+          python -m pytest -q scan/tests
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v3
+      - name: Installeer Android SDK
+        run: sdkmanager 'platforms;android-35' 'build-tools;35.0.0'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.10.2'
+
+      - name: Bouw de Muntvinder APK
+        shell: bash
+        run: |
+          set -euo pipefail
+          OWNER="${GITHUB_REPOSITORY%/*}"
+          REPO="${GITHUB_REPOSITORY#*/}"
+          FEED_URL="https://${OWNER,,}.github.io/${REPO,,}/feed.json"
+          echo "Ingebouwde feed: ${FEED_URL}"
+          gradle -p android --no-daemon "-PMUNTVINDER_FEED_URL=${FEED_URL}" :app:assembleDebug
+
+      - name: Maak installeerbare APK beschikbaar
+        uses: actions/upload-artifact@v4
+        with:
+          name: Muntvinder-v2-APK
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
