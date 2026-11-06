@@ -1,0 +1,42 @@
+name: Proofset Rendement 1.1 - APK reparatie
+on:
+  push:
+    branches: [proofset-rendement-v1-20261106]
+    paths:
+      - '.github/workflows/proofprofit-v11.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pak broncode uit
+        run: unzip -oq proofprofit-src.zip -d .
+      - name: Herstel opslaan en optionele verkoopprijs
+        shell: bash
+        run: |
+          printf '%s' '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' | base64 -d | gzip -d > /tmp/proofprofit-hotfix.js
+          node /tmp/proofprofit-hotfix.js
+          node --check proofprofit/app/src/main/assets/app.js
+          node proofprofit/tests/finance.test.js
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Android SDK 35
+        run: |
+          SDKMANAGER=/usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager
+          "$SDKMANAGER" --sdk_root=/usr/local/lib/android/sdk 'platforms;android-35' 'build-tools;35.0.0'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.10.2'
+      - name: Bouw Android APK
+        run: gradle -p proofprofit --no-daemon :app:assembleDebug
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Proofset-Rendement-v1.1-APK
+          path: proofprofit/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
