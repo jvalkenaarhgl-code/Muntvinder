@@ -139,7 +139,7 @@ final class ProofsetPanel {
         LinearLayout controls=row();
         Button add=button("＋  Nieuwe proofset",GOLD,GREEN,()->edit(null,null));
         controls.addView(add,new LinearLayout.LayoutParams(0,px(48),1));
-        View sp=new View(activity);controls.addView(sp,new LinearLayout.LayoutParams(px(8),1));
+        View spacerControl=new View(activity);controls.addView(spacerControl,new LinearLayout.LayoutParams(px(8),1));
         Button backup=button("Back-up",PALE,GREEN,this::backupMenu);
         controls.addView(backup,new LinearLayout.LayoutParams(px(110),px(48)));
         inset(root,controls,4);
