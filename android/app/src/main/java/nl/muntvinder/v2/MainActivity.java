@@ -442,6 +442,22 @@ public final class MainActivity extends Activity {
             requestPermissions(new String[]{Manifest.permission.POST_NOTIFICATIONS}, 41027);
         }
     }
+    private void testNotification() {
+        if (Build.VERSION.SDK_INT >= 33 &&
+                checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{Manifest.permission.POST_NOTIFICATIONS}, 41028);
+            return;
+        }
+        Toast.makeText(this,DealNotifications.sendTest(this),Toast.LENGTH_LONG).show();
+    }
+    @Override public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] results) {
+        super.onRequestPermissionsResult(requestCode,permissions,results);
+        if(requestCode==41028) {
+            boolean allowed=results.length>0 && results[0]==PackageManager.PERMISSION_GRANTED;
+            Toast.makeText(this,allowed ? DealNotifications.sendTest(this) :
+                "Android-meldingen zijn niet toegestaan.",Toast.LENGTH_LONG).show();
+        }
+    }
     private void settings() {
         EditText edit=new EditText(this);edit.setText(FeedClient.url(this));
         edit.setSingleLine(false);edit.setMinLines(2);
@@ -454,12 +470,27 @@ public final class MainActivity extends Activity {
         CheckBox bids=new CheckBox(this);
         bids.setText("Ook interessante biedingen melden");
         bids.setChecked(DealNotifications.bidsEnabled(this));
-        add(body,text("Nieuwe deals komen bovenaan. Bij een nieuwe topdeal kan Android maximaal één melding per 12 uur sturen; de eerste download geeft geen oude meldingen. De telefoon controleert ongeveer elke 30 minuten en kan controles uitstellen door batterijbesparing.",12,MUTED,false));
+        add(body,text("Een melding komt alleen bij NIEUWE interessante advertenties (maximaal één per 12 uur). De eerste scan is een startpunt en geeft geen oude deals. Android controleert ongeveer elke 30 minuten, maar batterijbesparing kan dit vertragen.",12,MUTED,false));
         spacer(body,10);add(body,notifications);add(body,bids);
-        spacer(body,8);
+        spacer(body,10);
+        LinearLayout panel=vertical();pad(panel,12,12);panel.setBackground(rounded(0xFFE9F0EC,12));
+        add(panel,text("MELDINGSSTATUS",11,GREEN,true));spacer(panel,7);
+        TextView diagnostics=text(DealNotifications.diagnostic(this),12,DARK,false);
+        add(panel,diagnostics);
+        spacer(panel,8);
+        add(panel,button("🔔  Verstuur een testmelding",GREEN,Color.WHITE,()->{
+            testNotification();
+            diagnostics.setText(DealNotifications.diagnostic(this));
+        }));
+        spacer(panel,5);
+        add(panel,text("Zie je de testmelding niet? Controleer in Android de meldingen van Muntvinder en zet batterijgebruik op Onbeperkt. Echte koopjes blijven afhankelijk van nieuwe relevante advertenties.",11,MUTED,false));
+        add(body,panel);
+        spacer(body,12);
         add(body,text("Gegevensbron (standaard automatisch ingesteld)",12,MUTED,true));
         spacer(body,6);add(body,edit);
-        new AlertDialog.Builder(this).setTitle("Muntvinder-instellingen").setView(body)
+        ScrollView scrollSettings=new ScrollView(this);
+        scrollSettings.setFillViewport(false);scrollSettings.addView(body);
+        new AlertDialog.Builder(this).setTitle("Muntvinder-instellingen").setView(scrollSettings)
             .setNegativeButton("Annuleren",null)
             .setPositiveButton("Opslaan",(dialog,which)->{
                 try {
