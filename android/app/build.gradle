@@ -4,11 +4,11 @@ android {
   compileSdk 35
   buildFeatures { buildConfig true }
   defaultConfig {
-    applicationId 'nl.muntvinder.v2'
+    applicationId 'nl.muntvinder.nativeone'
     minSdk 26
     targetSdk 35
-    versionCode 6
-    versionName '2.5'
+    versionCode 7
+    versionName '3.0'
     // De feed-URL wordt tijdens de build ingebakken. Geen handmatige installatie-instelling.
     def feed = (project.findProperty('MUNTVINDER_FEED_URL') ?: '').toString()
     if (feed && !(feed ==~ /https:\/\/[a-zA-Z0-9._\/-]+/)) {
