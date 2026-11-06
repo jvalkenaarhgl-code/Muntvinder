@@ -83,7 +83,14 @@ final class ProofsetPanel {
         boolean ok=activity.getSharedPreferences(PREF,0).edit().putString(DATA,a.toString()).commit();
         if(!ok)Toast.makeText(activity,"Opslaan is mislukt",Toast.LENGTH_LONG).show();
     }
-    private static double n(JSONObject j,String k){return Math.max(0,j.optDouble(k,0));}
+    private static double n(JSONObject j,String k){
+        if(!j.has(k)||j.isNull(k))return 0;
+        Object raw=j.opt(k);
+        String value=String.valueOf(raw).trim().replace("€","").replace(" ","");
+        if(value.contains(","))value=value.replace(".","").replace(",",".");
+        try{double amount=Double.parseDouble(value);return Double.isFinite(amount)?Math.max(0,amount):0;}
+        catch(Exception ex){return 0;}
+    }
     private static boolean hasPrice(JSONObject j){
         return j.has("sale")&&!j.isNull("sale")&&!j.optString("sale","").trim().isEmpty();
     }
@@ -402,7 +409,7 @@ final class ProofsetPanel {
                     String id=j.optString("id","");
                     int year=j.optInt("year",0);
                     if(id.isEmpty()||year<1900||year>2100||ids.contains(id))continue;
-                    if(j.optDouble("buy",-1)<0)continue;
+                    if(n(j,"buy")<=0)continue;
                     items.add(j);ids.add(id);imported++;
                 }
                 persist();refresh.run();
