@@ -54,6 +54,8 @@ public final class MainActivity extends Activity {
     private String selectedType = "Alles";
     private boolean favoritesOnly = false;
     private ScrollView scrollRoot;
+    private ProofsetPanel proofsets;
+    private String activeTab = "scanner";
     private final Map<ImageView, String> photosPending = new HashMap<>();
     private boolean busy = false;
 
@@ -62,11 +64,16 @@ public final class MainActivity extends Activity {
         getWindow().setStatusBarColor(GREEN);
         getWindow().setNavigationBarColor(GREEN);
         ScanJobService.schedule(this);
+        proofsets = new ProofsetPanel(this);
         draw();
         maybeAskNotificationPermission();
         if (!FeedClient.url(this).isEmpty()) refreshOnline(false);
     }
-    @Override protected void onResume() { super.onResume(); if (frame != null) render(); }
+    @Override protected void onResume() { super.onResume(); if (frame != null && "scanner".equals(activeTab)) render(); }
+    @Override protected void onActivityResult(int request, int result, Intent data) {
+        super.onActivityResult(request,result,data);
+        if(proofsets!=null)proofsets.onFileResult(request,result,data);
+    }
 
     private int px(int dp) { return (int)(getResources().getDisplayMetrics().density * dp + .5f); }
     private GradientDrawable rounded(int color, int radius) {
@@ -94,8 +101,38 @@ public final class MainActivity extends Activity {
         b.setBackground(rounded(bg,10));b.setOnClickListener(v->action.run());return b;
     }
     private void draw() {
+        // One cohesive Android screen: only the BODY changes when selecting a tab.
+        LinearLayout shell=vertical();shell.setBackgroundColor(BG);
         ScrollView scroll=new ScrollView(this);scroll.setFillViewport(true);scroll.setBackgroundColor(BG);
-        frame=vertical();scroll.addView(frame);setContentView(scroll);
+        frame=vertical();scroll.addView(frame);
+        shell.addView(scroll,new LinearLayout.LayoutParams(-1,0,1));
+
+        LinearLayout navigation=new LinearLayout(this);
+        navigation.setOrientation(LinearLayout.HORIZONTAL);
+        navigation.setBackgroundColor(LIGHT);
+        navigation.setPadding(px(6),px(6),px(6),px(6));
+        String[] labels={"⌕  Scanner","▦  Mijn sets","↗  Rendement"};
+        String[] ids={"scanner","sets","calculator"};
+        for(int i=0;i<ids.length;i++){
+            final String tab=ids[i];
+            boolean selected=tab.equals(activeTab);
+            Button tabButton=button(labels[i],selected?GREEN:LIGHT,selected?Color.WHITE:GREEN,()->{
+                if(tab.equals(activeTab))return;
+                activeTab=tab;draw();
+            });
+            LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(0,-1,1);
+            p.setMargins(px(2),0,px(2),0);
+            navigation.addView(tabButton,p);
+        }
+        shell.addView(navigation,new LinearLayout.LayoutParams(-1,px(67)));
+        setContentView(shell);
+
+        if(!"scanner".equals(activeTab)){
+            scrollRoot=null;
+            listArea=null;
+            if(proofsets!=null)proofsets.render(frame,"calculator".equals(activeTab),this::draw);
+            return;
+        }
         scrollRoot = scroll;
         scroll.setOnScrollChangeListener((View v,int sx,int sy,int oldX,int oldY)->loadVisiblePhotos());
 
@@ -278,6 +315,13 @@ public final class MainActivity extends Activity {
         spacer(card,13);
         Button go=button("Bekijk originele advertentie  ↗",GREEN,Color.WHITE,()->openUrl(d.optString("url")));
         add(card,go);
+        spacer(card,8);
+        Button saveDeal=button("＋  Neem over naar Mijn sets",0xFFE8F1EA,GREEN,()->{
+            activeTab="sets";
+            draw();
+            proofsets.edit(null,d);
+        });
+        add(card,saveDeal);
         add(listArea,card);spacer(listArea,13);
     }
     /** Laad alleen afbeeldingen die in beeld staan: geen tientallen downloads bij openen. */
