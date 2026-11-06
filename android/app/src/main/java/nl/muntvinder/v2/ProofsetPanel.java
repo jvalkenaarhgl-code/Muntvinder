@@ -368,7 +368,7 @@ final class ProofsetPanel {
         exportText=obj.toString();
         Intent intent=new Intent(Intent.ACTION_CREATE_DOCUMENT);
         intent.addCategory(Intent.CATEGORY_OPENABLE);intent.setType("application/json");
-        intent.putExtra(Intent.EXTRA_TITLE","muntvinder-proofsets-"+today()+".json");
+        intent.putExtra(Intent.EXTRA_TITLE,"muntvinder-proofsets-"+today()+".json");
         activity.startActivityForResult(intent,EXPORT);
     }
     private void importBackup(){
