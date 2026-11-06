@@ -7,8 +7,8 @@ android {
     applicationId 'nl.muntvinder.nativeone'
     minSdk 26
     targetSdk 35
-    versionCode 7
-    versionName '3.0'
+    versionCode 8
+    versionName '3.1'
     // De feed-URL wordt tijdens de build ingebakken. Geen handmatige installatie-instelling.
     def feed = (project.findProperty('MUNTVINDER_FEED_URL') ?: '').toString()
     if (feed && !(feed ==~ /https:\/\/[a-zA-Z0-9._\/-]+/)) {
