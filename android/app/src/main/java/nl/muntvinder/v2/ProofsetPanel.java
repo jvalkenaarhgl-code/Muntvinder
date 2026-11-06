@@ -41,6 +41,9 @@ final class ProofsetPanel {
     private final List<JSONObject> items=new ArrayList<>();
     private String exportText;
     private Runnable refresh=()->{};
+    private boolean calculatorMode=false;
+    boolean isCalculator(){return calculatorMode;}
+    void setCalculator(boolean value){calculatorMode=value;}
     ProofsetPanel(MainActivity a) { activity=a; load(); }
 
     private int px(int d){return (int)(d*activity.getResources().getDisplayMetrics().density+.5f);}
@@ -111,10 +114,23 @@ final class ProofsetPanel {
         add(c,t(value,22,tone,true));gap(c,4);add(c,t(note,11,MUTED,false));inset(host,c,2);
     }
 
+    private void subTabs(LinearLayout root){
+        LinearLayout tabs=row();
+        Button sets=button("▦  Mijn proofsets",calculatorMode?PALE:GREEN,calculatorMode?GREEN:WHITE,
+            ()->{if(calculatorMode){calculatorMode=false;refresh.run();}});
+        tabs.addView(sets,new LinearLayout.LayoutParams(0,px(48),1));
+        View space=new View(activity);tabs.addView(space,new LinearLayout.LayoutParams(px(9),1));
+        Button calculator=button("↗  Winstcalculator",calculatorMode?GREEN:PALE,calculatorMode?WHITE:GREEN,
+            ()->{if(!calculatorMode){calculatorMode=true;refresh.run();}});
+        tabs.addView(calculator,new LinearLayout.LayoutParams(0,px(48),1));
+        inset(root,tabs,7);
+    }
+
     void render(LinearLayout root,boolean calculator,Runnable redraw) {
         refresh=redraw;
         if(calculator){renderCalculator(root);return;}
         heading(root,"MIJN PROOFSETS","Aankopen & rendement","Houd je verzameling, verkoop en winst bij.");
+        subTabs(root);
         double invested=0,realized=0,forecast=0;int soldCount=0,unsold=0,unknown=0;
         for(JSONObject item:items){
             invested+=paid(item);
@@ -306,6 +322,7 @@ final class ProofsetPanel {
 
     private void renderCalculator(LinearLayout root){
         heading(root,"WINSTCALCULATOR","Bereken je rendement","Probeer een verkoopprijs zonder een aankoop op te slaan.");
+        subTabs(root);
         LinearLayout c=card();
         add(c,t("Koop- en verkoopscenario",18,DARK,true));gap(c,12);
         EditText buy=field(c,"Koopprijs (€)","",true);
