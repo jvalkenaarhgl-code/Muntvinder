@@ -109,9 +109,34 @@ final class ProofsetPanel {
         return x.isEmpty()?j.optString("type","Proofset")+" "+j.optString("year",""):x;
     }
     private String pct(double v){return String.format(new Locale("nl","NL"),"%.1f%%",v);}
-    private void infoCard(LinearLayout host,String caption,String value,String note,int tone){
-        LinearLayout c=card();add(c,t(caption,12,MUTED,true));gap(c,8);
-        add(c,t(value,22,tone,true));gap(c,4);add(c,t(note,11,MUTED,false));inset(host,c,2);
+    // Vier uniforme tegels; één native dashboard, geen tweede app.
+    private LinearLayout metricCard(String icon,String caption,String value,String note,int tone){
+        LinearLayout c=card();
+        c.setMinimumHeight(px(150));
+        LinearLayout header=row();
+        TextView badge=t(icon,16,tone,true);
+        badge.setGravity(Gravity.CENTER);
+        badge.setBackground(bg(tone==RED?0xFFFBEAE8:0xFFE6F0E9,9));
+        header.addView(badge,new LinearLayout.LayoutParams(px(32),px(32)));
+        View space=new View(activity);
+        header.addView(space,new LinearLayout.LayoutParams(px(7),1));
+        TextView label=t(caption,11,MUTED,true);
+        header.addView(label,new LinearLayout.LayoutParams(0,-2,1));
+        add(c,header);
+        gap(c,12);
+        add(c,t(value,21,tone,true));
+        gap(c,5);
+        add(c,t(note,11,MUTED,false));
+        return c;
+    }
+    private void metricRow(LinearLayout root,View first,View second){
+        LinearLayout line=row();
+        line.setGravity(Gravity.TOP);
+        line.addView(first,new LinearLayout.LayoutParams(0,-2,1));
+        View space=new View(activity);
+        line.addView(space,new LinearLayout.LayoutParams(px(10),1));
+        line.addView(second,new LinearLayout.LayoutParams(0,-2,1));
+        inset(root,line,0);
     }
 
     private void subTabs(LinearLayout root){
@@ -131,25 +156,45 @@ final class ProofsetPanel {
         if(calculator){renderCalculator(root);return;}
         heading(root,"MIJN PROOFSETS","Aankopen & rendement","Houd je verzameling, verkoop en winst bij.");
         subTabs(root);
-        double invested=0,realized=0,forecast=0;int soldCount=0,unsold=0,unknown=0;
+        double invested=0,realized=0,forecast=0,knownRevenue=0;
+        int soldCount=0,unsold=0,unknown=0,estimatedCount=0;
         for(JSONObject item:items){
             invested+=paid(item);
-            if(sold(item)&&hasPrice(item)){realized+=profit(item);soldCount++;}
-            else if(!sold(item)){unsold++;if(hasPrice(item))forecast+=profit(item);else unknown++;}
+            if(sold(item) && hasPrice(item)){
+                realized+=profit(item);
+                knownRevenue+=n(item,"sale");
+                soldCount++;
+            } else if(!sold(item)){
+                unsold++;
+                if(hasPrice(item)){
+                    forecast+=profit(item);
+                    knownRevenue+=n(item,"sale");
+                    estimatedCount++;
+                } else unknown++;
+            }
         }
-        LinearLayout stats=col();gap(stats,5);
-        infoCard(stats,"TOTAAL GEÏNVESTEERD",eur(invested),items.size()+" geregistreerde proofsets",DARK);
-        LinearLayout both=row();
-        LinearLayout realizedCard=card();add(realizedCard,t("Gerealiseerde winst",11,MUTED,true));gap(realizedCard,7);
-        add(realizedCard,t(eur(realized),19,realized<0?RED:GREEN,true));gap(realizedCard,4);
-        add(realizedCard,t(soldCount+" verkocht",11,MUTED,false));
-        both.addView(realizedCard,new LinearLayout.LayoutParams(0,-2,1));
-        View sp=new View(activity);both.addView(sp,new LinearLayout.LayoutParams(px(9),1));
-        LinearLayout prospectCard=card();add(prospectCard,t("Mogelijke winst",11,MUTED,true));gap(prospectCard,7);
-        add(prospectCard,t(eur(forecast),19,forecast<0?RED:GREEN,true));gap(prospectCard,4);
-        add(prospectCard,t(unknown+" zonder vraagprijs",11,MUTED,false));
-        both.addView(prospectCard,new LinearLayout.LayoutParams(0,-2,1));
-        inset(stats,both,6);
+        // Gewogen marge: som nettowinsten / som bijbehorende verkoopprijzen.
+        // Zonder prijs telt een set NIET mee in de noemer of de winst.
+        double totalMargin=knownRevenue>0?(realized+forecast)*100/knownRevenue:0;
+        LinearLayout stats=col();
+        LinearLayout overview=col();pad(overview,18,4);
+        add(overview,t("In één oogopslag",17,DARK,true));
+        add(overview,t("Werkelijk resultaat en verwachte opbrengsten apart",11,MUTED,false));
+        add(stats,overview);
+        metricRow(stats,
+            metricCard("€","Totaal geïnvesteerd",eur(invested),
+                items.size()+" geregistreerd",DARK),
+            metricCard("↑","Totale winst",eur(realized),
+                soldCount+" verkocht",realized<0?RED:GREEN));
+        metricRow(stats,
+            metricCard("◇","Mogelijke winst",eur(forecast),
+                estimatedCount+" geschat · "+unknown+" onbekend",forecast<0?RED:GREEN),
+            metricCard("%","Nettomarge",knownRevenue>0?pct(totalMargin):"—",
+                knownRevenue>0?"incl. verwachtingen":"Nog geen verkoopprijzen",
+                knownRevenue==0?MUTED:totalMargin<0?RED:GREEN));
+        LinearLayout marginInfo=col();pad(marginInfo,18,5);
+        add(marginInfo,t("Nettomarge = (gerealiseerde + mogelijke nettowinst) ÷ bekende (verwachte) verkoopomzet. Sets zonder verkoopprijs tellen niet mee.",11,MUTED,false));
+        add(stats,marginInfo);
         add(root,stats);
 
         LinearLayout controls=row();
@@ -183,7 +228,7 @@ final class ProofsetPanel {
             if(hasPrice(item)){
                 add(c,t((sold(item)?"Verkocht voor ":"Verwachte verkoop ")+eur(n(item,"sale")),12,MUTED,false));
                 gap(c,4);add(c,t((sold(item)?"Nettowinst ":"Mogelijke winst ")+eur(profit(item))+
-                    "   ·   ROI "+pct(roi(item)),13,profit(item)>=0?GREEN:RED,true));
+                    "   ·   ROI "+pct(roi(item))+"   ·   marge "+pct(margin(item)),13,profit(item)>=0?GREEN:RED,true));
             } else add(c,t("Verkoopprijs nog onbekend",12,MUTED,false));
             gap(c,12);
             add(c,button("Bewerken / verkoop vastleggen",PALE,GREEN,()->edit(item,null)));
