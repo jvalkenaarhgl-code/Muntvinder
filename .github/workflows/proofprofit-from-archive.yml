@@ -1,0 +1,36 @@
+name: Proofset Rendement - bouw Android APK
+on:
+  push:
+    branches:
+      - proofset-rendement-v1-20261106
+    paths:
+      - 'proofprofit-src.zip'
+      - '.github/workflows/proofprofit-from-archive.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pak de volledige broncode uit
+        run: unzip -oq proofprofit-src.zip -d .
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v3
+      - name: Android SDK
+        run: sdkmanager 'platforms;android-35' 'build-tools;35.0.0'
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.10.2'
+      - name: Compileer Proofset Rendement
+        run: gradle -p proofprofit --no-daemon :app:assembleDebug
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Proofset-Rendement-APK
+          path: proofprofit/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
