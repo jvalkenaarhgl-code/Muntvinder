@@ -111,8 +111,8 @@ public final class MainActivity extends Activity {
         navigation.setOrientation(LinearLayout.HORIZONTAL);
         navigation.setBackgroundColor(LIGHT);
         navigation.setPadding(px(6),px(6),px(6),px(6));
-        String[] labels={"⌕  Scanner","▦  Mijn sets","↗  Rendement"};
-        String[] ids={"scanner","sets","calculator"};
+        String[] labels={"⌕  Scanner","▦  Rendement"};
+        String[] ids={"scanner","rendement"};
         for(int i=0;i<ids.length;i++){
             final String tab=ids[i];
             boolean selected=tab.equals(activeTab);
@@ -130,7 +130,7 @@ public final class MainActivity extends Activity {
         if(!"scanner".equals(activeTab)){
             scrollRoot=null;
             listArea=null;
-            if(proofsets!=null)proofsets.render(frame,"calculator".equals(activeTab),this::draw);
+            if(proofsets!=null)proofsets.render(frame,proofsets.isCalculator(),this::draw);
             return;
         }
         scrollRoot = scroll;
@@ -317,7 +317,8 @@ public final class MainActivity extends Activity {
         add(card,go);
         spacer(card,8);
         Button saveDeal=button("＋  Neem over naar Mijn sets",0xFFE8F1EA,GREEN,()->{
-            activeTab="sets";
+            activeTab="rendement";
+            proofsets.setCalculator(false);
             draw();
             proofsets.edit(null,d);
         });
