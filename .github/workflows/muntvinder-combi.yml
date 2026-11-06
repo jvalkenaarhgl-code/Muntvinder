@@ -1,0 +1,65 @@
+name: Muntvinder Combi - Android APK
+on:
+  push:
+    branches:
+      - muntvinder-combi-v1-20261106
+    paths:
+      - 'android/app/src/main/java/nl/muntvinder/v2/ProfitActivity.java'
+      - 'merge/**'
+      - '.github/workflows/muntvinder-combi.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Gebruik de geteste v1.1 rendement-app als bron
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p build/profit-apk build/profit-assets android/app/src/main/assets
+          gh run download 42247037573 --repo "${GITHUB_REPOSITORY}" --name "Proofset-Rendement-v1.1-APK" --dir build/profit-apk
+          APK="$(find build/profit-apk -type f -iname '*.apk' | head -n 1)"
+          test -n "$APK"
+          unzip -oq "$APK" 'assets/*' -d build/profit-assets
+          cp build/profit-assets/assets/* android/app/src/main/assets/
+          cp merge/combi.js android/app/src/main/assets/combi.js
+
+      - name: Combineer scanner en rendement
+        run: python3 merge/build_unified.py
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Installeer Android SDK 35
+        run: |
+          SDKMANAGER=/usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager
+          test -x "$SDKMANAGER"
+          "$SDKMANAGER" --sdk_root=/usr/local/lib/android/sdk 'platforms;android-35' 'build-tools;35.0.0'
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.10.2'
+
+      - name: Bouw Muntvinder Combi APK
+        shell: bash
+        run: |
+          set -euo pipefail
+          FEED_URL="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/main/docs/feed.json"
+          gradle -p android --no-daemon "-PMUNTVINDER_FEED_URL=${FEED_URL}" :app:assembleDebug
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Muntvinder-Combi-APK
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
