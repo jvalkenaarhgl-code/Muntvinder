@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T13:53:48+00:00",
+  "generated_at": "2026-11-08T14:45:39+00:00",
   "source_status": "OK",
   "stale": false,
   "errors": [],
@@ -103,56 +103,6 @@
       "alert_candidate": true
     },
     {
-      "id": "mp:m2462253975",
-      "source": "Marktplaats",
-      "title": "Citroen C1 1.0-12V Ambiance | HOBBY/KLUS AUTO | APK 02-2027",
-      "description": "Citroen c1 1.0-12V ambiance | hobby/klus auto | apk 02-2027 | kenteken: 93-lhz-7 merk: citroen model: c1 apk tot: 20-02-2027 tellerstand: 217405 km carrosserievorm: hatch",
-      "make": "Citroen",
-      "model": "C1",
-      "year": 2008,
-      "mileage": 217405,
-      "price": 450.0,
-      "price_kind": "FIXED",
-      "fuel": "Benzine",
-      "transmission": "Handgeschakeld",
-      "city": "Harderwijk",
-      "postcode": "",
-      "url": "https://www.marktplaats.nl/v/auto-s/citroen/m2462253975-citroen-c1-1-0-12v-ambiance-hobby-klus-auto-apk-02-2027",
-      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/3630edca-5792-48f2-8169-85d930b66d60?rule=ecg_mp_eps$_83.jpg",
-      "image_urls": [
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/3630edca-5792-48f2-8169-85d930b66d60?rule=ecg_mp_eps$_83.jpg",
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/4c02d55f-8d23-4275-b89d-d6de65fdce38?rule=ecg_mp_eps$_83.jpg"
-      ],
-      "damage": false,
-      "high_risk": false,
-      "price_unverified": false,
-      "price_warning": "",
-      "damage_note": "",
-      "seller_name": "",
-      "is_bid": false,
-      "comparables": 42,
-      "comparable_asking_prices": [
-        750.0,
-        750.0,
-        799.0,
-        850.0,
-        898.0
-      ],
-      "resale_low": 880.88,
-      "resale_high": 1033.56,
-      "profit_low": 5.88,
-      "profit_high": 158.56,
-      "profit_note": "Vraagprijsmediaan 42 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
-      "estimated_repair": 250,
-      "estimated_other_costs": 175,
-      "total_investment": 875.0,
-      "pricing_confidence": "redelijk",
-      "deal_score": 230.49,
-      "deal_label": "Sterke prijsindicatie",
-      "rank": 3,
-      "alert_candidate": true
-    },
-    {
       "id": "mp:m2461121091",
       "source": "Marktplaats",
       "title": "Hyundai Getz 1.3 3DRS 2006 Grijs",
@@ -180,7 +130,7 @@
       "damage_note": "",
       "seller_name": "",
       "is_bid": true,
-      "comparables": 37,
+      "comparables": 36,
       "comparable_asking_prices": [
         870.0,
         895.0,
@@ -192,14 +142,14 @@
       "resale_high": 1276.0,
       "profit_low": 12.5,
       "profit_high": 201.0,
-      "profit_note": "Vraagprijsmediaan 37 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "profit_note": "Vraagprijsmediaan 36 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
       "estimated_repair": 250,
       "estimated_other_costs": 175,
       "total_investment": 1075.0,
       "pricing_confidence": "redelijk",
       "deal_score": 209.04,
       "deal_label": "Interessant bod, niet gegarandeerd",
-      "rank": 4,
+      "rank": 3,
       "alert_candidate": false
     },
     {
@@ -247,6 +197,56 @@
       "pricing_confidence": "beperkt",
       "deal_score": 190.1,
       "deal_label": "Interessant bod, niet gegarandeerd",
+      "rank": 4,
+      "alert_candidate": false
+    },
+    {
+      "id": "mp:m2462253975",
+      "source": "Marktplaats",
+      "title": "Citroen C1 1.0-12V Ambiance | HOBBY/KLUS AUTO | APK 02-2027",
+      "description": "Citroen c1 1.0-12V ambiance | hobby/klus auto | apk 02-2027 | kenteken: 93-lhz-7 merk: citroen model: c1 apk tot: 20-02-2027 tellerstand: 217405 km carrosserievorm: hatch",
+      "make": "Citroen",
+      "model": "C1",
+      "year": 2008,
+      "mileage": 217405,
+      "price": 450.0,
+      "price_kind": "FIXED",
+      "fuel": "Benzine",
+      "transmission": "Handgeschakeld",
+      "city": "Harderwijk",
+      "postcode": "",
+      "url": "https://www.marktplaats.nl/v/auto-s/citroen/m2462253975-citroen-c1-1-0-12v-ambiance-hobby-klus-auto-apk-02-2027",
+      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/3630edca-5792-48f2-8169-85d930b66d60?rule=ecg_mp_eps$_83.jpg",
+      "image_urls": [
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/3630edca-5792-48f2-8169-85d930b66d60?rule=ecg_mp_eps$_83.jpg",
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/4c02d55f-8d23-4275-b89d-d6de65fdce38?rule=ecg_mp_eps$_83.jpg"
+      ],
+      "damage": false,
+      "high_risk": false,
+      "price_unverified": false,
+      "price_warning": "",
+      "damage_note": "",
+      "seller_name": "",
+      "is_bid": false,
+      "comparables": 41,
+      "comparable_asking_prices": [
+        750.0,
+        750.0,
+        799.0,
+        850.0,
+        898.0
+      ],
+      "resale_low": 862.5,
+      "resale_high": 1012.0,
+      "profit_low": -12.5,
+      "profit_high": 137.0,
+      "profit_note": "Vraagprijsmediaan 41 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "estimated_repair": 250,
+      "estimated_other_costs": 175,
+      "total_investment": 875.0,
+      "pricing_confidence": "redelijk",
+      "deal_score": 100.74,
+      "deal_label": "Mogelijke marge, onzeker",
       "rank": 5,
       "alert_candidate": false
     },
@@ -626,24 +626,24 @@
       "damage_note": "",
       "seller_name": "",
       "is_bid": false,
-      "comparables": 23,
+      "comparables": 22,
       "comparable_asking_prices": [
         850.0,
         999.0,
-        999.0,
         1150.0,
-        1250.0
+        1250.0,
+        1295.0
       ],
-      "resale_low": 1121.25,
-      "resale_high": 1315.6,
-      "profit_low": -178.75,
-      "profit_high": 15.6,
-      "profit_note": "Vraagprijsmediaan 23 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "resale_low": 1122.75,
+      "resale_high": 1317.36,
+      "profit_low": -177.25,
+      "profit_high": 17.36,
+      "profit_note": "Vraagprijsmediaan 22 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
       "estimated_repair": 250,
       "estimated_other_costs": 175,
       "total_investment": 1300.0,
       "pricing_confidence": "redelijk",
-      "deal_score": 98.31,
+      "deal_score": 98.35,
       "deal_label": "Mogelijke marge, onzeker",
       "rank": 13,
       "alert_candidate": false
@@ -826,7 +826,7 @@
       "damage_note": "",
       "seller_name": "",
       "is_bid": false,
-      "comparables": 21,
+      "comparables": 20,
       "comparable_asking_prices": [
         650.0,
         650.0,
@@ -838,7 +838,7 @@
       "resale_high": 879.12,
       "profit_low": -125.75,
       "profit_high": 4.12,
-      "profit_note": "Vraagprijsmediaan 21 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "profit_note": "Vraagprijsmediaan 20 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
       "estimated_repair": 250,
       "estimated_other_costs": 175,
       "total_investment": 875.0,
@@ -1026,19 +1026,19 @@
       "damage_note": "Schade/gebrek genoemd; reparatiekosten eerst bepalen",
       "seller_name": "",
       "is_bid": false,
-      "comparables": 40,
+      "comparables": 39,
       "comparable_asking_prices": [
         499.0,
         595.0,
         595.0,
-        650.0,
-        749.0
+        749.0,
+        799.0
       ],
       "resale_low": 746.25,
       "resale_high": 875.6,
       "profit_low": -78.75,
       "profit_high": 50.6,
-      "profit_note": "Vraagprijsmediaan 40 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "profit_note": "Vraagprijsmediaan 39 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
       "estimated_repair": 250,
       "estimated_other_costs": 175,
       "total_investment": 825.0,
@@ -1176,7 +1176,7 @@
       "damage_note": "Schade/gebrek genoemd; reparatiekosten eerst bepalen",
       "seller_name": "",
       "is_bid": false,
-      "comparables": 18,
+      "comparables": 17,
       "comparable_asking_prices": [
         850.0,
         990.0,
@@ -1188,7 +1188,7 @@
       "resale_high": 1100.0,
       "profit_low": -136.5,
       "profit_high": 26.0,
-      "profit_note": "Vraagprijsmediaan 18 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "profit_note": "Vraagprijsmediaan 17 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
       "estimated_repair": 250,
       "estimated_other_costs": 175,
       "total_investment": 1074.0,
@@ -1196,6 +1196,56 @@
       "deal_score": 90.52,
       "deal_label": "Mogelijke marge, onzeker",
       "rank": 24,
+      "alert_candidate": false
+    },
+    {
+      "id": "mp:m2459955225",
+      "source": "Marktplaats",
+      "title": "Toyota Aygo 1.0 12V Vvt-i 5DRS 2007 Rood",
+      "description": "Alleen bieden geen aparte berichten of ik wil bellen of via een bericht een bedrag noemen aub. Die berichten verwijder ik direct. Toyota aygo 2007 5 deurs te koop vanwege",
+      "make": "Toyota",
+      "model": "Aygo",
+      "year": 2007,
+      "mileage": 200751,
+      "price": 650.0,
+      "price_kind": "MIN_BID",
+      "fuel": "Benzine",
+      "transmission": "Handgeschakeld",
+      "city": "De Kwakel",
+      "postcode": "",
+      "url": "https://www.marktplaats.nl/v/auto-s/toyota/m2459955225-toyota-aygo-1-0-12v-vvt-i-5drs-2007-rood",
+      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/19e0495a-8c06-498e-ae20-c4d3a03c585e?rule=ecg_mp_eps$_83.jpg",
+      "image_urls": [
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/19e0495a-8c06-498e-ae20-c4d3a03c585e?rule=ecg_mp_eps$_83.jpg",
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/35fc05b8-aad0-408b-8519-70e41cce88ee?rule=ecg_mp_eps$_83.jpg"
+      ],
+      "damage": false,
+      "high_risk": false,
+      "price_unverified": false,
+      "price_warning": "",
+      "damage_note": "",
+      "seller_name": "",
+      "is_bid": true,
+      "comparables": 31,
+      "comparable_asking_prices": [
+        650.0,
+        695.0,
+        795.0,
+        990.0,
+        999.0
+      ],
+      "resale_low": 937.5,
+      "resale_high": 1100.0,
+      "profit_low": -137.5,
+      "profit_high": 25.0,
+      "profit_note": "Vraagprijsmediaan 31 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "estimated_repair": 250,
+      "estimated_other_costs": 175,
+      "total_investment": 1075.0,
+      "pricing_confidence": "redelijk",
+      "deal_score": 90.5,
+      "deal_label": "Mogelijke marge, onzeker",
+      "rank": 25,
       "alert_candidate": false
     },
     {
@@ -1245,7 +1295,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 90.24,
       "deal_label": "Mogelijke marge, onzeker",
-      "rank": 25,
+      "rank": 26,
       "alert_candidate": false
     },
     {
@@ -1295,7 +1345,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 83.19,
       "deal_label": "Mogelijke marge, onzeker",
-      "rank": 26,
+      "rank": 27,
       "alert_candidate": false
     },
     {
@@ -1345,7 +1395,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 55.22,
       "deal_label": "Mogelijke marge, onzeker",
-      "rank": 27,
+      "rank": 28,
       "alert_candidate": false
     },
     {
@@ -1395,7 +1445,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 47.22,
       "deal_label": "Mogelijke marge, onzeker",
-      "rank": 28,
+      "rank": 29,
       "alert_candidate": false
     },
     {
@@ -1439,7 +1489,7 @@
       "pricing_confidence": "geen",
       "deal_score": 42.67,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 29,
+      "rank": 30,
       "alert_candidate": false
     },
     {
@@ -1483,7 +1533,7 @@
       "pricing_confidence": "geen",
       "deal_score": 42.66,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 30,
+      "rank": 31,
       "alert_candidate": false
     },
     {
@@ -1527,7 +1577,7 @@
       "pricing_confidence": "geen",
       "deal_score": 42.44,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 31,
+      "rank": 32,
       "alert_candidate": false
     },
     {
@@ -1574,7 +1624,7 @@
       "pricing_confidence": "geen",
       "deal_score": 42.43,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 32,
+      "rank": 33,
       "alert_candidate": false
     },
     {
@@ -1618,7 +1668,7 @@
       "pricing_confidence": "geen",
       "deal_score": 42.43,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 33,
+      "rank": 34,
       "alert_candidate": false
     },
     {
@@ -1662,7 +1712,7 @@
       "pricing_confidence": "geen",
       "deal_score": 42.43,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 34,
+      "rank": 35,
       "alert_candidate": false
     },
     {
@@ -1706,7 +1756,7 @@
       "pricing_confidence": "geen",
       "deal_score": 42.43,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 35,
+      "rank": 36,
       "alert_candidate": false
     },
     {
@@ -1752,7 +1802,7 @@
       "pricing_confidence": "geen",
       "deal_score": 42.21,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 36,
+      "rank": 37,
       "alert_candidate": false
     },
     {
@@ -1796,7 +1846,7 @@
       "pricing_confidence": "geen",
       "deal_score": 42.21,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 37,
+      "rank": 38,
       "alert_candidate": false
     },
     {
@@ -1843,7 +1893,7 @@
       "pricing_confidence": "geen",
       "deal_score": 42.21,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 38,
+      "rank": 39,
       "alert_candidate": false
     },
     {
@@ -1855,7 +1905,7 @@
       "model": "107",
       "year": 2005,
       "mileage": 2015,
-      "price": 695.0,
+      "price": 650.0,
       "price_kind": "FIXED",
       "fuel": "Benzine",
       "transmission": "Handgeschakeld",
@@ -1883,11 +1933,11 @@
       "profit_note": "Geen betrouwbare doorverkoopschatting: te weinig vergelijkbare auto's met bouwjaar en km-stand.",
       "estimated_repair": 250,
       "estimated_other_costs": 175,
-      "total_investment": 1120.0,
+      "total_investment": 1075.0,
       "pricing_confidence": "geen",
-      "deal_score": 42.15,
+      "deal_score": 42.21,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 39,
+      "rank": 40,
       "alert_candidate": false
     },
     {
@@ -1934,7 +1984,7 @@
       "pricing_confidence": "geen",
       "deal_score": 42.11,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 40,
+      "rank": 41,
       "alert_candidate": false
     },
     {
@@ -1980,7 +2030,7 @@
       "pricing_confidence": "geen",
       "deal_score": 42.07,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 41,
+      "rank": 42,
       "alert_candidate": false
     },
     {
@@ -2024,7 +2074,7 @@
       "pricing_confidence": "geen",
       "deal_score": 42.07,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 42,
+      "rank": 43,
       "alert_candidate": false
     },
     {
@@ -2068,7 +2118,7 @@
       "pricing_confidence": "geen",
       "deal_score": 42.07,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 43,
+      "rank": 44,
       "alert_candidate": false
     },
     {
@@ -2112,7 +2162,7 @@
       "pricing_confidence": "geen",
       "deal_score": 42.07,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 44,
+      "rank": 45,
       "alert_candidate": false
     },
     {
@@ -2156,7 +2206,7 @@
       "pricing_confidence": "geen",
       "deal_score": 42.07,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 45,
+      "rank": 46,
       "alert_candidate": false
     },
     {
@@ -2202,7 +2252,7 @@
       "pricing_confidence": "geen",
       "deal_score": 42.07,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 46,
+      "rank": 47,
       "alert_candidate": false
     },
     {
@@ -2248,7 +2298,7 @@
       "pricing_confidence": "geen",
       "deal_score": 42.07,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 47,
+      "rank": 48,
       "alert_candidate": false
     },
     {
@@ -2292,7 +2342,7 @@
       "pricing_confidence": "geen",
       "deal_score": 42.07,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 48,
+      "rank": 49,
       "alert_candidate": false
     },
     {
@@ -2336,7 +2386,7 @@
       "pricing_confidence": "geen",
       "deal_score": 42.0,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 49,
+      "rank": 50,
       "alert_candidate": false
     },
     {
@@ -2383,7 +2433,7 @@
       "pricing_confidence": "geen",
       "deal_score": 42.0,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 50,
+      "rank": 51,
       "alert_candidate": false
     },
     {
@@ -2430,7 +2480,7 @@
       "pricing_confidence": "geen",
       "deal_score": 42.0,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 51,
+      "rank": 52,
       "alert_candidate": false
     },
     {
@@ -2474,7 +2524,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.93,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 52,
+      "rank": 53,
       "alert_candidate": false
     },
     {
@@ -2518,7 +2568,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.93,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 53,
+      "rank": 54,
       "alert_candidate": false
     },
     {
@@ -2562,7 +2612,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.93,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 54,
+      "rank": 55,
       "alert_candidate": false
     },
     {
@@ -2609,7 +2659,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.93,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 55,
+      "rank": 56,
       "alert_candidate": false
     },
     {
@@ -2653,7 +2703,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.86,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 56,
+      "rank": 57,
       "alert_candidate": false
     },
     {
@@ -2699,7 +2749,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.86,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 57,
+      "rank": 58,
       "alert_candidate": false
     },
     {
@@ -2743,7 +2793,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.86,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 58,
+      "rank": 59,
       "alert_candidate": false
     },
     {
@@ -2787,7 +2837,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.86,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 59,
+      "rank": 60,
       "alert_candidate": false
     },
     {
@@ -2831,7 +2881,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.86,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 60,
+      "rank": 61,
       "alert_candidate": false
     },
     {
@@ -2875,7 +2925,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.86,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 61,
+      "rank": 62,
       "alert_candidate": false
     },
     {
@@ -2922,7 +2972,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.79,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 62,
+      "rank": 63,
       "alert_candidate": false
     },
     {
@@ -2966,7 +3016,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.79,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 63,
+      "rank": 64,
       "alert_candidate": false
     },
     {
@@ -3010,7 +3060,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.79,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 64,
+      "rank": 65,
       "alert_candidate": false
     },
     {
@@ -3054,7 +3104,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.79,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 65,
+      "rank": 66,
       "alert_candidate": false
     },
     {
@@ -3098,7 +3148,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.79,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 66,
+      "rank": 67,
       "alert_candidate": false
     },
     {
@@ -3144,7 +3194,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.79,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 67,
+      "rank": 68,
       "alert_candidate": false
     },
     {
@@ -3188,7 +3238,51 @@
       "pricing_confidence": "geen",
       "deal_score": 41.79,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 68,
+      "rank": 69,
+      "alert_candidate": false
+    },
+    {
+      "id": "mp:m2463465709",
+      "source": "Marktplaats",
+      "title": "Volkswagen Polo 1.2 6V 44KW 5D My2009 2011 tik in de motor",
+      "description": "Tik in de motor! Algemene informatie aantal deuren: 3 kleur: wit technische informatie vermogen: 51 kw (59 pk) transmissie: 5 versnellingen, handgeschakeld bandenmaat: 18",
+      "make": "Volkswagen",
+      "model": "Polo",
+      "year": 2011,
+      "mileage": null,
+      "price": 950.0,
+      "price_kind": "FIXED",
+      "fuel": "Benzine",
+      "transmission": "Handgeschakeld",
+      "city": "Maasbommel",
+      "postcode": "",
+      "url": "https://www.marktplaats.nl/v/auto-s/volkswagen/m2463465709-volkswagen-polo-1-2-6v-44kw-5d-my2009-2011-tik-in-de-motor",
+      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/0a19b82e-6885-4545-93e4-98ce8be810b7?rule=ecg_mp_eps$_83.jpg",
+      "image_urls": [
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/0a19b82e-6885-4545-93e4-98ce8be810b7?rule=ecg_mp_eps$_83.jpg",
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/5cc3446c-05fc-49b8-a75d-ec3d39a7cb95?rule=ecg_mp_eps$_83.jpg"
+      ],
+      "damage": false,
+      "high_risk": false,
+      "price_unverified": false,
+      "price_warning": "",
+      "damage_note": "",
+      "seller_name": "",
+      "is_bid": false,
+      "comparables": 0,
+      "comparable_asking_prices": [],
+      "resale_low": null,
+      "resale_high": null,
+      "profit_low": null,
+      "profit_high": null,
+      "profit_note": "Geen betrouwbare doorverkoopschatting: te weinig vergelijkbare auto's met bouwjaar en km-stand.",
+      "estimated_repair": 250,
+      "estimated_other_costs": 175,
+      "total_investment": 1375.0,
+      "pricing_confidence": "geen",
+      "deal_score": 41.79,
+      "deal_label": "Niet voldoende vergelijkingsgegevens",
+      "rank": 70,
       "alert_candidate": false
     },
     {
@@ -3232,7 +3326,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.72,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 69,
+      "rank": 71,
       "alert_candidate": false
     },
     {
@@ -3276,7 +3370,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.72,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 70,
+      "rank": 72,
       "alert_candidate": false
     },
     {
@@ -3323,7 +3417,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.72,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 71,
+      "rank": 73,
       "alert_candidate": false
     },
     {
@@ -3369,7 +3463,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.72,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 72,
+      "rank": 74,
       "alert_candidate": false
     },
     {
@@ -3416,7 +3510,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.72,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 73,
+      "rank": 75,
       "alert_candidate": false
     },
     {
@@ -3460,7 +3554,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.72,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 74,
+      "rank": 76,
       "alert_candidate": false
     },
     {
@@ -3504,7 +3598,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.72,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 75,
+      "rank": 77,
       "alert_candidate": false
     },
     {
@@ -3550,7 +3644,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.72,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 76,
+      "rank": 78,
       "alert_candidate": false
     },
     {
@@ -3594,7 +3688,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.72,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 77,
+      "rank": 79,
       "alert_candidate": false
     },
     {
@@ -3638,7 +3732,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.72,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 78,
+      "rank": 80,
       "alert_candidate": false
     },
     {
@@ -3684,7 +3778,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.72,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 79,
+      "rank": 81,
       "alert_candidate": false
     },
     {
@@ -3728,7 +3822,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.72,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 80,
+      "rank": 82,
       "alert_candidate": false
     },
     {
@@ -3775,7 +3869,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.72,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 81,
+      "rank": 83,
       "alert_candidate": false
     },
     {
@@ -3819,7 +3913,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.72,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 82,
+      "rank": 84,
       "alert_candidate": false
     },
     {
@@ -3863,7 +3957,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.72,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 83,
+      "rank": 85,
       "alert_candidate": false
     },
     {
@@ -3907,7 +4001,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.71,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 84,
+      "rank": 86,
       "alert_candidate": false
     },
     {
@@ -3951,7 +4045,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.71,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 85,
+      "rank": 87,
       "alert_candidate": false
     },
     {
@@ -3995,7 +4089,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.71,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 86,
+      "rank": 88,
       "alert_candidate": false
     },
     {
@@ -4039,53 +4133,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.71,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 87,
-      "alert_candidate": false
-    },
-    {
-      "id": "mp:m2462916422",
-      "source": "Marktplaats",
-      "title": "Volkswagen Polo 1.2 TDI BlueMotion Comfortline",
-      "description": "Volkswagen polo 1.2 Tdi bluemotion comfortline kenteken: 68-nkn-2 merk: volkswagen model: polo apk tot: 10-03-2027 tellerstand: 390920 km carrosserievorm: hatchback aanta",
-      "make": "Volkswagen",
-      "model": "Polo",
-      "year": 2010,
-      "mileage": 390920,
-      "price": 1000.0,
-      "price_kind": "FIXED",
-      "fuel": "Diesel",
-      "transmission": "Handgeschakeld",
-      "city": "Amersfoort",
-      "postcode": "",
-      "url": "https://www.marktplaats.nl/v/auto-s/volkswagen/m2462916422-volkswagen-polo-1-2-tdi-bluemotion-comfortline",
-      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/32abee19-c840-48b3-8fca-6fcce34a3676?rule=ecg_mp_eps$_83.jpg",
-      "image_urls": [
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/32abee19-c840-48b3-8fca-6fcce34a3676?rule=ecg_mp_eps$_83.jpg",
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/5f91e573-f7b3-4fab-9f17-cbc1aaaa2744?rule=ecg_mp_eps$_83.jpg"
-      ],
-      "damage": false,
-      "high_risk": false,
-      "price_unverified": false,
-      "price_warning": "",
-      "damage_note": "",
-      "seller_name": "",
-      "is_bid": false,
-      "comparables": 1,
-      "comparable_asking_prices": [
-        699.0
-      ],
-      "resale_low": null,
-      "resale_high": null,
-      "profit_low": null,
-      "profit_high": null,
-      "profit_note": "Geen betrouwbare doorverkoopschatting: te weinig vergelijkbare auto's met bouwjaar en km-stand.",
-      "estimated_repair": 250,
-      "estimated_other_costs": 175,
-      "total_investment": 1425.0,
-      "pricing_confidence": "geen",
-      "deal_score": 41.71,
-      "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 88,
+      "rank": 89,
       "alert_candidate": false
     },
     {
@@ -4129,7 +4177,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.64,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 89,
+      "rank": 90,
       "alert_candidate": false
     },
     {
@@ -4176,7 +4224,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.59,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 90,
+      "rank": 91,
       "alert_candidate": false
     },
     {
@@ -4220,7 +4268,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.57,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 91,
+      "rank": 92,
       "alert_candidate": false
     },
     {
@@ -4264,7 +4312,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.57,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 92,
+      "rank": 93,
       "alert_candidate": false
     },
     {
@@ -4308,7 +4356,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.57,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 93,
+      "rank": 94,
       "alert_candidate": false
     },
     {
@@ -4352,7 +4400,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.5,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 94,
+      "rank": 95,
       "alert_candidate": false
     },
     {
@@ -4396,7 +4444,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.5,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 95,
+      "rank": 96,
       "alert_candidate": false
     },
     {
@@ -4440,7 +4488,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.5,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 96,
+      "rank": 97,
       "alert_candidate": false
     },
     {
@@ -4484,7 +4532,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.43,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 97,
+      "rank": 98,
       "alert_candidate": false
     },
     {
@@ -4528,7 +4576,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.43,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 98,
+      "rank": 99,
       "alert_candidate": false
     },
     {
@@ -4572,7 +4620,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.43,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 99,
+      "rank": 100,
       "alert_candidate": false
     },
     {
@@ -4619,7 +4667,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.37,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 100,
+      "rank": 101,
       "alert_candidate": false
     },
     {
@@ -4663,7 +4711,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.36,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 101,
+      "rank": 102,
       "alert_candidate": false
     },
     {
@@ -4709,7 +4757,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.36,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 102,
+      "rank": 103,
       "alert_candidate": false
     },
     {
@@ -4753,7 +4801,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.36,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 103,
+      "rank": 104,
       "alert_candidate": false
     },
     {
@@ -4797,7 +4845,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.36,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 104,
+      "rank": 105,
       "alert_candidate": false
     },
     {
@@ -4841,7 +4889,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.29,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 105,
+      "rank": 106,
       "alert_candidate": false
     },
     {
@@ -4885,7 +4933,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.29,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 106,
+      "rank": 107,
       "alert_candidate": false
     },
     {
@@ -4929,7 +4977,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.15,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 107,
+      "rank": 108,
       "alert_candidate": false
     },
     {
@@ -4973,7 +5021,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.14,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 108,
+      "rank": 109,
       "alert_candidate": false
     },
     {
@@ -5017,7 +5065,7 @@
       "pricing_confidence": "geen",
       "deal_score": 41.09,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 109,
+      "rank": 110,
       "alert_candidate": false
     },
     {
@@ -5063,7 +5111,7 @@
       "pricing_confidence": "geen",
       "deal_score": 40.58,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 110,
+      "rank": 111,
       "alert_candidate": false
     },
     {
@@ -5107,7 +5155,7 @@
       "pricing_confidence": "geen",
       "deal_score": 40.07,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 111,
+      "rank": 112,
       "alert_candidate": false
     },
     {
@@ -5151,7 +5199,7 @@
       "pricing_confidence": "geen",
       "deal_score": 39.65,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 112,
+      "rank": 113,
       "alert_candidate": false
     },
     {
@@ -5195,7 +5243,7 @@
       "pricing_confidence": "geen",
       "deal_score": 39.65,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 113,
+      "rank": 114,
       "alert_candidate": false
     },
     {
@@ -5239,7 +5287,7 @@
       "pricing_confidence": "geen",
       "deal_score": 39.58,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 114,
+      "rank": 115,
       "alert_candidate": false
     },
     {
@@ -5286,7 +5334,7 @@
       "pricing_confidence": "geen",
       "deal_score": 39.57,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 115,
+      "rank": 116,
       "alert_candidate": false
     },
     {
@@ -5329,50 +5377,6 @@
       "total_investment": 2925.0,
       "pricing_confidence": "geen",
       "deal_score": 39.57,
-      "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 116,
-      "alert_candidate": false
-    },
-    {
-      "id": "mp:m2463098195",
-      "source": "Marktplaats",
-      "title": "Seat Ibiza SC 1.2 TDI COPA | NAP Carplay Cruise Airco",
-      "description": "Nap | carplay | cruise control | airco |nieuwe apk | lichtmetalen velgen 15\" algemene informatie aantal deuren: 3 kleur: zwart technische informatie vermogen: 55 kw (75 p",
-      "make": "Seat",
-      "model": "Ibiza",
-      "year": 2012,
-      "mileage": 269425,
-      "price": 2590.0,
-      "price_kind": "FIXED",
-      "fuel": "Diesel",
-      "transmission": "Handgeschakeld",
-      "city": "Bunnik",
-      "postcode": "",
-      "url": "https://www.marktplaats.nl/v/auto-s/seat/m2463098195-seat-ibiza-sc-1-2-tdi-copa-nap-carplay-cruise-airco",
-      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/8f403e03-96a2-4a34-8bc7-7cd3435f353e?rule=ecg_mp_eps$_83.jpg",
-      "image_urls": [
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/8f403e03-96a2-4a34-8bc7-7cd3435f353e?rule=ecg_mp_eps$_83.jpg",
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/d33fa53c-efc1-47a5-894e-1c080b80757f?rule=ecg_mp_eps$_83.jpg"
-      ],
-      "damage": false,
-      "high_risk": false,
-      "price_unverified": false,
-      "price_warning": "",
-      "damage_note": "",
-      "seller_name": "",
-      "is_bid": false,
-      "comparables": 0,
-      "comparable_asking_prices": [],
-      "resale_low": null,
-      "resale_high": null,
-      "profit_low": null,
-      "profit_high": null,
-      "profit_note": "Geen betrouwbare doorverkoopschatting: te weinig vergelijkbare auto's met bouwjaar en km-stand.",
-      "estimated_repair": 250,
-      "estimated_other_costs": 175,
-      "total_investment": 3015.0,
-      "pricing_confidence": "geen",
-      "deal_score": 39.44,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
       "rank": 117,
       "alert_candidate": false
@@ -5919,50 +5923,6 @@
       "alert_candidate": false
     },
     {
-      "id": "mp:m2463088226",
-      "source": "Marktplaats",
-      "title": "Kia (Pro) Cee d 1.6 GDI 5DR 2012 Zwart Top conditie",
-      "description": "Zeer mooie kia ceed van bouwjaar 2012 deze auto is van a tot z dealer onderhouden. Auto is afkomstig van de eerste eigenaar. Rijdt en schakelt fantastisch ( rijdt en ziet",
-      "make": "Kia",
-      "model": "Pro",
-      "year": 2012,
-      "mileage": 297182,
-      "price": 3590.0,
-      "price_kind": "FIXED",
-      "fuel": "Benzine",
-      "transmission": "Handgeschakeld",
-      "city": "Sittard",
-      "postcode": "",
-      "url": "https://www.marktplaats.nl/v/auto-s/kia/m2463088226-kia-pro-cee-d-1-6-gdi-5dr-2012-zwart-top-conditie",
-      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/a096bbf7-6bad-4426-97ad-1b5a31010ba1?rule=ecg_mp_eps$_83.jpg",
-      "image_urls": [
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/a096bbf7-6bad-4426-97ad-1b5a31010ba1?rule=ecg_mp_eps$_83.jpg",
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/5644422d-21e1-479c-9f5d-ff307e170d54?rule=ecg_mp_eps$_83.jpg"
-      ],
-      "damage": false,
-      "high_risk": false,
-      "price_unverified": false,
-      "price_warning": "",
-      "damage_note": "",
-      "seller_name": "",
-      "is_bid": false,
-      "comparables": 0,
-      "comparable_asking_prices": [],
-      "resale_low": null,
-      "resale_high": null,
-      "profit_low": null,
-      "profit_high": null,
-      "profit_note": "Geen betrouwbare doorverkoopschatting: te weinig vergelijkbare auto's met bouwjaar en km-stand.",
-      "estimated_repair": 250,
-      "estimated_other_costs": 175,
-      "total_investment": 4015.0,
-      "pricing_confidence": "geen",
-      "deal_score": 38.01,
-      "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 130,
-      "alert_candidate": false
-    },
-    {
       "id": "mp:m2454754290",
       "source": "Marktplaats",
       "title": "Toyota Prius 1.8 Dynamic Xenon/Navi EXPORT/HANDEL",
@@ -6003,7 +5963,7 @@
       "pricing_confidence": "geen",
       "deal_score": 37.51,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 131,
+      "rank": 130,
       "alert_candidate": false
     },
     {
@@ -6047,7 +6007,7 @@
       "pricing_confidence": "geen",
       "deal_score": 37.51,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 132,
+      "rank": 131,
       "alert_candidate": false
     },
     {
@@ -6093,7 +6053,7 @@
       "pricing_confidence": "geen",
       "deal_score": 37.51,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 133,
+      "rank": 132,
       "alert_candidate": false
     },
     {
@@ -6137,7 +6097,7 @@
       "pricing_confidence": "geen",
       "deal_score": 37.5,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 134,
+      "rank": 133,
       "alert_candidate": false
     },
     {
@@ -6181,7 +6141,7 @@
       "pricing_confidence": "geen",
       "deal_score": 37.5,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 135,
+      "rank": 134,
       "alert_candidate": false
     },
     {
@@ -6225,7 +6185,7 @@
       "pricing_confidence": "geen",
       "deal_score": 37.5,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 136,
+      "rank": 135,
       "alert_candidate": false
     },
     {
@@ -6269,7 +6229,7 @@
       "pricing_confidence": "geen",
       "deal_score": 37.44,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 137,
+      "rank": 136,
       "alert_candidate": false
     },
     {
@@ -6313,7 +6273,7 @@
       "pricing_confidence": "geen",
       "deal_score": 37.43,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 138,
+      "rank": 137,
       "alert_candidate": false
     },
     {
@@ -6357,7 +6317,7 @@
       "pricing_confidence": "geen",
       "deal_score": 37.07,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 139,
+      "rank": 138,
       "alert_candidate": false
     },
     {
@@ -6401,7 +6361,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.79,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 140,
+      "rank": 139,
       "alert_candidate": false
     },
     {
@@ -6445,7 +6405,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.79,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 141,
+      "rank": 140,
       "alert_candidate": false
     },
     {
@@ -6491,7 +6451,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.79,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 142,
+      "rank": 141,
       "alert_candidate": false
     },
     {
@@ -6535,7 +6495,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.79,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 143,
+      "rank": 142,
       "alert_candidate": false
     },
     {
@@ -6579,7 +6539,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.79,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 144,
+      "rank": 143,
       "alert_candidate": false
     },
     {
@@ -6620,7 +6580,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.71,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 145,
+      "rank": 144,
       "alert_candidate": false
     },
     {
@@ -6667,7 +6627,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.71,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 146,
+      "rank": 145,
       "alert_candidate": false
     },
     {
@@ -6711,7 +6671,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.71,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 147,
+      "rank": 146,
       "alert_candidate": false
     },
     {
@@ -6755,7 +6715,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.64,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 148,
+      "rank": 147,
       "alert_candidate": false
     },
     {
@@ -6799,7 +6759,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.64,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 149,
+      "rank": 148,
       "alert_candidate": false
     },
     {
@@ -6843,7 +6803,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.62,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 150,
+      "rank": 149,
       "alert_candidate": false
     },
     {
@@ -6887,7 +6847,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.5,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 151,
+      "rank": 150,
       "alert_candidate": false
     },
     {
@@ -6931,7 +6891,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.5,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 152,
+      "rank": 151,
       "alert_candidate": false
     },
     {
@@ -6975,7 +6935,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.43,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 153,
+      "rank": 152,
       "alert_candidate": false
     },
     {
@@ -7019,7 +6979,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.43,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 154,
+      "rank": 153,
       "alert_candidate": false
     },
     {
@@ -7063,7 +7023,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.43,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 155,
+      "rank": 154,
       "alert_candidate": false
     },
     {
@@ -7107,7 +7067,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.43,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 156,
+      "rank": 155,
       "alert_candidate": false
     },
     {
@@ -7151,7 +7111,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.43,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 157,
+      "rank": 156,
       "alert_candidate": false
     },
     {
@@ -7195,51 +7155,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.36,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 158,
-      "alert_candidate": false
-    },
-    {
-      "id": "mp:m2463398353",
-      "source": "Marktplaats",
-      "title": "Renault Master 2.3 DCI 81KW 2015",
-      "description": "Te koop een renault l2h2 altijd netjes onderhouden prijs is ex btw",
-      "make": "Renault",
-      "model": "Master",
-      "year": 2015,
-      "mileage": null,
-      "price": 4750.0,
-      "price_kind": "FIXED",
-      "fuel": "Diesel",
-      "transmission": "Handgeschakeld",
-      "city": "Enschede",
-      "postcode": "",
-      "url": "https://www.marktplaats.nl/v/auto-s/bestelauto-s/m2463398353-renault-master-2-3-dci-81kw-2015",
-      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/fcbf25d8-d43a-48c5-8a27-4d25c59a3d76?rule=ecg_mp_eps$_83.jpg",
-      "image_urls": [
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/fcbf25d8-d43a-48c5-8a27-4d25c59a3d76?rule=ecg_mp_eps$_83.jpg",
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/e1656a3b-6c85-4b8b-9c6e-a55532ae1641?rule=ecg_mp_eps$_83.jpg"
-      ],
-      "damage": false,
-      "high_risk": false,
-      "price_unverified": false,
-      "price_warning": "",
-      "damage_note": "",
-      "seller_name": "",
-      "is_bid": false,
-      "comparables": 0,
-      "comparable_asking_prices": [],
-      "resale_low": null,
-      "resale_high": null,
-      "profit_low": null,
-      "profit_high": null,
-      "profit_note": "Geen betrouwbare doorverkoopschatting: te weinig vergelijkbare auto's met bouwjaar en km-stand.",
-      "estimated_repair": 250,
-      "estimated_other_costs": 175,
-      "total_investment": 5175.0,
-      "pricing_confidence": "geen",
-      "deal_score": 36.36,
-      "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 159,
+      "rank": 157,
       "alert_candidate": false
     },
     {
@@ -7283,7 +7199,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.29,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 160,
+      "rank": 158,
       "alert_candidate": false
     },
     {
@@ -7327,7 +7243,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.29,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 161,
+      "rank": 159,
       "alert_candidate": false
     },
     {
@@ -7371,7 +7287,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.26,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 162,
+      "rank": 160,
       "alert_candidate": false
     },
     {
@@ -7415,51 +7331,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.21,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 163,
-      "alert_candidate": false
-    },
-    {
-      "id": "mp:m2459955225",
-      "source": "Marktplaats",
-      "title": "Toyota Aygo 1.0 12V Vvt-i 5DRS 2007 Rood",
-      "description": "Bieden geen aparte berichten of ik wil bellen of via een bericht een bedrag noemenaub. Toyota aygo 2007 5 deurs te koop vanwege aanschaf andere auto. Bijna 10 jaar in ons",
-      "make": "Toyota",
-      "model": "Aygo",
-      "year": 2007,
-      "mileage": null,
-      "price": 650.0,
-      "price_kind": "MIN_BID",
-      "fuel": "Benzine",
-      "transmission": "Handgeschakeld",
-      "city": "De Kwakel",
-      "postcode": "",
-      "url": "https://www.marktplaats.nl/v/auto-s/toyota/m2459955225-toyota-aygo-1-0-12v-vvt-i-5drs-2007-rood",
-      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/19e0495a-8c06-498e-ae20-c4d3a03c585e?rule=ecg_mp_eps$_83.jpg",
-      "image_urls": [
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/19e0495a-8c06-498e-ae20-c4d3a03c585e?rule=ecg_mp_eps$_83.jpg",
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/35fc05b8-aad0-408b-8519-70e41cce88ee?rule=ecg_mp_eps$_83.jpg"
-      ],
-      "damage": false,
-      "high_risk": false,
-      "price_unverified": false,
-      "price_warning": "",
-      "damage_note": "",
-      "seller_name": "",
-      "is_bid": true,
-      "comparables": 0,
-      "comparable_asking_prices": [],
-      "resale_low": null,
-      "resale_high": null,
-      "profit_low": null,
-      "profit_high": null,
-      "profit_note": "Geen betrouwbare doorverkoopschatting: te weinig vergelijkbare auto's met bouwjaar en km-stand.",
-      "estimated_repair": 250,
-      "estimated_other_costs": 175,
-      "total_investment": 1075.0,
-      "pricing_confidence": "geen",
-      "deal_score": 36.21,
-      "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 164,
+      "rank": 161,
       "alert_candidate": false
     },
     {
@@ -7503,7 +7375,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.14,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 165,
+      "rank": 162,
       "alert_candidate": false
     },
     {
@@ -7547,7 +7419,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.14,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 166,
+      "rank": 163,
       "alert_candidate": false
     },
     {
@@ -7591,7 +7463,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.14,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 167,
+      "rank": 164,
       "alert_candidate": false
     },
     {
@@ -7635,7 +7507,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.08,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 168,
+      "rank": 165,
       "alert_candidate": false
     },
     {
@@ -7679,7 +7551,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.08,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 169,
+      "rank": 166,
       "alert_candidate": false
     },
     {
@@ -7723,7 +7595,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.07,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 170,
+      "rank": 167,
       "alert_candidate": false
     },
     {
@@ -7767,7 +7639,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.07,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 171,
+      "rank": 168,
       "alert_candidate": false
     },
     {
@@ -7811,7 +7683,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.07,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 172,
+      "rank": 169,
       "alert_candidate": false
     },
     {
@@ -7855,7 +7727,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.07,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 173,
+      "rank": 170,
       "alert_candidate": false
     },
     {
@@ -7901,7 +7773,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.07,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 174,
+      "rank": 171,
       "alert_candidate": false
     },
     {
@@ -7945,7 +7817,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.07,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 175,
+      "rank": 172,
       "alert_candidate": false
     },
     {
@@ -7991,7 +7863,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.07,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 176,
+      "rank": 173,
       "alert_candidate": false
     },
     {
@@ -8035,7 +7907,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.07,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 177,
+      "rank": 174,
       "alert_candidate": false
     },
     {
@@ -8079,7 +7951,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.07,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 178,
+      "rank": 175,
       "alert_candidate": false
     },
     {
@@ -8123,7 +7995,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.07,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 179,
+      "rank": 176,
       "alert_candidate": false
     },
     {
@@ -8167,7 +8039,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.07,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 180,
+      "rank": 177,
       "alert_candidate": false
     },
     {
@@ -8214,7 +8086,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.01,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 181,
+      "rank": 178,
       "alert_candidate": false
     },
     {
@@ -8258,7 +8130,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.01,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 182,
+      "rank": 179,
       "alert_candidate": false
     },
     {
@@ -8302,7 +8174,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.0,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 183,
+      "rank": 180,
       "alert_candidate": false
     },
     {
@@ -8346,7 +8218,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.0,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 184,
+      "rank": 181,
       "alert_candidate": false
     },
     {
@@ -8390,7 +8262,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.0,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 185,
+      "rank": 182,
       "alert_candidate": false
     },
     {
@@ -8434,7 +8306,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.0,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 186,
+      "rank": 183,
       "alert_candidate": false
     },
     {
@@ -8478,7 +8350,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.0,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 187,
+      "rank": 184,
       "alert_candidate": false
     },
     {
@@ -8522,7 +8394,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36.0,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 188,
+      "rank": 185,
       "alert_candidate": false
     },
     {
@@ -8566,51 +8438,7 @@
       "pricing_confidence": "geen",
       "deal_score": 36,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 189,
-      "alert_candidate": false
-    },
-    {
-      "id": "mp:m2442705343",
-      "source": "Marktplaats",
-      "title": "Peugeot 1007 1.4 2007 Zwart - Nieuwe APK!",
-      "description": "Aangeboden: nieuwe apk!! Nette en zeer praktische peugeot 1007 1.4. Een ideale stadsauto, eerste auto of zuinige dagelijkse auto met een comfortabele hoge zit en de beken",
-      "make": "Peugeot",
-      "model": "Zwart",
-      "year": 2007,
-      "mileage": 206130,
-      "price": 850.0,
-      "price_kind": "MIN_BID",
-      "fuel": "Benzine",
-      "transmission": "Handgeschakeld",
-      "city": "Haren Gn",
-      "postcode": "",
-      "url": "https://www.marktplaats.nl/v/auto-s/peugeot/m2442705343-peugeot-1007-1-4-2007-zwart-nieuwe-apk",
-      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/42ca08d8-7a85-4609-bd79-24ad42a18788?rule=ecg_mp_eps$_83.jpg",
-      "image_urls": [
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/42ca08d8-7a85-4609-bd79-24ad42a18788?rule=ecg_mp_eps$_83.jpg",
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/7d715f4c-94fc-4281-8a10-0743f0e0e82c?rule=ecg_mp_eps$_83.jpg"
-      ],
-      "damage": false,
-      "high_risk": false,
-      "price_unverified": false,
-      "price_warning": "",
-      "damage_note": "",
-      "seller_name": "",
-      "is_bid": true,
-      "comparables": 0,
-      "comparable_asking_prices": [],
-      "resale_low": null,
-      "resale_high": null,
-      "profit_low": null,
-      "profit_high": null,
-      "profit_note": "Geen betrouwbare doorverkoopschatting: te weinig vergelijkbare auto's met bouwjaar en km-stand.",
-      "estimated_repair": 250,
-      "estimated_other_costs": 175,
-      "total_investment": 1275.0,
-      "pricing_confidence": "geen",
-      "deal_score": 35.93,
-      "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 190,
+      "rank": 186,
       "alert_candidate": false
     },
     {
@@ -8654,7 +8482,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.93,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 191,
+      "rank": 187,
       "alert_candidate": false
     },
     {
@@ -8698,7 +8526,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.93,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 192,
+      "rank": 188,
       "alert_candidate": false
     },
     {
@@ -8742,7 +8570,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.93,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 193,
+      "rank": 189,
       "alert_candidate": false
     },
     {
@@ -8786,7 +8614,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.93,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 194,
+      "rank": 190,
       "alert_candidate": false
     },
     {
@@ -8833,7 +8661,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.93,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 195,
+      "rank": 191,
       "alert_candidate": false
     },
     {
@@ -8877,7 +8705,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.93,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 196,
+      "rank": 192,
       "alert_candidate": false
     },
     {
@@ -8921,7 +8749,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.93,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 197,
+      "rank": 193,
       "alert_candidate": false
     },
     {
@@ -8965,7 +8793,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.93,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 198,
+      "rank": 194,
       "alert_candidate": false
     },
     {
@@ -9009,7 +8837,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.86,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 199,
+      "rank": 195,
       "alert_candidate": false
     },
     {
@@ -9053,7 +8881,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.86,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 200,
+      "rank": 196,
       "alert_candidate": false
     },
     {
@@ -9099,7 +8927,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.86,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 201,
+      "rank": 197,
       "alert_candidate": false
     },
     {
@@ -9143,7 +8971,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.86,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 202,
+      "rank": 198,
       "alert_candidate": false
     },
     {
@@ -9187,7 +9015,51 @@
       "pricing_confidence": "geen",
       "deal_score": 35.86,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 203,
+      "rank": 199,
+      "alert_candidate": false
+    },
+    {
+      "id": "mp:m2454690449",
+      "source": "Marktplaats",
+      "title": "Peugeot 206 2.0 16V CC | 136 PK | Cabrio | APK tot mei 2027",
+      "description": "Leuke en sportieve peugeot 206 cc met de krachtige 2.0 16V motor van 136 pk! Een compacte cabrio waarmee je heerlijk kunt rijden en genieten van open rijden dankzij het e",
+      "make": "Peugeot",
+      "model": "206",
+      "year": 2003,
+      "mileage": null,
+      "price": 900.0,
+      "price_kind": "MIN_BID",
+      "fuel": "Benzine",
+      "transmission": "Handgeschakeld",
+      "city": "Leeuwarden",
+      "postcode": "",
+      "url": "https://www.marktplaats.nl/v/auto-s/peugeot/m2454690449-peugeot-206-2-0-16v-cc-136-pk-cabrio-apk-tot-mei-2027",
+      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/a2706dc0-bea4-4372-8c84-e912dfffb58d?rule=ecg_mp_eps$_83.jpg",
+      "image_urls": [
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/a2706dc0-bea4-4372-8c84-e912dfffb58d?rule=ecg_mp_eps$_83.jpg",
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/648d493e-c99f-4eb8-872e-490a361113b2?rule=ecg_mp_eps$_83.jpg"
+      ],
+      "damage": false,
+      "high_risk": false,
+      "price_unverified": false,
+      "price_warning": "",
+      "damage_note": "",
+      "seller_name": "",
+      "is_bid": true,
+      "comparables": 0,
+      "comparable_asking_prices": [],
+      "resale_low": null,
+      "resale_high": null,
+      "profit_low": null,
+      "profit_high": null,
+      "profit_note": "Geen betrouwbare doorverkoopschatting: te weinig vergelijkbare auto's met bouwjaar en km-stand.",
+      "estimated_repair": 250,
+      "estimated_other_costs": 175,
+      "total_investment": 1325.0,
+      "pricing_confidence": "geen",
+      "deal_score": 35.86,
+      "deal_label": "Niet voldoende vergelijkingsgegevens",
+      "rank": 200,
       "alert_candidate": false
     },
     {
@@ -9233,7 +9105,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.86,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 204,
+      "rank": 201,
       "alert_candidate": false
     },
     {
@@ -9277,7 +9149,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.86,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 205,
+      "rank": 202,
       "alert_candidate": false
     },
     {
@@ -9321,51 +9193,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.83,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 206,
-      "alert_candidate": false
-    },
-    {
-      "id": "mp:m2454690449",
-      "source": "Marktplaats",
-      "title": "Peugeot 206 2.0 16V CC | 136 PK | Cabrio | APK tot mei 2027",
-      "description": "Leuke en sportieve peugeot 206 cc met de krachtige 2.0 16V motor van 136 pk! Een compacte cabrio waarmee je heerlijk kunt rijden en genieten van open rijden dankzij het e",
-      "make": "Peugeot",
-      "model": "206",
-      "year": 2003,
-      "mileage": null,
-      "price": 949.0,
-      "price_kind": "MIN_BID",
-      "fuel": "Benzine",
-      "transmission": "Handgeschakeld",
-      "city": "Leeuwarden",
-      "postcode": "",
-      "url": "https://www.marktplaats.nl/v/auto-s/peugeot/m2454690449-peugeot-206-2-0-16v-cc-136-pk-cabrio-apk-tot-mei-2027",
-      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/a2706dc0-bea4-4372-8c84-e912dfffb58d?rule=ecg_mp_eps$_83.jpg",
-      "image_urls": [
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/a2706dc0-bea4-4372-8c84-e912dfffb58d?rule=ecg_mp_eps$_83.jpg",
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/648d493e-c99f-4eb8-872e-490a361113b2?rule=ecg_mp_eps$_83.jpg"
-      ],
-      "damage": false,
-      "high_risk": false,
-      "price_unverified": false,
-      "price_warning": "",
-      "damage_note": "",
-      "seller_name": "",
-      "is_bid": true,
-      "comparables": 0,
-      "comparable_asking_prices": [],
-      "resale_low": null,
-      "resale_high": null,
-      "profit_low": null,
-      "profit_high": null,
-      "profit_note": "Geen betrouwbare doorverkoopschatting: te weinig vergelijkbare auto's met bouwjaar en km-stand.",
-      "estimated_repair": 250,
-      "estimated_other_costs": 175,
-      "total_investment": 1374.0,
-      "pricing_confidence": "geen",
-      "deal_score": 35.79,
-      "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 207,
+      "rank": 203,
       "alert_candidate": false
     },
     {
@@ -9409,7 +9237,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.79,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 208,
+      "rank": 204,
       "alert_candidate": false
     },
     {
@@ -9453,7 +9281,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.79,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 209,
+      "rank": 205,
       "alert_candidate": false
     },
     {
@@ -9499,7 +9327,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.79,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 210,
+      "rank": 206,
       "alert_candidate": false
     },
     {
@@ -9543,7 +9371,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.79,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 211,
+      "rank": 207,
       "alert_candidate": false
     },
     {
@@ -9587,7 +9415,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.79,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 212,
+      "rank": 208,
       "alert_candidate": false
     },
     {
@@ -9631,7 +9459,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.79,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 213,
+      "rank": 209,
       "alert_candidate": false
     },
     {
@@ -9675,7 +9503,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.75,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 214,
+      "rank": 210,
       "alert_candidate": false
     },
     {
@@ -9719,7 +9547,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.75,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 215,
+      "rank": 211,
       "alert_candidate": false
     },
     {
@@ -9763,7 +9591,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.72,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 216,
+      "rank": 212,
       "alert_candidate": false
     },
     {
@@ -9807,7 +9635,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.72,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 217,
+      "rank": 213,
       "alert_candidate": false
     },
     {
@@ -9851,7 +9679,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.72,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 218,
+      "rank": 214,
       "alert_candidate": false
     },
     {
@@ -9897,7 +9725,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.72,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 219,
+      "rank": 215,
       "alert_candidate": false
     },
     {
@@ -9943,7 +9771,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.72,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 220,
+      "rank": 216,
       "alert_candidate": false
     },
     {
@@ -9990,7 +9818,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.72,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 221,
+      "rank": 217,
       "alert_candidate": false
     },
     {
@@ -10034,7 +9862,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.72,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 222,
+      "rank": 218,
       "alert_candidate": false
     },
     {
@@ -10078,7 +9906,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.72,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 223,
+      "rank": 219,
       "alert_candidate": false
     },
     {
@@ -10122,7 +9950,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.72,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 224,
+      "rank": 220,
       "alert_candidate": false
     },
     {
@@ -10166,7 +9994,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.72,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 225,
+      "rank": 221,
       "alert_candidate": false
     },
     {
@@ -10212,7 +10040,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.71,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 226,
+      "rank": 222,
       "alert_candidate": false
     },
     {
@@ -10256,7 +10084,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.71,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 227,
+      "rank": 223,
       "alert_candidate": false
     },
     {
@@ -10300,7 +10128,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.71,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 228,
+      "rank": 224,
       "alert_candidate": false
     },
     {
@@ -10344,7 +10172,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.71,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 229,
+      "rank": 225,
       "alert_candidate": false
     },
     {
@@ -10388,7 +10216,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.71,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 230,
+      "rank": 226,
       "alert_candidate": false
     },
     {
@@ -10432,7 +10260,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.71,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 231,
+      "rank": 227,
       "alert_candidate": false
     },
     {
@@ -10476,7 +10304,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.71,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 232,
+      "rank": 228,
       "alert_candidate": false
     },
     {
@@ -10522,7 +10350,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.71,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 233,
+      "rank": 229,
       "alert_candidate": false
     },
     {
@@ -10568,7 +10396,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.71,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 234,
+      "rank": 230,
       "alert_candidate": false
     },
     {
@@ -10612,7 +10440,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.71,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 235,
+      "rank": 231,
       "alert_candidate": false
     },
     {
@@ -10656,7 +10484,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.71,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 236,
+      "rank": 232,
       "alert_candidate": false
     },
     {
@@ -10700,7 +10528,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.71,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 237,
+      "rank": 233,
       "alert_candidate": false
     },
     {
@@ -10744,7 +10572,53 @@
       "pricing_confidence": "geen",
       "deal_score": 35.71,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 238,
+      "rank": 234,
+      "alert_candidate": false
+    },
+    {
+      "id": "mp:m2463458428",
+      "source": "Marktplaats",
+      "title": "Opel Corsa 1.2 Ecoflex Bi-fuel 83pk 3d 2014 Zwart",
+      "description": "Te koop: opel corsa 1.2 Opel corsa 1.2 Te koop. De auto heeft 340.000 Km gereden, maar rijdt en schakelt nog goed. De auto heeft gebruikerssporen passend bij de leeftijd ",
+      "make": "Opel",
+      "model": "Corsa",
+      "year": 2014,
+      "mileage": 340000,
+      "price": 1000.0,
+      "price_kind": "MIN_BID",
+      "fuel": "LPG",
+      "transmission": "Handgeschakeld",
+      "city": "Arnhem",
+      "postcode": "",
+      "url": "https://www.marktplaats.nl/v/auto-s/opel/m2463458428-opel-corsa-1-2-ecoflex-bi-fuel-83pk-3d-2014-zwart",
+      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/8e3f997b-b802-47d2-be9a-d5be71d5dfaf?rule=ecg_mp_eps$_83.jpg",
+      "image_urls": [
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/8e3f997b-b802-47d2-be9a-d5be71d5dfaf?rule=ecg_mp_eps$_83.jpg",
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/fa413a7e-5702-4358-8feb-3390c7df9eb5?rule=ecg_mp_eps$_83.jpg"
+      ],
+      "damage": false,
+      "high_risk": false,
+      "price_unverified": false,
+      "price_warning": "",
+      "damage_note": "",
+      "seller_name": "",
+      "is_bid": true,
+      "comparables": 1,
+      "comparable_asking_prices": [
+        750.0
+      ],
+      "resale_low": null,
+      "resale_high": null,
+      "profit_low": null,
+      "profit_high": null,
+      "profit_note": "Geen betrouwbare doorverkoopschatting: te weinig vergelijkbare auto's met bouwjaar en km-stand.",
+      "estimated_repair": 250,
+      "estimated_other_costs": 175,
+      "total_investment": 1425.0,
+      "pricing_confidence": "geen",
+      "deal_score": 35.71,
+      "deal_label": "Niet voldoende vergelijkingsgegevens",
+      "rank": 235,
       "alert_candidate": false
     },
     {
@@ -10788,7 +10662,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.64,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 239,
+      "rank": 236,
       "alert_candidate": false
     },
     {
@@ -10832,7 +10706,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.64,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 240,
+      "rank": 237,
       "alert_candidate": false
     },
     {
@@ -10876,7 +10750,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.57,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 241,
+      "rank": 238,
       "alert_candidate": false
     },
     {
@@ -10920,7 +10794,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.57,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 242,
+      "rank": 239,
       "alert_candidate": false
     },
     {
@@ -10964,7 +10838,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.57,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 243,
+      "rank": 240,
       "alert_candidate": false
     },
     {
@@ -11010,7 +10884,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.57,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 244,
+      "rank": 241,
       "alert_candidate": false
     },
     {
@@ -11054,7 +10928,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.57,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 245,
+      "rank": 242,
       "alert_candidate": false
     },
     {
@@ -11098,7 +10972,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.5,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 246,
+      "rank": 243,
       "alert_candidate": false
     },
     {
@@ -11142,7 +11016,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.5,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 247,
+      "rank": 244,
       "alert_candidate": false
     },
     {
@@ -11186,7 +11060,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.5,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 248,
+      "rank": 245,
       "alert_candidate": false
     },
     {
@@ -11230,7 +11104,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.5,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 249,
+      "rank": 246,
       "alert_candidate": false
     },
     {
@@ -11274,7 +11148,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.5,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 250,
+      "rank": 247,
       "alert_candidate": false
     },
     {
@@ -11318,7 +11192,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.5,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 251,
+      "rank": 248,
       "alert_candidate": false
     },
     {
@@ -11362,7 +11236,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.46,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 252,
+      "rank": 249,
       "alert_candidate": false
     },
     {
@@ -11395,7 +11269,7 @@
       "is_bid": true,
       "comparables": 2,
       "comparable_asking_prices": [
-        695.0,
+        650.0,
         750.0
       ],
       "resale_low": null,
@@ -11409,7 +11283,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.46,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 253,
+      "rank": 250,
       "alert_candidate": false
     },
     {
@@ -11453,7 +11327,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.44,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 254,
+      "rank": 251,
       "alert_candidate": false
     },
     {
@@ -11499,51 +11373,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.43,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 255,
-      "alert_candidate": false
-    },
-    {
-      "id": "mp:m2432376770",
-      "source": "Marktplaats",
-      "title": "Volkswagen Golf 1.6 77KW 2004 Groen",
-      "description": "Mooie groene golf4 1.6 Te koop!! Auto rijd goed,en de onderhoudshistorie is van af de eerste eigenaar bekend en aanwezig bij de auto. Ik verkoop mijn auto omdat ik zelf o",
-      "make": "Volkswagen",
-      "model": "Golf",
-      "year": 2004,
-      "mileage": null,
-      "price": 1200.0,
-      "price_kind": "MIN_BID",
-      "fuel": "Benzine",
-      "transmission": "Handgeschakeld",
-      "city": "Zwolle",
-      "postcode": "",
-      "url": "https://www.marktplaats.nl/v/auto-s/volkswagen/m2432376770-volkswagen-golf-1-6-77kw-2004-groen",
-      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/a6ee2c1f-5f68-44a3-b74f-ecfab69ee0f4?rule=ecg_mp_eps$_83.jpg",
-      "image_urls": [
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/a6ee2c1f-5f68-44a3-b74f-ecfab69ee0f4?rule=ecg_mp_eps$_83.jpg",
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/abec48c6-105b-4b79-9d15-05d8dd9789e5?rule=ecg_mp_eps$_83.jpg"
-      ],
-      "damage": false,
-      "high_risk": false,
-      "price_unverified": false,
-      "price_warning": "",
-      "damage_note": "",
-      "seller_name": "",
-      "is_bid": true,
-      "comparables": 0,
-      "comparable_asking_prices": [],
-      "resale_low": null,
-      "resale_high": null,
-      "profit_low": null,
-      "profit_high": null,
-      "profit_note": "Geen betrouwbare doorverkoopschatting: te weinig vergelijkbare auto's met bouwjaar en km-stand.",
-      "estimated_repair": 250,
-      "estimated_other_costs": 175,
-      "total_investment": 1625.0,
-      "pricing_confidence": "geen",
-      "deal_score": 35.43,
-      "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 256,
+      "rank": 252,
       "alert_candidate": false
     },
     {
@@ -11590,7 +11420,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.43,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 257,
+      "rank": 253,
       "alert_candidate": false
     },
     {
@@ -11634,7 +11464,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.43,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 258,
+      "rank": 254,
       "alert_candidate": false
     },
     {
@@ -11680,7 +11510,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.36,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 259,
+      "rank": 255,
       "alert_candidate": false
     },
     {
@@ -11724,7 +11554,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.36,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 260,
+      "rank": 256,
       "alert_candidate": false
     },
     {
@@ -11768,7 +11598,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.36,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 261,
+      "rank": 257,
       "alert_candidate": false
     },
     {
@@ -11812,7 +11642,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.36,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 262,
+      "rank": 258,
       "alert_candidate": false
     },
     {
@@ -11856,7 +11686,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.36,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 263,
+      "rank": 259,
       "alert_candidate": false
     },
     {
@@ -11902,7 +11732,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.36,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 264,
+      "rank": 260,
       "alert_candidate": false
     },
     {
@@ -11946,7 +11776,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.29,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 265,
+      "rank": 261,
       "alert_candidate": false
     },
     {
@@ -11990,7 +11820,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.29,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 266,
+      "rank": 262,
       "alert_candidate": false
     },
     {
@@ -12034,7 +11864,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.29,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 267,
+      "rank": 263,
       "alert_candidate": false
     },
     {
@@ -12078,7 +11908,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.29,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 268,
+      "rank": 264,
       "alert_candidate": false
     },
     {
@@ -12124,7 +11954,51 @@
       "pricing_confidence": "geen",
       "deal_score": 35.21,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 269,
+      "rank": 265,
+      "alert_candidate": false
+    },
+    {
+      "id": "mp:m2463474869",
+      "source": "Marktplaats",
+      "title": "Ford Fiësta 1.25, Titanium, 5 deurs met stoelverwarming",
+      "description": "Ford fiesta zwart - fijne en betrouwbare auto met een beetje pijn in het hart bied ik mijn ford fiesta te koop aan. Het is een heerlijke auto die me altijd goed heeft geb",
+      "make": "Ford",
+      "model": "Titanium",
+      "year": 2011,
+      "mileage": 275385,
+      "price": 1350.0,
+      "price_kind": "MIN_BID",
+      "fuel": "Benzine",
+      "transmission": "Handgeschakeld",
+      "city": "Losser",
+      "postcode": "",
+      "url": "https://www.marktplaats.nl/v/auto-s/ford/m2463474869-ford-fiesta-1-25-titanium-5-deurs-met-stoelverwarming",
+      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/df38f30b-98d9-4f42-bcf2-00ca6210b8c3?rule=ecg_mp_eps$_83.jpg",
+      "image_urls": [
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/df38f30b-98d9-4f42-bcf2-00ca6210b8c3?rule=ecg_mp_eps$_83.jpg",
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/762a04fc-f90c-4488-b8b3-06b3f427260e?rule=ecg_mp_eps$_83.jpg"
+      ],
+      "damage": false,
+      "high_risk": false,
+      "price_unverified": false,
+      "price_warning": "",
+      "damage_note": "",
+      "seller_name": "",
+      "is_bid": true,
+      "comparables": 0,
+      "comparable_asking_prices": [],
+      "resale_low": null,
+      "resale_high": null,
+      "profit_low": null,
+      "profit_high": null,
+      "profit_note": "Geen betrouwbare doorverkoopschatting: te weinig vergelijkbare auto's met bouwjaar en km-stand.",
+      "estimated_repair": 250,
+      "estimated_other_costs": 175,
+      "total_investment": 1775.0,
+      "pricing_confidence": "geen",
+      "deal_score": 35.21,
+      "deal_label": "Niet voldoende vergelijkingsgegevens",
+      "rank": 266,
       "alert_candidate": false
     },
     {
@@ -12168,7 +12042,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.14,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 270,
+      "rank": 267,
       "alert_candidate": false
     },
     {
@@ -12212,7 +12086,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.14,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 271,
+      "rank": 268,
       "alert_candidate": false
     },
     {
@@ -12256,7 +12130,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.07,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 272,
+      "rank": 269,
       "alert_candidate": false
     },
     {
@@ -12300,7 +12174,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.07,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 273,
+      "rank": 270,
       "alert_candidate": false
     },
     {
@@ -12344,7 +12218,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.04,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 274,
+      "rank": 271,
       "alert_candidate": false
     },
     {
@@ -12388,7 +12262,7 @@
       "pricing_confidence": "geen",
       "deal_score": 35.01,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 275,
+      "rank": 272,
       "alert_candidate": false
     },
     {
@@ -12432,7 +12306,51 @@
       "pricing_confidence": "geen",
       "deal_score": 34.86,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 276,
+      "rank": 273,
+      "alert_candidate": false
+    },
+    {
+      "id": "mp:m2463475277",
+      "source": "Marktplaats",
+      "title": "Volkswagen Polo 1.2 47KW 2002 Rood",
+      "description": "Vw polo 9n. Bj 2002 apk tot 18 dec 2026 rijdt goed, schakelt goed, loopt goed. Wat schade en roest aan de carrosserie",
+      "make": "Volkswagen",
+      "model": "Polo",
+      "year": 2002,
+      "mileage": null,
+      "price": 500.0,
+      "price_kind": "FIXED",
+      "fuel": "Benzine",
+      "transmission": "Handgeschakeld",
+      "city": "Lelystad",
+      "postcode": "",
+      "url": "https://www.marktplaats.nl/v/auto-s/volkswagen/m2463475277-volkswagen-polo-1-2-47kw-2002-rood",
+      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/6eff165d-bc03-405e-b959-8617142af6c7?rule=ecg_mp_eps$_83.jpg",
+      "image_urls": [
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/6eff165d-bc03-405e-b959-8617142af6c7?rule=ecg_mp_eps$_83.jpg",
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/7acde82d-6439-40e5-8105-ab6430dbeeac?rule=ecg_mp_eps$_83.jpg"
+      ],
+      "damage": true,
+      "high_risk": false,
+      "price_unverified": false,
+      "price_warning": "",
+      "damage_note": "Schade/gebrek genoemd; reparatiekosten eerst bepalen",
+      "seller_name": "",
+      "is_bid": false,
+      "comparables": 0,
+      "comparable_asking_prices": [],
+      "resale_low": null,
+      "resale_high": null,
+      "profit_low": null,
+      "profit_high": null,
+      "profit_note": "Geen betrouwbare doorverkoopschatting: te weinig vergelijkbare auto's met bouwjaar en km-stand.",
+      "estimated_repair": 250,
+      "estimated_other_costs": 175,
+      "total_investment": 925.0,
+      "pricing_confidence": "geen",
+      "deal_score": 34.43,
+      "deal_label": "Niet voldoende vergelijkingsgegevens",
+      "rank": 274,
       "alert_candidate": false
     },
     {
@@ -12476,7 +12394,7 @@
       "pricing_confidence": "geen",
       "deal_score": 34.36,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 277,
+      "rank": 275,
       "alert_candidate": false
     },
     {
@@ -12520,7 +12438,7 @@
       "pricing_confidence": "geen",
       "deal_score": 34.29,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 278,
+      "rank": 276,
       "alert_candidate": false
     },
     {
@@ -12564,7 +12482,7 @@
       "pricing_confidence": "geen",
       "deal_score": 34.21,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 279,
+      "rank": 277,
       "alert_candidate": false
     },
     {
@@ -12608,7 +12526,7 @@
       "pricing_confidence": "geen",
       "deal_score": 34.14,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 280,
+      "rank": 278,
       "alert_candidate": false
     },
     {
@@ -12652,7 +12570,7 @@
       "pricing_confidence": "geen",
       "deal_score": 33.93,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 281,
+      "rank": 279,
       "alert_candidate": false
     },
     {
@@ -12696,7 +12614,7 @@
       "pricing_confidence": "geen",
       "deal_score": 33.93,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 282,
+      "rank": 280,
       "alert_candidate": false
     },
     {
@@ -12742,7 +12660,7 @@
       "pricing_confidence": "geen",
       "deal_score": 33.79,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 283,
+      "rank": 281,
       "alert_candidate": false
     },
     {
@@ -12786,7 +12704,7 @@
       "pricing_confidence": "geen",
       "deal_score": 33.72,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 284,
+      "rank": 282,
       "alert_candidate": false
     },
     {
@@ -12833,7 +12751,7 @@
       "pricing_confidence": "geen",
       "deal_score": 33.72,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 285,
+      "rank": 283,
       "alert_candidate": false
     },
     {
@@ -12879,7 +12797,7 @@
       "pricing_confidence": "geen",
       "deal_score": 33.72,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 286,
+      "rank": 284,
       "alert_candidate": false
     },
     {
@@ -12923,7 +12841,7 @@
       "pricing_confidence": "geen",
       "deal_score": 33.71,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 287,
+      "rank": 285,
       "alert_candidate": false
     },
     {
@@ -12967,7 +12885,7 @@
       "pricing_confidence": "geen",
       "deal_score": 33.64,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 288,
+      "rank": 286,
       "alert_candidate": false
     },
     {
@@ -13011,7 +12929,7 @@
       "pricing_confidence": "geen",
       "deal_score": 33.58,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 289,
+      "rank": 287,
       "alert_candidate": false
     },
     {
@@ -13055,51 +12973,7 @@
       "pricing_confidence": "geen",
       "deal_score": 33.57,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 290,
-      "alert_candidate": false
-    },
-    {
-      "id": "mp:m2454582879",
-      "source": "Marktplaats",
-      "title": "Peugeot 208 1.4 HDI 50KW/68PK 3-D 2013 Wit",
-      "description": "Wegens overlijden van mijn man is de auto overbodig: peugeot 208 1.4 Hdi 50kw/68pk 3-d 2013 wit auto is starten en lopen voor zijn net nieuwe remblokken en remschijven er",
-      "make": "Peugeot",
-      "model": "208",
-      "year": 2013,
-      "mileage": null,
-      "price": 2750.0,
-      "price_kind": "MIN_BID",
-      "fuel": "Diesel",
-      "transmission": "Handgeschakeld",
-      "city": "Drieborg",
-      "postcode": "",
-      "url": "https://www.marktplaats.nl/v/auto-s/peugeot/m2454582879-peugeot-208-1-4-hdi-50kw-68pk-3-d-2013-wit",
-      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/e678a845-0a29-4756-af37-33cfb20b8640?rule=ecg_mp_eps$_83.jpg",
-      "image_urls": [
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/e678a845-0a29-4756-af37-33cfb20b8640?rule=ecg_mp_eps$_83.jpg",
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/c860691c-94e6-4a69-9902-3e88f7fb7024?rule=ecg_mp_eps$_83.jpg"
-      ],
-      "damage": false,
-      "high_risk": false,
-      "price_unverified": false,
-      "price_warning": "",
-      "damage_note": "",
-      "seller_name": "",
-      "is_bid": true,
-      "comparables": 0,
-      "comparable_asking_prices": [],
-      "resale_low": null,
-      "resale_high": null,
-      "profit_low": null,
-      "profit_high": null,
-      "profit_note": "Geen betrouwbare doorverkoopschatting: te weinig vergelijkbare auto's met bouwjaar en km-stand.",
-      "estimated_repair": 250,
-      "estimated_other_costs": 175,
-      "total_investment": 3175.0,
-      "pricing_confidence": "geen",
-      "deal_score": 33.21,
-      "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 291,
+      "rank": 288,
       "alert_candidate": false
     },
     {
@@ -13143,7 +13017,7 @@
       "pricing_confidence": "geen",
       "deal_score": 33.21,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 292,
+      "rank": 289,
       "alert_candidate": false
     },
     {
@@ -13187,53 +13061,7 @@
       "pricing_confidence": "geen",
       "deal_score": 33.14,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 293,
-      "alert_candidate": false
-    },
-    {
-      "id": "mp:m2463078275",
-      "source": "Marktplaats",
-      "title": "Peugeot 107 1.0 12V 5DR 2013 Zwart",
-      "description": "Peugeot 107, uit september 2013 dit voertuig had destijds een nieuwprijs vanaf €11.760,- En is een origineel nederlandse auto. De auto kan van 0-100km/h in 13,7 seconden ",
-      "make": "Peugeot",
-      "model": "107",
-      "year": 2013,
-      "mileage": 157363,
-      "price": 3250.0,
-      "price_kind": "MIN_BID",
-      "fuel": "Benzine",
-      "transmission": "Handgeschakeld",
-      "city": "Schiedam",
-      "postcode": "",
-      "url": "https://www.marktplaats.nl/v/auto-s/peugeot/m2463078275-peugeot-107-1-0-12v-5dr-2013-zwart",
-      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/89ebfd6d-d16d-4df2-9822-b7788db94695?rule=ecg_mp_eps$_83.jpg",
-      "image_urls": [
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/89ebfd6d-d16d-4df2-9822-b7788db94695?rule=ecg_mp_eps$_83.jpg",
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/ff407778-5d6d-45c2-80f5-1cf9d292cbc5?rule=ecg_mp_eps$_83.jpg"
-      ],
-      "damage": false,
-      "high_risk": false,
-      "price_unverified": false,
-      "price_warning": "",
-      "damage_note": "",
-      "seller_name": "",
-      "is_bid": true,
-      "comparables": 1,
-      "comparable_asking_prices": [
-        2950.0
-      ],
-      "resale_low": null,
-      "resale_high": null,
-      "profit_low": null,
-      "profit_high": null,
-      "profit_note": "Geen betrouwbare doorverkoopschatting: te weinig vergelijkbare auto's met bouwjaar en km-stand.",
-      "estimated_repair": 250,
-      "estimated_other_costs": 175,
-      "total_investment": 3675.0,
-      "pricing_confidence": "geen",
-      "deal_score": 32.5,
-      "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 294,
+      "rank": 290,
       "alert_candidate": false
     },
     {
@@ -13277,7 +13105,51 @@
       "pricing_confidence": "geen",
       "deal_score": 32.5,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 295,
+      "rank": 291,
+      "alert_candidate": false
+    },
+    {
+      "id": "mp:m2463472511",
+      "source": "Marktplaats",
+      "title": "Renault Clio 1.5 DCI 66KW 5-DRS 2014 Wit",
+      "description": "Renault clio 1.5 Dci – 2014 | 276.210 Km nette en zuinige renault clio 1.5 Dci uit 2014, met een kilometerstand van 276.210 Km. De auto wordt verkocht omdat wij inmiddels",
+      "make": "Renault",
+      "model": "Clio",
+      "year": 2014,
+      "mileage": 276210,
+      "price": 3250.0,
+      "price_kind": "MIN_BID",
+      "fuel": "Diesel",
+      "transmission": "Handgeschakeld",
+      "city": "Tynaarlo",
+      "postcode": "",
+      "url": "https://www.marktplaats.nl/v/auto-s/renault/m2463472511-renault-clio-1-5-dci-66kw-5-drs-2014-wit",
+      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/460cb77c-8671-4e9b-962d-a95db3182dbc?rule=ecg_mp_eps$_83.jpg",
+      "image_urls": [
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/460cb77c-8671-4e9b-962d-a95db3182dbc?rule=ecg_mp_eps$_83.jpg",
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/dff86d6d-c4b7-46d4-ba9f-fc85fe9c8845?rule=ecg_mp_eps$_83.jpg"
+      ],
+      "damage": false,
+      "high_risk": false,
+      "price_unverified": false,
+      "price_warning": "",
+      "damage_note": "",
+      "seller_name": "",
+      "is_bid": true,
+      "comparables": 0,
+      "comparable_asking_prices": [],
+      "resale_low": null,
+      "resale_high": null,
+      "profit_low": null,
+      "profit_high": null,
+      "profit_note": "Geen betrouwbare doorverkoopschatting: te weinig vergelijkbare auto's met bouwjaar en km-stand.",
+      "estimated_repair": 250,
+      "estimated_other_costs": 175,
+      "total_investment": 3675.0,
+      "pricing_confidence": "geen",
+      "deal_score": 32.5,
+      "deal_label": "Niet voldoende vergelijkingsgegevens",
+      "rank": 292,
       "alert_candidate": false
     },
     {
@@ -13321,51 +13193,7 @@
       "pricing_confidence": "geen",
       "deal_score": 32.36,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 296,
-      "alert_candidate": false
-    },
-    {
-      "id": "mp:m2458400412",
-      "source": "Marktplaats",
-      "title": "Toyota Corolla Verso 1.8 Vvt-i 2004 Blauw",
-      "description": "Toyota corolla verso km 192606 airco trekhaak 1.8 Stuur gerust een berichtje bij vragen of interesse",
-      "make": "Toyota",
-      "model": "Corolla",
-      "year": 2004,
-      "mileage": 192606,
-      "price": 3450.0,
-      "price_kind": "MIN_BID",
-      "fuel": "Benzine",
-      "transmission": "Handgeschakeld",
-      "city": "Veen",
-      "postcode": "",
-      "url": "https://www.marktplaats.nl/v/auto-s/toyota/m2458400412-toyota-corolla-verso-1-8-vvt-i-2004-blauw",
-      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/755dcec2-9ba4-4ca8-9f82-d6047ccbb7d3?rule=ecg_mp_eps$_83.jpg",
-      "image_urls": [
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/755dcec2-9ba4-4ca8-9f82-d6047ccbb7d3?rule=ecg_mp_eps$_83.jpg",
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/f3f79db5-14b4-40c0-85d4-4372d7c7f474?rule=ecg_mp_eps$_83.jpg"
-      ],
-      "damage": false,
-      "high_risk": false,
-      "price_unverified": false,
-      "price_warning": "",
-      "damage_note": "",
-      "seller_name": "",
-      "is_bid": true,
-      "comparables": 0,
-      "comparable_asking_prices": [],
-      "resale_low": null,
-      "resale_high": null,
-      "profit_low": null,
-      "profit_high": null,
-      "profit_note": "Geen betrouwbare doorverkoopschatting: te weinig vergelijkbare auto's met bouwjaar en km-stand.",
-      "estimated_repair": 250,
-      "estimated_other_costs": 175,
-      "total_investment": 3875.0,
-      "pricing_confidence": "geen",
-      "deal_score": 32.21,
-      "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 297,
+      "rank": 293,
       "alert_candidate": false
     },
     {
@@ -13409,7 +13237,7 @@
       "pricing_confidence": "geen",
       "deal_score": 32.01,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 298,
+      "rank": 294,
       "alert_candidate": false
     },
     {
@@ -13456,7 +13284,7 @@
       "pricing_confidence": "geen",
       "deal_score": 31.86,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 299,
+      "rank": 295,
       "alert_candidate": false
     },
     {
@@ -13500,7 +13328,7 @@
       "pricing_confidence": "geen",
       "deal_score": 31.79,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 300,
+      "rank": 296,
       "alert_candidate": false
     },
     {
@@ -13544,7 +13372,7 @@
       "pricing_confidence": "geen",
       "deal_score": 31.5,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 301,
+      "rank": 297,
       "alert_candidate": false
     },
     {
@@ -13588,7 +13416,139 @@
       "pricing_confidence": "geen",
       "deal_score": 31.5,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 302,
+      "rank": 298,
+      "alert_candidate": false
+    },
+    {
+      "id": "mp:m2459919819",
+      "source": "Marktplaats",
+      "title": "Mercedes C-klasse 180 K. Classic 173.000 KM NAP-AUTOMAAT-APK",
+      "description": "Mercedes c-klasse 180 k. Classic 173.000 Km nap-automaat-apk kenteken: 24-pk-tn merk: mercedes model: c-klasse apk tot: 20-08-2027 tellerstand: 173479 km carrosserievorm:",
+      "make": "Mercedes",
+      "model": "C-klasse",
+      "year": 2004,
+      "mileage": 173479,
+      "price": 3950.0,
+      "price_kind": "MIN_BID",
+      "fuel": "Benzine",
+      "transmission": "Automaat",
+      "city": "Rotterdam",
+      "postcode": "",
+      "url": "https://www.marktplaats.nl/v/auto-s/mercedes-benz/m2459919819-mercedes-c-klasse-180-k-classic-173-000-km-nap-automaat-apk",
+      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/ada88da5-1af7-44d5-8702-60dcfd9a1c38?rule=ecg_mp_eps$_83.jpg",
+      "image_urls": [
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/ada88da5-1af7-44d5-8702-60dcfd9a1c38?rule=ecg_mp_eps$_83.jpg",
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/38e288c9-d289-459e-bd58-3976f6099dab?rule=ecg_mp_eps$_83.jpg"
+      ],
+      "damage": false,
+      "high_risk": false,
+      "price_unverified": false,
+      "price_warning": "",
+      "damage_note": "",
+      "seller_name": "",
+      "is_bid": true,
+      "comparables": 0,
+      "comparable_asking_prices": [],
+      "resale_low": null,
+      "resale_high": null,
+      "profit_low": null,
+      "profit_high": null,
+      "profit_note": "Geen betrouwbare doorverkoopschatting: te weinig vergelijkbare auto's met bouwjaar en km-stand.",
+      "estimated_repair": 250,
+      "estimated_other_costs": 175,
+      "total_investment": 4375.0,
+      "pricing_confidence": "geen",
+      "deal_score": 31.5,
+      "deal_label": "Niet voldoende vergelijkingsgegevens",
+      "rank": 299,
+      "alert_candidate": false
+    },
+    {
+      "id": "mp:m2463444746",
+      "source": "Marktplaats",
+      "title": "Fiat 500 1.2 AUT 2010 Groen",
+      "description": "Fiat 500 1.2 Lounge | 2010 | luxe uitvoering | €4.000 Te koop aangeboden: een mooie fiat 500 uit 2010 met een 1.2 Benzinemotor. De auto heeft een stijlvolle donkerblauwe/",
+      "make": "Fiat",
+      "model": "500",
+      "year": 2010,
+      "mileage": 136300,
+      "price": 4000.0,
+      "price_kind": "MIN_BID",
+      "fuel": "Benzine",
+      "transmission": "Automaat",
+      "city": "Zevenaar",
+      "postcode": "",
+      "url": "https://www.marktplaats.nl/v/auto-s/fiat/m2463444746-fiat-500-1-2-aut-2010-groen",
+      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/22f4127e-c0a2-41c1-9bad-78c643712622?rule=ecg_mp_eps$_83.jpg",
+      "image_urls": [
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/22f4127e-c0a2-41c1-9bad-78c643712622?rule=ecg_mp_eps$_83.jpg",
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/7e7e4265-5d63-4730-be49-489295965537?rule=ecg_mp_eps$_83.jpg"
+      ],
+      "damage": false,
+      "high_risk": false,
+      "price_unverified": false,
+      "price_warning": "",
+      "damage_note": "",
+      "seller_name": "",
+      "is_bid": true,
+      "comparables": 0,
+      "comparable_asking_prices": [],
+      "resale_low": null,
+      "resale_high": null,
+      "profit_low": null,
+      "profit_high": null,
+      "profit_note": "Geen betrouwbare doorverkoopschatting: te weinig vergelijkbare auto's met bouwjaar en km-stand.",
+      "estimated_repair": 250,
+      "estimated_other_costs": 175,
+      "total_investment": 4425.0,
+      "pricing_confidence": "geen",
+      "deal_score": 31.43,
+      "deal_label": "Niet voldoende vergelijkingsgegevens",
+      "rank": 300,
+      "alert_candidate": false
+    },
+    {
+      "id": "mp:m2463163167",
+      "source": "Marktplaats",
+      "title": "Fiat 500 1.2 Lounge – Panoramadak – Airco- veel vernieuwd!",
+      "description": "Te koop aangeboden: nette, zwarte fiat 500 1.2 Lounge uit 2012. Een leuke, complete en goed verzorgde fiat 500. De auto is zowel van binnen als van buiten netjes, schoon ",
+      "make": "Fiat",
+      "model": "500",
+      "year": 2012,
+      "mileage": 50012,
+      "price": 4150.0,
+      "price_kind": "MIN_BID",
+      "fuel": "Benzine",
+      "transmission": "Handgeschakeld",
+      "city": "Zandvoort",
+      "postcode": "",
+      "url": "https://www.marktplaats.nl/v/auto-s/fiat/m2463163167-fiat-500-1-2-lounge-panoramadak-airco-veel-vernieuwd",
+      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/3df61322-bbdf-4e79-9ef4-15cd22becae5?rule=ecg_mp_eps$_83.jpg",
+      "image_urls": [
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/3df61322-bbdf-4e79-9ef4-15cd22becae5?rule=ecg_mp_eps$_83.jpg",
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/c3c54463-8323-49fb-9bc4-fc9f6982e32e?rule=ecg_mp_eps$_83.jpg"
+      ],
+      "damage": false,
+      "high_risk": false,
+      "price_unverified": false,
+      "price_warning": "",
+      "damage_note": "",
+      "seller_name": "",
+      "is_bid": true,
+      "comparables": 0,
+      "comparable_asking_prices": [],
+      "resale_low": null,
+      "resale_high": null,
+      "profit_low": null,
+      "profit_high": null,
+      "profit_note": "Geen betrouwbare doorverkoopschatting: te weinig vergelijkbare auto's met bouwjaar en km-stand.",
+      "estimated_repair": 250,
+      "estimated_other_costs": 175,
+      "total_investment": 4575.0,
+      "pricing_confidence": "geen",
+      "deal_score": 31.21,
+      "deal_label": "Niet voldoende vergelijkingsgegevens",
+      "rank": 301,
       "alert_candidate": false
     },
     {
@@ -13632,7 +13592,7 @@
       "pricing_confidence": "geen",
       "deal_score": 31.14,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 305,
+      "rank": 302,
       "alert_candidate": false
     },
     {
@@ -13676,7 +13636,7 @@
       "pricing_confidence": "geen",
       "deal_score": 28.71,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 314,
+      "rank": 312,
       "alert_candidate": false
     },
     {
@@ -13720,7 +13680,7 @@
       "pricing_confidence": "geen",
       "deal_score": 28.43,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 315,
+      "rank": 313,
       "alert_candidate": false
     },
     {
@@ -13764,7 +13724,7 @@
       "pricing_confidence": "geen",
       "deal_score": 28.39,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 316,
+      "rank": 314,
       "alert_candidate": false
     },
     {
@@ -13808,7 +13768,7 @@
       "pricing_confidence": "geen",
       "deal_score": 28.36,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 317,
+      "rank": 315,
       "alert_candidate": false
     },
     {
@@ -13852,7 +13812,7 @@
       "pricing_confidence": "geen",
       "deal_score": 28.07,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 318,
+      "rank": 316,
       "alert_candidate": false
     },
     {
@@ -13896,7 +13856,7 @@
       "pricing_confidence": "geen",
       "deal_score": 28.0,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 319,
+      "rank": 317,
       "alert_candidate": false
     },
     {
@@ -13940,7 +13900,7 @@
       "pricing_confidence": "geen",
       "deal_score": 28.0,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 320,
+      "rank": 318,
       "alert_candidate": false
     },
     {
@@ -13984,7 +13944,7 @@
       "pricing_confidence": "geen",
       "deal_score": 28.0,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 321,
+      "rank": 319,
       "alert_candidate": false
     },
     {
@@ -14031,7 +13991,7 @@
       "pricing_confidence": "geen",
       "deal_score": 27.93,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 322,
+      "rank": 320,
       "alert_candidate": false
     },
     {
@@ -14075,7 +14035,51 @@
       "pricing_confidence": "geen",
       "deal_score": 27.79,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 323,
+      "rank": 321,
+      "alert_candidate": false
+    },
+    {
+      "id": "mp:m2463459522",
+      "source": "Marktplaats",
+      "title": "Volkswagen Polo 1.4 55KW 2005 Blauw",
+      "description": "Volkswagen polo 1.4 16V 2005 airco cruise control 230xxx gedraaid db-riem vervangen bij 192000 met reserveband recent blokken en schijven vervangen voor barst in de voorr",
+      "make": "Volkswagen",
+      "model": "Polo",
+      "year": 2005,
+      "mileage": null,
+      "price": 999.0,
+      "price_kind": "MIN_BID",
+      "fuel": "Benzine",
+      "transmission": "Handgeschakeld",
+      "city": "Holwert",
+      "postcode": "",
+      "url": "https://www.marktplaats.nl/v/auto-s/volkswagen/m2463459522-volkswagen-polo-1-4-55kw-2005-blauw",
+      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/58902be6-4777-4c38-82f6-43dc752a8ac5?rule=ecg_mp_eps$_83.jpg",
+      "image_urls": [
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/58902be6-4777-4c38-82f6-43dc752a8ac5?rule=ecg_mp_eps$_83.jpg",
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/22ea4cef-b3c8-48ce-bcce-5b0985e553b3?rule=ecg_mp_eps$_83.jpg"
+      ],
+      "damage": true,
+      "high_risk": false,
+      "price_unverified": false,
+      "price_warning": "",
+      "damage_note": "Schade/gebrek genoemd; reparatiekosten eerst bepalen",
+      "seller_name": "",
+      "is_bid": true,
+      "comparables": 0,
+      "comparable_asking_prices": [],
+      "resale_low": null,
+      "resale_high": null,
+      "profit_low": null,
+      "profit_high": null,
+      "profit_note": "Geen betrouwbare doorverkoopschatting: te weinig vergelijkbare auto's met bouwjaar en km-stand.",
+      "estimated_repair": 250,
+      "estimated_other_costs": 175,
+      "total_investment": 1424.0,
+      "pricing_confidence": "geen",
+      "deal_score": 27.72,
+      "deal_label": "Niet voldoende vergelijkingsgegevens",
+      "rank": 322,
       "alert_candidate": false
     },
     {
@@ -14119,7 +14123,7 @@
       "pricing_confidence": "geen",
       "deal_score": 27.71,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 324,
+      "rank": 323,
       "alert_candidate": false
     },
     {
@@ -14163,7 +14167,7 @@
       "pricing_confidence": "geen",
       "deal_score": 27.5,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 325,
+      "rank": 324,
       "alert_candidate": false
     },
     {
@@ -14207,7 +14211,7 @@
       "pricing_confidence": "geen",
       "deal_score": 27.43,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 326,
+      "rank": 325,
       "alert_candidate": false
     },
     {
@@ -14254,7 +14258,7 @@
       "pricing_confidence": "geen",
       "deal_score": 27.43,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 327,
+      "rank": 326,
       "alert_candidate": false
     },
     {
@@ -14298,7 +14302,7 @@
       "pricing_confidence": "geen",
       "deal_score": 27.36,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 328,
+      "rank": 327,
       "alert_candidate": false
     },
     {
@@ -14342,7 +14346,7 @@
       "pricing_confidence": "geen",
       "deal_score": 27.0,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 329,
+      "rank": 328,
       "alert_candidate": false
     },
     {
@@ -14386,7 +14390,7 @@
       "pricing_confidence": "geen",
       "deal_score": 26.5,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 330,
+      "rank": 329,
       "alert_candidate": false
     },
     {
@@ -14436,7 +14440,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 9.36,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 347,
+      "rank": 346,
       "alert_candidate": false
     },
     {
@@ -14467,26 +14471,26 @@
       "damage_note": "",
       "seller_name": "",
       "is_bid": true,
-      "comparables": 23,
+      "comparables": 22,
       "comparable_asking_prices": [
-        650.0,
         799.0,
         800.0,
         850.0,
+        950.0,
         950.0
       ],
-      "resale_low": 746.25,
-      "resale_high": 875.6,
-      "profit_low": -228.75,
-      "profit_high": -99.4,
-      "profit_note": "Vraagprijsmediaan 23 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "resale_low": 747.75,
+      "resale_high": 877.36,
+      "profit_low": -227.25,
+      "profit_high": -97.64,
+      "profit_note": "Vraagprijsmediaan 22 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
       "estimated_repair": 250,
       "estimated_other_costs": 175,
       "total_investment": 975.0,
       "pricing_confidence": "redelijk",
-      "deal_score": 9.34,
+      "deal_score": 9.35,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 348,
+      "rank": 347,
       "alert_candidate": false
     },
     {
@@ -14540,6 +14544,56 @@
       "alert_candidate": false
     },
     {
+      "id": "mp:m2459783480",
+      "source": "Marktplaats",
+      "title": "Hyundai Getz 1.4 5DRS 2006 Grijs",
+      "description": "Titel hyundai getz 1.4 | 5-Deurs | 187.312 Km | te koop: hyundai getz 1.4 Hierbij bied ik deze donkergrijze hyundai getz aan. Een fijne, compacte auto die ideaal is als e",
+      "make": "Hyundai",
+      "model": "Getz",
+      "year": 2006,
+      "mileage": 187312,
+      "price": 1000.0,
+      "price_kind": "MIN_BID",
+      "fuel": "Benzine",
+      "transmission": "Handgeschakeld",
+      "city": "IJmuiden",
+      "postcode": "",
+      "url": "https://www.marktplaats.nl/v/auto-s/hyundai/m2459783480-hyundai-getz-1-4-5drs-2006-grijs",
+      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/635566e8-bb93-41ac-aaec-93dc5178a380?rule=ecg_mp_eps$_83.jpg",
+      "image_urls": [
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/635566e8-bb93-41ac-aaec-93dc5178a380?rule=ecg_mp_eps$_83.jpg",
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/bd5e4fec-3a36-4211-b693-6e45442c9548?rule=ecg_mp_eps$_83.jpg"
+      ],
+      "damage": false,
+      "high_risk": false,
+      "price_unverified": false,
+      "price_warning": "",
+      "damage_note": "",
+      "seller_name": "",
+      "is_bid": true,
+      "comparables": 39,
+      "comparable_asking_prices": [
+        870.0,
+        875.0,
+        895.0,
+        899.0,
+        899.0
+      ],
+      "resale_low": 1121.25,
+      "resale_high": 1315.6,
+      "profit_low": -303.75,
+      "profit_high": -109.4,
+      "profit_note": "Vraagprijsmediaan 39 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "estimated_repair": 250,
+      "estimated_other_costs": 175,
+      "total_investment": 1425.0,
+      "pricing_confidence": "redelijk",
+      "deal_score": 9.27,
+      "deal_label": "Geen positieve onderbouwde marge",
+      "rank": 352,
+      "alert_candidate": false
+    },
+    {
       "id": "mp:m2457026591",
       "source": "Marktplaats",
       "title": "Peugeot 206 1.4 5D 2000 Grijs beginners auto",
@@ -14586,29 +14640,29 @@
       "pricing_confidence": "redelijk",
       "deal_score": 9.26,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 352,
+      "rank": 353,
       "alert_candidate": false
     },
     {
-      "id": "mp:m2459783480",
+      "id": "mp:m2450768184",
       "source": "Marktplaats",
-      "title": "Hyundai Getz 1.4 5DRS 2006 Grijs",
-      "description": "Titel hyundai getz 1.4 | 5-Deurs | 187.312 Km | te koop: hyundai getz 1.4 Hierbij bied ik deze donkergrijze hyundai getz aan. Een fijne, compacte auto die ideaal is als e",
-      "make": "Hyundai",
-      "model": "Getz",
-      "year": 2006,
-      "mileage": 187312,
-      "price": 1000.0,
+      "title": "Peugeot 206 1.6 16V CC 2002 Grijs",
+      "description": "Te koop aangeboden: een peugeot 206 cc uit 2002 in goede staat met een kilometerstand van 251.000 Kilometer. De auto is voorzien van een sterke 1.6 Benzinemotor en verkee",
+      "make": "Peugeot",
+      "model": "206",
+      "year": 2002,
+      "mileage": 251000,
+      "price": 500.0,
       "price_kind": "MIN_BID",
       "fuel": "Benzine",
       "transmission": "Handgeschakeld",
-      "city": "IJmuiden",
+      "city": "Tzummarum",
       "postcode": "",
-      "url": "https://www.marktplaats.nl/v/auto-s/hyundai/m2459783480-hyundai-getz-1-4-5drs-2006-grijs",
-      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/635566e8-bb93-41ac-aaec-93dc5178a380?rule=ecg_mp_eps$_83.jpg",
+      "url": "https://www.marktplaats.nl/v/auto-s/peugeot/m2450768184-peugeot-206-1-6-16v-cc-2002-grijs",
+      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/589c6e8e-e2eb-41e0-be3d-1da8e6dd67d9?rule=ecg_mp_eps$_83.jpg",
       "image_urls": [
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/635566e8-bb93-41ac-aaec-93dc5178a380?rule=ecg_mp_eps$_83.jpg",
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/bd5e4fec-3a36-4211-b693-6e45442c9548?rule=ecg_mp_eps$_83.jpg"
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/589c6e8e-e2eb-41e0-be3d-1da8e6dd67d9?rule=ecg_mp_eps$_83.jpg",
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/44474359-f4cb-47cd-8a34-b2cee0fb1f2d?rule=ecg_mp_eps$_83.jpg"
       ],
       "damage": false,
       "high_risk": false,
@@ -14617,26 +14671,76 @@
       "damage_note": "",
       "seller_name": "",
       "is_bid": true,
-      "comparables": 40,
+      "comparables": 33,
       "comparable_asking_prices": [
-        870.0,
-        875.0,
-        895.0,
-        899.0,
-        899.0
+        550.0,
+        575.0,
+        600.0,
+        695.0,
+        699.0
       ],
-      "resale_low": 1113.75,
-      "resale_high": 1306.8,
-      "profit_low": -311.25,
-      "profit_high": -118.2,
-      "profit_note": "Vraagprijsmediaan 40 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "resale_low": 674.25,
+      "resale_high": 791.12,
+      "profit_low": -250.75,
+      "profit_high": -133.88,
+      "profit_note": "Vraagprijsmediaan 33 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
       "estimated_repair": 250,
       "estimated_other_costs": 175,
-      "total_investment": 1425.0,
+      "total_investment": 925.0,
       "pricing_confidence": "redelijk",
-      "deal_score": 9.21,
+      "deal_score": 9.11,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 354,
+      "rank": 360,
+      "alert_candidate": false
+    },
+    {
+      "id": "mp:m2462650514",
+      "source": "Marktplaats",
+      "title": "Peugeot 206 1.4 Gentry Premium",
+      "description": "Inruilkoopje zo ingeruild gaat zo ook weer weg zonder garantie meeneemprijs algemene informatie aantal deuren: 5 kleur: zwart technische informatie vermogen: 55 kw (75 pk",
+      "make": "Peugeot",
+      "model": "206",
+      "year": 2002,
+      "mileage": 233040,
+      "price": 500.0,
+      "price_kind": "MIN_BID",
+      "fuel": "Benzine",
+      "transmission": "Handgeschakeld",
+      "city": "Elst",
+      "postcode": "",
+      "url": "https://www.marktplaats.nl/v/auto-s/peugeot/m2462650514-peugeot-206-1-4-gentry-premium",
+      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/c3ab5f1c-7e18-4743-9802-942667f1ae40?rule=ecg_mp_eps$_83.jpg",
+      "image_urls": [
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/c3ab5f1c-7e18-4743-9802-942667f1ae40?rule=ecg_mp_eps$_83.jpg",
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/0214393b-fef1-4cd9-8867-190f0c7b813e?rule=ecg_mp_eps$_83.jpg"
+      ],
+      "damage": false,
+      "high_risk": false,
+      "price_unverified": false,
+      "price_warning": "",
+      "damage_note": "",
+      "seller_name": "",
+      "is_bid": true,
+      "comparables": 31,
+      "comparable_asking_prices": [
+        550.0,
+        575.0,
+        600.0,
+        695.0,
+        699.0
+      ],
+      "resale_low": 674.25,
+      "resale_high": 791.12,
+      "profit_low": -250.75,
+      "profit_high": -133.88,
+      "profit_note": "Vraagprijsmediaan 31 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "estimated_repair": 250,
+      "estimated_other_costs": 175,
+      "total_investment": 925.0,
+      "pricing_confidence": "redelijk",
+      "deal_score": 9.11,
+      "deal_label": "Geen positieve onderbouwde marge",
+      "rank": 361,
       "alert_candidate": false
     },
     {
@@ -14686,7 +14790,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 9.11,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 359,
+      "rank": 362,
       "alert_candidate": false
     },
     {
@@ -14736,29 +14840,29 @@
       "pricing_confidence": "redelijk",
       "deal_score": 9.07,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 360,
+      "rank": 363,
       "alert_candidate": false
     },
     {
-      "id": "mp:m2450768184",
+      "id": "mp:m2458310321",
       "source": "Marktplaats",
-      "title": "Peugeot 206 1.6 16V CC 2002 Grijs",
-      "description": "Te koop aangeboden: een peugeot 206 cc uit 2002 in goede staat met een kilometerstand van 251.000 Kilometer. De auto is voorzien van een sterke 1.6 Benzinemotor en verkee",
+      "title": "Peugeot 206 1.4 Air-line 2",
+      "description": "Algemene informatie aantal deuren: 5 kleur: geel technische informatie vermogen: 55 kw (75 pk) transmissie: 5 versnellingen, handgeschakeld bandenmaat: 175/65 r14 acceler",
       "make": "Peugeot",
       "model": "206",
-      "year": 2002,
-      "mileage": 251000,
-      "price": 500.0,
-      "price_kind": "MIN_BID",
+      "year": 2005,
+      "mileage": 216757,
+      "price": 550.0,
+      "price_kind": "FIXED",
       "fuel": "Benzine",
       "transmission": "Handgeschakeld",
-      "city": "Tzummarum",
+      "city": "Almere",
       "postcode": "",
-      "url": "https://www.marktplaats.nl/v/auto-s/peugeot/m2450768184-peugeot-206-1-6-16v-cc-2002-grijs",
-      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/589c6e8e-e2eb-41e0-be3d-1da8e6dd67d9?rule=ecg_mp_eps$_83.jpg",
+      "url": "https://www.marktplaats.nl/v/auto-s/peugeot/m2458310321-peugeot-206-1-4-air-line-2",
+      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/f769f71a-71ff-4b2b-9b27-a63d31567b53?rule=ecg_mp_eps$_83.jpg",
       "image_urls": [
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/589c6e8e-e2eb-41e0-be3d-1da8e6dd67d9?rule=ecg_mp_eps$_83.jpg",
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/44474359-f4cb-47cd-8a34-b2cee0fb1f2d?rule=ecg_mp_eps$_83.jpg"
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/f769f71a-71ff-4b2b-9b27-a63d31567b53?rule=ecg_mp_eps$_83.jpg",
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/44ea2f3d-6508-4aee-8931-fda60cc5d84b?rule=ecg_mp_eps$_83.jpg"
       ],
       "damage": false,
       "high_risk": false,
@@ -14766,77 +14870,27 @@
       "price_warning": "",
       "damage_note": "",
       "seller_name": "",
-      "is_bid": true,
-      "comparables": 32,
+      "is_bid": false,
+      "comparables": 20,
       "comparable_asking_prices": [
-        550.0,
-        575.0,
-        600.0,
-        695.0,
-        699.0
+        700.0,
+        745.0,
+        750.0,
+        750.0,
+        790.0
       ],
-      "resale_low": 653.62,
-      "resale_high": 766.92,
-      "profit_low": -271.38,
-      "profit_high": -158.08,
-      "profit_note": "Vraagprijsmediaan 32 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "resale_low": 674.62,
+      "resale_high": 791.56,
+      "profit_low": -300.38,
+      "profit_high": -183.44,
+      "profit_note": "Vraagprijsmediaan 20 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
       "estimated_repair": 250,
       "estimated_other_costs": 175,
-      "total_investment": 925.0,
+      "total_investment": 975.0,
       "pricing_confidence": "redelijk",
-      "deal_score": 8.95,
+      "deal_score": 8.78,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 374,
-      "alert_candidate": false
-    },
-    {
-      "id": "mp:m2462650514",
-      "source": "Marktplaats",
-      "title": "Peugeot 206 1.4 Gentry Premium",
-      "description": "Inruilkoopje zo ingeruild gaat zo ook weer weg zonder garantie meeneemprijs algemene informatie aantal deuren: 5 kleur: zwart technische informatie vermogen: 55 kw (75 pk",
-      "make": "Peugeot",
-      "model": "206",
-      "year": 2002,
-      "mileage": 233040,
-      "price": 500.0,
-      "price_kind": "MIN_BID",
-      "fuel": "Benzine",
-      "transmission": "Handgeschakeld",
-      "city": "Elst",
-      "postcode": "",
-      "url": "https://www.marktplaats.nl/v/auto-s/peugeot/m2462650514-peugeot-206-1-4-gentry-premium",
-      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/c3ab5f1c-7e18-4743-9802-942667f1ae40?rule=ecg_mp_eps$_83.jpg",
-      "image_urls": [
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/c3ab5f1c-7e18-4743-9802-942667f1ae40?rule=ecg_mp_eps$_83.jpg",
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/0214393b-fef1-4cd9-8867-190f0c7b813e?rule=ecg_mp_eps$_83.jpg"
-      ],
-      "damage": false,
-      "high_risk": false,
-      "price_unverified": false,
-      "price_warning": "",
-      "damage_note": "",
-      "seller_name": "",
-      "is_bid": true,
-      "comparables": 30,
-      "comparable_asking_prices": [
-        550.0,
-        575.0,
-        600.0,
-        695.0,
-        699.0
-      ],
-      "resale_low": 653.62,
-      "resale_high": 766.92,
-      "profit_low": -271.38,
-      "profit_high": -158.08,
-      "profit_note": "Vraagprijsmediaan 30 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
-      "estimated_repair": 250,
-      "estimated_other_costs": 175,
-      "total_investment": 925.0,
-      "pricing_confidence": "redelijk",
-      "deal_score": 8.95,
-      "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 375,
+      "rank": 383,
       "alert_candidate": false
     },
     {
@@ -14886,107 +14940,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 8.77,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 386,
-      "alert_candidate": false
-    },
-    {
-      "id": "mp:m2458310321",
-      "source": "Marktplaats",
-      "title": "Peugeot 206 1.4 Air-line 2",
-      "description": "Algemene informatie aantal deuren: 5 kleur: geel technische informatie vermogen: 55 kw (75 pk) transmissie: 5 versnellingen, handgeschakeld bandenmaat: 175/65 r14 acceler",
-      "make": "Peugeot",
-      "model": "206",
-      "year": 2005,
-      "mileage": 216757,
-      "price": 550.0,
-      "price_kind": "FIXED",
-      "fuel": "Benzine",
-      "transmission": "Handgeschakeld",
-      "city": "Almere",
-      "postcode": "",
-      "url": "https://www.marktplaats.nl/v/auto-s/peugeot/m2458310321-peugeot-206-1-4-air-line-2",
-      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/f769f71a-71ff-4b2b-9b27-a63d31567b53?rule=ecg_mp_eps$_83.jpg",
-      "image_urls": [
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/f769f71a-71ff-4b2b-9b27-a63d31567b53?rule=ecg_mp_eps$_83.jpg",
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/44ea2f3d-6508-4aee-8931-fda60cc5d84b?rule=ecg_mp_eps$_83.jpg"
-      ],
-      "damage": false,
-      "high_risk": false,
-      "price_unverified": false,
-      "price_warning": "",
-      "damage_note": "",
-      "seller_name": "",
-      "is_bid": false,
-      "comparables": 19,
-      "comparable_asking_prices": [
-        700.0,
-        745.0,
-        750.0,
-        750.0,
-        790.0
-      ],
-      "resale_low": 674.25,
-      "resale_high": 791.12,
-      "profit_low": -300.75,
-      "profit_high": -183.88,
-      "profit_note": "Vraagprijsmediaan 19 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
-      "estimated_repair": 250,
-      "estimated_other_costs": 175,
-      "total_investment": 975.0,
-      "pricing_confidence": "redelijk",
-      "deal_score": 8.77,
-      "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 387,
-      "alert_candidate": false
-    },
-    {
-      "id": "mp:m2458250144",
-      "source": "Marktplaats",
-      "title": "Peugeot 206 SW 1.4 X-line 218.416 NAP, Airco, Trekhaak!",
-      "description": "Peugeot 206 sw 1.4 X-line 218.500 Nap, airco, trekhaak, elektrische ramen, centraaldeurs vergendeling met afstand bedingen. 3X auto sleutel aanwezig. Auto rijdt en schake",
-      "make": "Peugeot",
-      "model": "206",
-      "year": 2002,
-      "mileage": 218416,
-      "price": 575.0,
-      "price_kind": "FIXED",
-      "fuel": "Benzine",
-      "transmission": "Handgeschakeld",
-      "city": "Almere",
-      "postcode": "",
-      "url": "https://www.marktplaats.nl/v/auto-s/peugeot/m2458250144-peugeot-206-sw-1-4-x-line-218-416-nap-airco-trekhaak",
-      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/5855d1a9-ea46-4737-9c58-f009f72bc651?rule=ecg_mp_eps$_83.jpg",
-      "image_urls": [
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/5855d1a9-ea46-4737-9c58-f009f72bc651?rule=ecg_mp_eps$_83.jpg",
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/afc1aff8-087a-4ae2-a745-8d490ca008a4?rule=ecg_mp_eps$_83.jpg"
-      ],
-      "damage": false,
-      "high_risk": false,
-      "price_unverified": false,
-      "price_warning": "",
-      "damage_note": "",
-      "seller_name": "",
-      "is_bid": false,
-      "comparables": 27,
-      "comparable_asking_prices": [
-        550.0,
-        600.0,
-        695.0,
-        699.0,
-        700.0
-      ],
-      "resale_low": 674.25,
-      "resale_high": 791.12,
-      "profit_low": -325.75,
-      "profit_high": -208.88,
-      "profit_note": "Vraagprijsmediaan 27 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
-      "estimated_repair": 250,
-      "estimated_other_costs": 175,
-      "total_investment": 1000.0,
-      "pricing_confidence": "redelijk",
-      "deal_score": 8.61,
-      "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 399,
+      "rank": 384,
       "alert_candidate": false
     },
     {
@@ -15036,7 +14990,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 7.83,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 485,
+      "rank": 480,
       "alert_candidate": false
     },
     {
@@ -15086,7 +15040,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 7.83,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 486,
+      "rank": 481,
       "alert_candidate": false
     },
     {
@@ -15136,7 +15090,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 7.48,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 556,
+      "rank": 552,
       "alert_candidate": false
     },
     {
@@ -15186,7 +15140,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 7.25,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 606,
+      "rank": 602,
       "alert_candidate": false
     },
     {
@@ -15236,7 +15190,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 7.25,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 607,
+      "rank": 603,
       "alert_candidate": false
     },
     {
@@ -15286,7 +15240,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 6.65,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 736,
+      "rank": 734,
       "alert_candidate": false
     },
     {
@@ -15317,26 +15271,26 @@
       "damage_note": "",
       "seller_name": "",
       "is_bid": false,
-      "comparables": 28,
+      "comparables": 27,
       "comparable_asking_prices": [
         870.0,
         875.0,
         999.0,
-        999.0,
-        1150.0
+        1150.0,
+        1250.0
       ],
-      "resale_low": 1113.75,
-      "resale_high": 1306.8,
-      "profit_low": -811.25,
-      "profit_high": -618.2,
-      "profit_note": "Vraagprijsmediaan 28 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "resale_low": 1121.25,
+      "resale_high": 1315.6,
+      "profit_low": -803.75,
+      "profit_high": -609.4,
+      "profit_note": "Vraagprijsmediaan 27 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
       "estimated_repair": 250,
       "estimated_other_costs": 175,
       "total_investment": 1925.0,
       "pricing_confidence": "redelijk",
-      "deal_score": 5.88,
+      "deal_score": 5.94,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 1018,
+      "rank": 1006,
       "alert_candidate": false
     },
     {
@@ -15367,26 +15321,26 @@
       "damage_note": "",
       "seller_name": "",
       "is_bid": false,
-      "comparables": 17,
+      "comparables": 16,
       "comparable_asking_prices": [
         850.0,
         875.0,
-        999.0,
         1150.0,
-        1250.0
+        1250.0,
+        1295.0
       ],
-      "resale_low": 1102.5,
-      "resale_high": 1293.6,
-      "profit_low": -822.5,
-      "profit_high": -631.4,
-      "profit_note": "Vraagprijsmediaan 17 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "resale_low": 1111.88,
+      "resale_high": 1304.6,
+      "profit_low": -813.12,
+      "profit_high": -620.4,
+      "profit_note": "Vraagprijsmediaan 16 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
       "estimated_repair": 250,
       "estimated_other_costs": 175,
       "total_investment": 1925.0,
       "pricing_confidence": "redelijk",
-      "deal_score": 5.79,
+      "deal_score": 5.86,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 1054,
+      "rank": 1032,
       "alert_candidate": false
     },
     {
@@ -15417,7 +15371,7 @@
       "damage_note": "",
       "seller_name": "",
       "is_bid": false,
-      "comparables": 35,
+      "comparables": 34,
       "comparable_asking_prices": [
         870.0,
         895.0,
@@ -15429,14 +15383,14 @@
       "resale_high": 1276.0,
       "profit_low": -887.5,
       "profit_high": -699.0,
-      "profit_note": "Vraagprijsmediaan 35 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "profit_note": "Vraagprijsmediaan 34 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
       "estimated_repair": 250,
       "estimated_other_costs": 175,
       "total_investment": 1975.0,
       "pricing_confidence": "redelijk",
       "deal_score": 5.34,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 1167,
+      "rank": 1165,
       "alert_candidate": false
     },
     {
@@ -15467,7 +15421,7 @@
       "damage_note": "",
       "seller_name": "",
       "is_bid": true,
-      "comparables": 33,
+      "comparables": 32,
       "comparable_asking_prices": [
         850.0,
         875.0,
@@ -15479,14 +15433,14 @@
       "resale_high": 1315.6,
       "profit_low": -903.75,
       "profit_high": -709.4,
-      "profit_note": "Vraagprijsmediaan 33 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "profit_note": "Vraagprijsmediaan 32 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
       "estimated_repair": 250,
       "estimated_other_costs": 175,
       "total_investment": 2025.0,
       "pricing_confidence": "redelijk",
       "deal_score": 5.27,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 1179,
+      "rank": 1177,
       "alert_candidate": false
     },
     {
@@ -15536,7 +15490,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 5.13,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 1201,
+      "rank": 1198,
       "alert_candidate": false
     },
     {
@@ -15586,7 +15540,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 5.08,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 1205,
+      "rank": 1201,
       "alert_candidate": false
     },
     {
@@ -15617,7 +15571,7 @@
       "damage_note": "",
       "seller_name": "",
       "is_bid": false,
-      "comparables": 33,
+      "comparables": 32,
       "comparable_asking_prices": [
         870.0,
         895.0,
@@ -15629,18 +15583,18 @@
       "resale_high": 1276.0,
       "profit_low": -936.5,
       "profit_high": -748.0,
-      "profit_note": "Vraagprijsmediaan 33 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "profit_note": "Vraagprijsmediaan 32 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
       "estimated_repair": 250,
       "estimated_other_costs": 175,
       "total_investment": 2024.0,
       "pricing_confidence": "redelijk",
       "deal_score": 5.01,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 1221,
+      "rank": 1218,
       "alert_candidate": false
     },
     {
-      "id": "mp:m2451438975",
+      "id": "mp:m2463464180",
       "source": "Marktplaats",
       "title": "Hyundai Getz 1.1i GL Young|nieuwe APK| NAP| unieke km",
       "description": "Tijdelijk herfstvoordeel op alle auto's deze auto nu van €1695.- Voor €1550 voordeel loopt t/m 9 november lees onder de staat van de auto algemene informatie aantal deure",
@@ -15654,11 +15608,11 @@
       "transmission": "Handgeschakeld",
       "city": "Goor",
       "postcode": "",
-      "url": "https://www.marktplaats.nl/v/auto-s/hyundai/m2451438975-hyundai-getz-1-1i-gl-young-nieuwe-apk-nap-unieke-km",
-      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/441d1667-3db8-4e37-b739-6743ffbacb33?rule=ecg_mp_eps$_83.jpg",
+      "url": "https://www.marktplaats.nl/v/auto-s/hyundai/m2463464180-hyundai-getz-1-1i-gl-young-nieuwe-apk-nap-unieke-km",
+      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/6cefea36-163c-429f-8f80-b214fbb0fe37?rule=ecg_mp_eps$_83.jpg",
       "image_urls": [
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/441d1667-3db8-4e37-b739-6743ffbacb33?rule=ecg_mp_eps$_83.jpg",
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/ec5f633d-9f04-484e-8018-960ac090921c?rule=ecg_mp_eps$_83.jpg"
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/6cefea36-163c-429f-8f80-b214fbb0fe37?rule=ecg_mp_eps$_83.jpg",
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/def2206d-4666-4d9c-bd4e-a3739f4b1182?rule=ecg_mp_eps$_83.jpg"
       ],
       "damage": false,
       "high_risk": false,
@@ -15686,7 +15640,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 4.96,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 1225,
+      "rank": 1222,
       "alert_candidate": false
     },
     {
@@ -15736,7 +15690,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 4.94,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 1227,
+      "rank": 1224,
       "alert_candidate": false
     },
     {
@@ -15786,7 +15740,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 4.79,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 1240,
+      "rank": 1238,
       "alert_candidate": false
     },
     {
@@ -15817,7 +15771,7 @@
       "damage_note": "",
       "seller_name": "",
       "is_bid": false,
-      "comparables": 34,
+      "comparables": 33,
       "comparable_asking_prices": [
         870.0,
         875.0,
@@ -15829,14 +15783,14 @@
       "resale_high": 1276.0,
       "profit_low": -1036.5,
       "profit_high": -848.0,
-      "profit_note": "Vraagprijsmediaan 34 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "profit_note": "Vraagprijsmediaan 33 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
       "estimated_repair": 250,
       "estimated_other_costs": 175,
       "total_investment": 2124.0,
       "pricing_confidence": "redelijk",
       "deal_score": 4.35,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 1285,
+      "rank": 1283,
       "alert_candidate": false
     },
     {
@@ -15867,7 +15821,7 @@
       "damage_note": "",
       "seller_name": "",
       "is_bid": true,
-      "comparables": 31,
+      "comparables": 30,
       "comparable_asking_prices": [
         870.0,
         875.0,
@@ -15879,14 +15833,14 @@
       "resale_high": 1276.0,
       "profit_low": -1037.5,
       "profit_high": -849.0,
-      "profit_note": "Vraagprijsmediaan 31 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "profit_note": "Vraagprijsmediaan 30 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
       "estimated_repair": 250,
       "estimated_other_costs": 175,
       "total_investment": 2125.0,
       "pricing_confidence": "redelijk",
       "deal_score": 4.34,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 1286,
+      "rank": 1284,
       "alert_candidate": false
     },
     {
@@ -15936,7 +15890,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 4.27,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 1287,
+      "rank": 1285,
       "alert_candidate": false
     },
     {
@@ -15967,7 +15921,7 @@
       "damage_note": "",
       "seller_name": "",
       "is_bid": true,
-      "comparables": 31,
+      "comparables": 30,
       "comparable_asking_prices": [
         870.0,
         895.0,
@@ -15979,14 +15933,14 @@
       "resale_high": 1276.0,
       "profit_low": -1087.5,
       "profit_high": -899.0,
-      "profit_note": "Vraagprijsmediaan 31 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "profit_note": "Vraagprijsmediaan 30 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
       "estimated_repair": 250,
       "estimated_other_costs": 175,
       "total_investment": 2175.0,
       "pricing_confidence": "redelijk",
       "deal_score": 4.01,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 1290,
+      "rank": 1288,
       "alert_candidate": false
     },
     {
@@ -16017,7 +15971,7 @@
       "damage_note": "",
       "seller_name": "",
       "is_bid": false,
-      "comparables": 38,
+      "comparables": 37,
       "comparable_asking_prices": [
         870.0,
         895.0,
@@ -16029,14 +15983,14 @@
       "resale_high": 1276.0,
       "profit_low": -1087.5,
       "profit_high": -899.0,
-      "profit_note": "Vraagprijsmediaan 38 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "profit_note": "Vraagprijsmediaan 37 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
       "estimated_repair": 250,
       "estimated_other_costs": 175,
       "total_investment": 2175.0,
       "pricing_confidence": "redelijk",
       "deal_score": 4.01,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 1291,
+      "rank": 1289,
       "alert_candidate": false
     },
     {
@@ -16086,7 +16040,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 3.96,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 1292,
+      "rank": 1290,
       "alert_candidate": false
     },
     {
@@ -16117,7 +16071,7 @@
       "damage_note": "",
       "seller_name": "",
       "is_bid": true,
-      "comparables": 37,
+      "comparables": 36,
       "comparable_asking_prices": [
         870.0,
         895.0,
@@ -16129,14 +16083,14 @@
       "resale_high": 1315.6,
       "profit_low": -1153.75,
       "profit_high": -959.4,
-      "profit_note": "Vraagprijsmediaan 37 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "profit_note": "Vraagprijsmediaan 36 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
       "estimated_repair": 250,
       "estimated_other_costs": 175,
       "total_investment": 2275.0,
       "pricing_confidence": "redelijk",
       "deal_score": 3.6,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 1293,
+      "rank": 1291,
       "alert_candidate": false
     },
     {
@@ -16186,7 +16140,7 @@
       "pricing_confidence": "beperkt",
       "deal_score": 3.33,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 1296,
+      "rank": 1294,
       "alert_candidate": false
     },
     {
@@ -16236,7 +16190,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 3.33,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 1297,
+      "rank": 1295,
       "alert_candidate": false
     },
     {
@@ -16286,7 +16240,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 3.33,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 1298,
+      "rank": 1296,
       "alert_candidate": false
     },
     {
@@ -16336,6 +16290,55 @@
       "deal_score": 3.33,
       "deal_label": "Geen positieve onderbouwde marge",
       "rank": 1315,
+      "alert_candidate": false
+    },
+    {
+      "id": "mp:m2463030960",
+      "source": "Marktplaats",
+      "title": "volkswagen polo 1.2 2010 5 deurs airco alarm tft 17\" vw 6r",
+      "description": "Volkswagen polo 1.2 5 Deurs 2010 zeer zuinige auto de auto is zeer netjes zoals u kunt zien op de fotos  bouwjaar                2010 kilometerstand    264.000Km apk     ",
+      "make": "Volkswagen",
+      "model": "Polo",
+      "year": 2010,
+      "mileage": 264000,
+      "price": 3600.0,
+      "price_kind": "MIN_BID",
+      "fuel": "Benzine",
+      "transmission": "Handgeschakeld",
+      "city": "Oss",
+      "postcode": "",
+      "url": "https://www.marktplaats.nl/v/auto-s/volkswagen/m2463030960-volkswagen-polo-1-2-2010-5-deurs-airco-alarm-tft-17-vw-6r",
+      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/1aef94c9-328f-45b1-969d-2d94e298b844?rule=ecg_mp_eps$_83.jpg",
+      "image_urls": [
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/1aef94c9-328f-45b1-969d-2d94e298b844?rule=ecg_mp_eps$_83.jpg",
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/9e9bbec1-9925-4e1f-b905-e84cc0589570?rule=ecg_mp_eps$_83.jpg"
+      ],
+      "damage": false,
+      "high_risk": false,
+      "price_unverified": false,
+      "price_warning": "",
+      "damage_note": "",
+      "seller_name": "",
+      "is_bid": true,
+      "comparables": 4,
+      "comparable_asking_prices": [
+        650.0,
+        699.0,
+        700.0,
+        3450.0
+      ],
+      "resale_low": 524.62,
+      "resale_high": 615.56,
+      "profit_low": -3500.38,
+      "profit_high": -3409.44,
+      "profit_note": "Vraagprijsmediaan 4 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "estimated_repair": 250,
+      "estimated_other_costs": 175,
+      "total_investment": 4025.0,
+      "pricing_confidence": "beperkt",
+      "deal_score": 3.33,
+      "deal_label": "Geen positieve onderbouwde marge",
+      "rank": 1316,
       "alert_candidate": false
     },
     {
@@ -16416,19 +16419,19 @@
       "damage_note": "Schade/gebrek genoemd; reparatiekosten eerst bepalen",
       "seller_name": "",
       "is_bid": false,
-      "comparables": 25,
+      "comparables": 24,
       "comparable_asking_prices": [
-        650.0,
         650.0,
         799.0,
         800.0,
-        850.0
+        850.0,
+        899.0
       ],
       "resale_low": 749.25,
       "resale_high": 879.12,
       "profit_low": -174.75,
       "profit_high": -44.88,
-      "profit_note": "Vraagprijsmediaan 25 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "profit_note": "Vraagprijsmediaan 24 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
       "estimated_repair": 250,
       "estimated_other_costs": 175,
       "total_investment": 924.0,
@@ -16466,24 +16469,24 @@
       "damage_note": "Schade/gebrek genoemd; reparatiekosten eerst bepalen",
       "seller_name": "",
       "is_bid": true,
-      "comparables": 27,
+      "comparables": 26,
       "comparable_asking_prices": [
         499.0,
         650.0,
-        650.0,
         799.0,
-        800.0
+        800.0,
+        850.0
       ],
-      "resale_low": 746.25,
-      "resale_high": 875.6,
-      "profit_low": -223.75,
-      "profit_high": -94.4,
-      "profit_note": "Vraagprijsmediaan 27 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "resale_low": 747.75,
+      "resale_high": 877.36,
+      "profit_low": -222.25,
+      "profit_high": -92.64,
+      "profit_note": "Vraagprijsmediaan 26 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
       "estimated_repair": 250,
       "estimated_other_costs": 175,
       "total_investment": 970.0,
       "pricing_confidence": "redelijk",
-      "deal_score": 1.37,
+      "deal_score": 1.38,
       "deal_label": "Geen positieve onderbouwde marge",
       "rank": 1319,
       "alert_candidate": false
@@ -16566,24 +16569,24 @@
       "damage_note": "Schade/gebrek genoemd; reparatiekosten eerst bepalen",
       "seller_name": "",
       "is_bid": false,
-      "comparables": 9,
+      "comparables": 8,
       "comparable_asking_prices": [
         795.0,
         800.0,
         800.0,
-        995.0,
-        1190.0
+        1190.0,
+        1195.0
       ],
-      "resale_low": 892.5,
-      "resale_high": 1047.2,
-      "profit_low": -282.5,
-      "profit_high": -127.8,
-      "profit_note": "Vraagprijsmediaan 9 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "resale_low": 894.38,
+      "resale_high": 1049.4,
+      "profit_low": -280.62,
+      "profit_high": -125.6,
+      "profit_note": "Vraagprijsmediaan 8 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
       "estimated_repair": 250,
       "estimated_other_costs": 175,
       "total_investment": 1175.0,
       "pricing_confidence": "redelijk",
-      "deal_score": 1.15,
+      "deal_score": 1.16,
       "deal_label": "Geen positieve onderbouwde marge",
       "rank": 1321,
       "alert_candidate": false
@@ -17261,24 +17264,24 @@
       "damage_note": "Schade/gebrek genoemd; reparatiekosten eerst bepalen",
       "seller_name": "",
       "is_bid": true,
-      "comparables": 8,
+      "comparables": 7,
       "comparable_asking_prices": [
         795.0,
         800.0,
-        995.0,
         1190.0,
-        1195.0
+        1195.0,
+        1250.0
       ],
-      "resale_low": 894.38,
-      "resale_high": 1049.4,
-      "profit_low": -529.62,
-      "profit_high": -374.6,
-      "profit_note": "Vraagprijsmediaan 8 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "resale_low": 896.25,
+      "resale_high": 1051.6,
+      "profit_low": -527.75,
+      "profit_high": -372.4,
+      "profit_note": "Vraagprijsmediaan 7 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
       "estimated_repair": 250,
       "estimated_other_costs": 175,
       "total_investment": 1424.0,
       "pricing_confidence": "redelijk",
-      "deal_score": -0.5,
+      "deal_score": -0.48,
       "deal_label": "Geen positieve onderbouwde marge",
       "rank": 1335,
       "alert_candidate": false
@@ -17411,7 +17414,7 @@
       "damage_note": "Schade/gebrek genoemd; reparatiekosten eerst bepalen",
       "seller_name": "",
       "is_bid": true,
-      "comparables": 26,
+      "comparables": 27,
       "comparable_asking_prices": [
         550.0,
         575.0,
@@ -17419,18 +17422,68 @@
         695.0,
         700.0
       ],
-      "resale_low": 653.62,
-      "resale_high": 766.92,
-      "profit_low": -546.38,
-      "profit_high": -433.08,
-      "profit_note": "Vraagprijsmediaan 26 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "resale_low": 674.25,
+      "resale_high": 791.12,
+      "profit_low": -525.75,
+      "profit_high": -408.88,
+      "profit_note": "Vraagprijsmediaan 27 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
       "estimated_repair": 250,
       "estimated_other_costs": 175,
       "total_investment": 1200.0,
       "pricing_confidence": "redelijk",
-      "deal_score": -0.89,
+      "deal_score": -0.73,
       "deal_label": "Geen positieve onderbouwde marge",
       "rank": 1338,
+      "alert_candidate": false
+    },
+    {
+      "id": "mp:m2408162800",
+      "source": "Marktplaats",
+      "title": "Peugeot 206 1.4 5D 2003 Grijs",
+      "description": "Goede staat, gebruikers sporen aanwezig. Apk tot eind van de jaar. Aandachts punten zijn: scheur in de voor raam aan de passagiers kant en een kleine roest plekje onder d",
+      "make": "Peugeot",
+      "model": "206",
+      "year": 2003,
+      "mileage": 245932,
+      "price": 800.0,
+      "price_kind": "MIN_BID",
+      "fuel": "Benzine",
+      "transmission": "Handgeschakeld",
+      "city": "Groningen",
+      "postcode": "",
+      "url": "https://www.marktplaats.nl/v/auto-s/peugeot/m2408162800-peugeot-206-1-4-5d-2003-grijs",
+      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/f90a457f-326c-4ee6-a421-1ce04a623237?rule=ecg_mp_eps$_83.jpg",
+      "image_urls": [
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/f90a457f-326c-4ee6-a421-1ce04a623237?rule=ecg_mp_eps$_83.jpg",
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/c1ce79e2-5ddd-4712-820c-3f5b4df960a1?rule=ecg_mp_eps$_83.jpg"
+      ],
+      "damage": true,
+      "high_risk": false,
+      "price_unverified": false,
+      "price_warning": "",
+      "damage_note": "Schade/gebrek genoemd; reparatiekosten eerst bepalen",
+      "seller_name": "",
+      "is_bid": true,
+      "comparables": 32,
+      "comparable_asking_prices": [
+        550.0,
+        575.0,
+        590.0,
+        600.0,
+        695.0
+      ],
+      "resale_low": 653.62,
+      "resale_high": 766.92,
+      "profit_low": -571.38,
+      "profit_high": -458.08,
+      "profit_note": "Vraagprijsmediaan 32 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "estimated_repair": 250,
+      "estimated_other_costs": 175,
+      "total_investment": 1225.0,
+      "pricing_confidence": "redelijk",
+      "deal_score": -1.05,
+      "deal_label": "Geen positieve onderbouwde marge",
+      "rank": 1339,
       "alert_candidate": false
     },
     {
@@ -17479,56 +17532,6 @@
       "total_investment": 1424.0,
       "pricing_confidence": "redelijk",
       "deal_score": -1.05,
-      "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 1339,
-      "alert_candidate": false
-    },
-    {
-      "id": "mp:m2408162800",
-      "source": "Marktplaats",
-      "title": "Peugeot 206 1.4 5D 2003 Grijs",
-      "description": "Goede staat, gebruikers sporen aanwezig. Apk tot eind van de jaar. Aandachts punten zijn: scheur in de voor raam aan de passagiers kant en een kleine roest plekje onder d",
-      "make": "Peugeot",
-      "model": "206",
-      "year": 2003,
-      "mileage": 245932,
-      "price": 800.0,
-      "price_kind": "MIN_BID",
-      "fuel": "Benzine",
-      "transmission": "Handgeschakeld",
-      "city": "Groningen",
-      "postcode": "",
-      "url": "https://www.marktplaats.nl/v/auto-s/peugeot/m2408162800-peugeot-206-1-4-5d-2003-grijs",
-      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/f90a457f-326c-4ee6-a421-1ce04a623237?rule=ecg_mp_eps$_83.jpg",
-      "image_urls": [
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/f90a457f-326c-4ee6-a421-1ce04a623237?rule=ecg_mp_eps$_83.jpg",
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/c1ce79e2-5ddd-4712-820c-3f5b4df960a1?rule=ecg_mp_eps$_83.jpg"
-      ],
-      "damage": true,
-      "high_risk": false,
-      "price_unverified": false,
-      "price_warning": "",
-      "damage_note": "Schade/gebrek genoemd; reparatiekosten eerst bepalen",
-      "seller_name": "",
-      "is_bid": true,
-      "comparables": 31,
-      "comparable_asking_prices": [
-        550.0,
-        575.0,
-        590.0,
-        600.0,
-        695.0
-      ],
-      "resale_low": 633.0,
-      "resale_high": 742.72,
-      "profit_low": -592.0,
-      "profit_high": -482.28,
-      "profit_note": "Vraagprijsmediaan 31 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
-      "estimated_repair": 250,
-      "estimated_other_costs": 175,
-      "total_investment": 1225.0,
-      "pricing_confidence": "redelijk",
-      "deal_score": -1.22,
       "deal_label": "Geen positieve onderbouwde marge",
       "rank": 1340,
       "alert_candidate": false
@@ -17661,19 +17664,19 @@
       "damage_note": "Schade/gebrek genoemd; reparatiekosten eerst bepalen",
       "seller_name": "",
       "is_bid": false,
-      "comparables": 36,
+      "comparables": 35,
       "comparable_asking_prices": [
         499.0,
         595.0,
         595.0,
-        650.0,
-        749.0
+        749.0,
+        799.0
       ],
       "resale_low": 746.25,
       "resale_high": 875.6,
       "profit_low": -677.75,
       "profit_high": -548.4,
-      "profit_note": "Vraagprijsmediaan 36 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "profit_note": "Vraagprijsmediaan 35 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
       "estimated_repair": 250,
       "estimated_other_costs": 175,
       "total_investment": 1424.0,
@@ -17711,7 +17714,7 @@
       "damage_note": "Schade/gebrek genoemd; reparatiekosten eerst bepalen",
       "seller_name": "",
       "is_bid": true,
-      "comparables": 13,
+      "comparables": 12,
       "comparable_asking_prices": [
         495.0,
         499.0,
@@ -17719,18 +17722,68 @@
         650.0,
         899.0
       ],
-      "resale_low": 746.25,
-      "resale_high": 875.6,
-      "profit_low": -677.75,
-      "profit_high": -548.4,
-      "profit_note": "Vraagprijsmediaan 13 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "resale_low": 744.38,
+      "resale_high": 873.4,
+      "profit_low": -679.62,
+      "profit_high": -550.6,
+      "profit_note": "Vraagprijsmediaan 12 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
       "estimated_repair": 250,
       "estimated_other_costs": 175,
       "total_investment": 1424.0,
       "pricing_confidence": "redelijk",
-      "deal_score": -1.66,
+      "deal_score": -1.67,
       "deal_label": "Geen positieve onderbouwde marge",
       "rank": 1344,
+      "alert_candidate": false
+    },
+    {
+      "id": "mp:m2451308464",
+      "source": "Marktplaats",
+      "title": "Peugeot 206 1.4 X-line 3D 2004 Nieuwe Apk",
+      "description": "Peugeot 206 1.4 X-line | bouwjaar 2004 | nieuwe apk andré mulder auto’s biedt aan: een peugeot 206 1.4 X-line uit 2004, uitgevoerd met een 1.4 Benzinemotor en handgeschak",
+      "make": "Peugeot",
+      "model": "206",
+      "year": 2004,
+      "mileage": 225141,
+      "price": 899.0,
+      "price_kind": "FIXED",
+      "fuel": "Benzine",
+      "transmission": "Handgeschakeld",
+      "city": "Winschoten",
+      "postcode": "",
+      "url": "https://www.marktplaats.nl/v/auto-s/peugeot/m2451308464-peugeot-206-1-4-x-line-3d-2004-nieuwe-apk",
+      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/f52d72c2-f472-4bce-a2a0-d91afd73541f?rule=ecg_mp_eps$_83.jpg",
+      "image_urls": [
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/f52d72c2-f472-4bce-a2a0-d91afd73541f?rule=ecg_mp_eps$_83.jpg",
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/ec91221d-5e28-43a7-beff-3ef4e84963b1?rule=ecg_mp_eps$_83.jpg"
+      ],
+      "damage": true,
+      "high_risk": false,
+      "price_unverified": false,
+      "price_warning": "",
+      "damage_note": "Schade/gebrek genoemd; reparatiekosten eerst bepalen",
+      "seller_name": "",
+      "is_bid": false,
+      "comparables": 30,
+      "comparable_asking_prices": [
+        550.0,
+        575.0,
+        590.0,
+        600.0,
+        700.0
+      ],
+      "resale_low": 653.62,
+      "resale_high": 766.92,
+      "profit_low": -670.38,
+      "profit_high": -557.08,
+      "profit_note": "Vraagprijsmediaan 30 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "estimated_repair": 250,
+      "estimated_other_costs": 175,
+      "total_investment": 1324.0,
+      "pricing_confidence": "redelijk",
+      "deal_score": -1.71,
+      "deal_label": "Geen positieve onderbouwde marge",
+      "rank": 1345,
       "alert_candidate": false
     },
     {
@@ -17778,56 +17831,6 @@
       "total_investment": 1174.0,
       "pricing_confidence": "beperkt",
       "deal_score": -1.72,
-      "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 1345,
-      "alert_candidate": false
-    },
-    {
-      "id": "mp:m2458461714",
-      "source": "Marktplaats",
-      "title": "Volkswagen Golf | 2009 | 1.4 TSI Comfortline | Export en Han",
-      "description": "Auto conditie: start en rijdt. Auto loopt op 3 cilinders alle lampjes branden branden in dashboard rondom schade handgeschakeld – benzine – export en handel te koop aange",
-      "make": "Volkswagen",
-      "model": "Golf",
-      "year": 2009,
-      "mileage": 352112,
-      "price": 999.0,
-      "price_kind": "FIXED",
-      "fuel": "Benzine",
-      "transmission": "Handgeschakeld",
-      "city": "Nieuwerkerk aan den IJssel",
-      "postcode": "",
-      "url": "https://www.marktplaats.nl/v/auto-s/volkswagen/m2458461714-volkswagen-golf-2009-1-4-tsi-comfortline-export-en-han",
-      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/b914c1fb-4ba5-49ec-81a1-59c92650a121?rule=ecg_mp_eps$_83.jpg",
-      "image_urls": [
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/b914c1fb-4ba5-49ec-81a1-59c92650a121?rule=ecg_mp_eps$_83.jpg",
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/20af0aa2-698f-476b-845f-a4805b9d680f?rule=ecg_mp_eps$_83.jpg"
-      ],
-      "damage": true,
-      "high_risk": false,
-      "price_unverified": false,
-      "price_warning": "",
-      "damage_note": "Schade/gebrek genoemd; reparatiekosten eerst bepalen",
-      "seller_name": "",
-      "is_bid": false,
-      "comparables": 8,
-      "comparable_asking_prices": [
-        750.0,
-        810.0,
-        899.0,
-        950.0,
-        999.0
-      ],
-      "resale_low": 730.88,
-      "resale_high": 857.56,
-      "profit_low": -693.12,
-      "profit_high": -566.44,
-      "profit_note": "Vraagprijsmediaan 8 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
-      "estimated_repair": 250,
-      "estimated_other_costs": 175,
-      "total_investment": 1424.0,
-      "pricing_confidence": "redelijk",
-      "deal_score": -1.78,
       "deal_label": "Geen positieve onderbouwde marge",
       "rank": 1346,
       "alert_candidate": false
@@ -18033,25 +18036,25 @@
       "alert_candidate": false
     },
     {
-      "id": "mp:m2451308464",
+      "id": "mp:m2458461714",
       "source": "Marktplaats",
-      "title": "Peugeot 206 1.4 X-line 3D 2004 Nieuwe Apk",
-      "description": "Peugeot 206 1.4 X-line | bouwjaar 2004 | nieuwe apk andré mulder auto’s biedt aan: een peugeot 206 1.4 X-line uit 2004, uitgevoerd met een 1.4 Benzinemotor en handgeschak",
-      "make": "Peugeot",
-      "model": "206",
-      "year": 2004,
-      "mileage": 225141,
-      "price": 899.0,
+      "title": "Volkswagen Golf | 2009 | 1.4 TSI Comfortline | Export en Han",
+      "description": "Auto conditie: start en rijdt. Auto loopt op 3 cilinders alle lampjes branden branden in dashboard rondom schade handgeschakeld – benzine – export en handel te koop aange",
+      "make": "Volkswagen",
+      "model": "Golf",
+      "year": 2009,
+      "mileage": 352112,
+      "price": 999.0,
       "price_kind": "FIXED",
       "fuel": "Benzine",
       "transmission": "Handgeschakeld",
-      "city": "Winschoten",
+      "city": "Nieuwerkerk aan den IJssel",
       "postcode": "",
-      "url": "https://www.marktplaats.nl/v/auto-s/peugeot/m2451308464-peugeot-206-1-4-x-line-3d-2004-nieuwe-apk",
-      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/f52d72c2-f472-4bce-a2a0-d91afd73541f?rule=ecg_mp_eps$_83.jpg",
+      "url": "https://www.marktplaats.nl/v/auto-s/volkswagen/m2458461714-volkswagen-golf-2009-1-4-tsi-comfortline-export-en-han",
+      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/b914c1fb-4ba5-49ec-81a1-59c92650a121?rule=ecg_mp_eps$_83.jpg",
       "image_urls": [
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/f52d72c2-f472-4bce-a2a0-d91afd73541f?rule=ecg_mp_eps$_83.jpg",
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/ec91221d-5e28-43a7-beff-3ef4e84963b1?rule=ecg_mp_eps$_83.jpg"
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/b914c1fb-4ba5-49ec-81a1-59c92650a121?rule=ecg_mp_eps$_83.jpg",
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/20af0aa2-698f-476b-845f-a4805b9d680f?rule=ecg_mp_eps$_83.jpg"
       ],
       "damage": true,
       "high_risk": false,
@@ -18060,24 +18063,24 @@
       "damage_note": "Schade/gebrek genoemd; reparatiekosten eerst bepalen",
       "seller_name": "",
       "is_bid": false,
-      "comparables": 29,
+      "comparables": 7,
       "comparable_asking_prices": [
-        550.0,
-        575.0,
-        590.0,
-        600.0,
-        700.0
+        750.0,
+        810.0,
+        899.0,
+        950.0,
+        999.0
       ],
-      "resale_low": 633.0,
-      "resale_high": 742.72,
-      "profit_low": -691.0,
-      "profit_high": -581.28,
-      "profit_note": "Vraagprijsmediaan 29 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "resale_low": 712.5,
+      "resale_high": 836.0,
+      "profit_low": -711.5,
+      "profit_high": -588.0,
+      "profit_note": "Vraagprijsmediaan 7 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
       "estimated_repair": 250,
       "estimated_other_costs": 175,
-      "total_investment": 1324.0,
+      "total_investment": 1424.0,
       "pricing_confidence": "redelijk",
-      "deal_score": -1.88,
+      "deal_score": -1.92,
       "deal_label": "Geen positieve onderbouwde marge",
       "rank": 1351,
       "alert_candidate": false
@@ -18260,19 +18263,19 @@
       "damage_note": "Schade/gebrek genoemd; reparatiekosten eerst bepalen",
       "seller_name": "",
       "is_bid": true,
-      "comparables": 36,
+      "comparables": 35,
       "comparable_asking_prices": [
         595.0,
         595.0,
-        650.0,
         799.0,
-        850.0
+        850.0,
+        895.0
       ],
       "resale_low": 746.25,
       "resale_high": 875.6,
       "profit_low": -828.75,
       "profit_high": -699.4,
-      "profit_note": "Vraagprijsmediaan 36 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "profit_note": "Vraagprijsmediaan 35 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
       "estimated_repair": 250,
       "estimated_other_costs": 175,
       "total_investment": 1575.0,
@@ -18523,7 +18526,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": -41.4,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 1402,
+      "rank": 1403,
       "alert_candidate": false
     },
     {
@@ -18573,7 +18576,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 120.71,
       "deal_label": "Prijs eerst controleren — mogelijk lokbedrag",
-      "rank": 1405,
+      "rank": 1406,
       "alert_candidate": false
     },
     {
@@ -18621,7 +18624,7 @@
       "pricing_confidence": "beperkt",
       "deal_score": -20.4,
       "deal_label": "Prijs eerst controleren — mogelijk lokbedrag",
-      "rank": 1406,
+      "rank": 1407,
       "alert_candidate": false
     },
     {
@@ -18652,26 +18655,25 @@
       "damage_note": "Schade/gebrek genoemd; reparatiekosten eerst bepalen",
       "seller_name": "",
       "is_bid": false,
-      "comparables": 5,
+      "comparables": 4,
       "comparable_asking_prices": [
         650.0,
         699.0,
         700.0,
-        1000.0,
         3450.0
       ],
-      "resale_low": 525.0,
-      "resale_high": 616.0,
-      "profit_low": -11.0,
-      "profit_high": 80.0,
-      "profit_note": "Vraagprijsmediaan 5 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "resale_low": 524.62,
+      "resale_high": 615.56,
+      "profit_low": -11.38,
+      "profit_high": 79.56,
+      "profit_note": "Vraagprijsmediaan 4 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
       "estimated_repair": 250,
       "estimated_other_costs": 175,
       "total_investment": 536.0,
       "pricing_confidence": "beperkt",
-      "deal_score": -28.4,
+      "deal_score": -28.41,
       "deal_label": "Prijs eerst controleren — mogelijk lokbedrag",
-      "rank": 1408,
+      "rank": 1409,
       "alert_candidate": false
     },
     {
@@ -18715,7 +18717,7 @@
       "pricing_confidence": "geen",
       "deal_score": -77.0,
       "deal_label": "Prijs eerst controleren — mogelijk lokbedrag",
-      "rank": 1409,
+      "rank": 1410,
       "alert_candidate": false
     },
     {
@@ -18759,7 +18761,7 @@
       "pricing_confidence": "geen",
       "deal_score": -77.0,
       "deal_label": "Prijs eerst controleren — mogelijk lokbedrag",
-      "rank": 1410,
+      "rank": 1411,
       "alert_candidate": false
     },
     {
@@ -18803,7 +18805,7 @@
       "pricing_confidence": "geen",
       "deal_score": -77.0,
       "deal_label": "Prijs eerst controleren — mogelijk lokbedrag",
-      "rank": 1411,
+      "rank": 1412,
       "alert_candidate": false
     },
     {
@@ -18847,7 +18849,7 @@
       "pricing_confidence": "geen",
       "deal_score": -77.0,
       "deal_label": "Prijs eerst controleren — mogelijk lokbedrag",
-      "rank": 1412,
+      "rank": 1413,
       "alert_candidate": false
     },
     {
@@ -18891,7 +18893,7 @@
       "pricing_confidence": "geen",
       "deal_score": -77.0,
       "deal_label": "Prijs eerst controleren — mogelijk lokbedrag",
-      "rank": 1413,
+      "rank": 1414,
       "alert_candidate": false
     },
     {
@@ -18935,7 +18937,7 @@
       "pricing_confidence": "geen",
       "deal_score": -77.0,
       "deal_label": "Prijs eerst controleren — mogelijk lokbedrag",
-      "rank": 1414,
+      "rank": 1415,
       "alert_candidate": false
     },
     {
@@ -18979,7 +18981,7 @@
       "pricing_confidence": "geen",
       "deal_score": -77.0,
       "deal_label": "Prijs eerst controleren — mogelijk lokbedrag",
-      "rank": 1415,
+      "rank": 1416,
       "alert_candidate": false
     },
     {
@@ -19023,7 +19025,7 @@
       "pricing_confidence": "geen",
       "deal_score": -77.0,
       "deal_label": "Prijs eerst controleren — mogelijk lokbedrag",
-      "rank": 1416,
+      "rank": 1417,
       "alert_candidate": false
     },
     {
@@ -19067,7 +19069,7 @@
       "pricing_confidence": "geen",
       "deal_score": -77.0,
       "deal_label": "Prijs eerst controleren — mogelijk lokbedrag",
-      "rank": 1417,
+      "rank": 1418,
       "alert_candidate": false
     },
     {
@@ -19111,7 +19113,7 @@
       "pricing_confidence": "geen",
       "deal_score": -77.0,
       "deal_label": "Prijs eerst controleren — mogelijk lokbedrag",
-      "rank": 1418,
+      "rank": 1419,
       "alert_candidate": false
     },
     {
@@ -19155,7 +19157,7 @@
       "pricing_confidence": "geen",
       "deal_score": -77.0,
       "deal_label": "Prijs eerst controleren — mogelijk lokbedrag",
-      "rank": 1419,
+      "rank": 1420,
       "alert_candidate": false
     },
     {
@@ -19199,7 +19201,7 @@
       "pricing_confidence": "geen",
       "deal_score": -77.0,
       "deal_label": "Prijs eerst controleren — mogelijk lokbedrag",
-      "rank": 1420,
+      "rank": 1421,
       "alert_candidate": false
     },
     {
@@ -19243,7 +19245,7 @@
       "pricing_confidence": "geen",
       "deal_score": -77.0,
       "deal_label": "Prijs eerst controleren — mogelijk lokbedrag",
-      "rank": 1421,
+      "rank": 1422,
       "alert_candidate": false
     },
     {
@@ -19287,7 +19289,7 @@
       "pricing_confidence": "geen",
       "deal_score": -77.02,
       "deal_label": "Prijs eerst controleren — mogelijk lokbedrag",
-      "rank": 1422,
+      "rank": 1423,
       "alert_candidate": false
     },
     {
@@ -19331,7 +19333,7 @@
       "pricing_confidence": "geen",
       "deal_score": -77.02,
       "deal_label": "Prijs eerst controleren — mogelijk lokbedrag",
-      "rank": 1423,
+      "rank": 1424,
       "alert_candidate": false
     },
     {
@@ -19375,7 +19377,7 @@
       "pricing_confidence": "geen",
       "deal_score": -77.02,
       "deal_label": "Prijs eerst controleren — mogelijk lokbedrag",
-      "rank": 1424,
+      "rank": 1425,
       "alert_candidate": false
     },
     {
@@ -19419,7 +19421,7 @@
       "pricing_confidence": "geen",
       "deal_score": -77.02,
       "deal_label": "Prijs eerst controleren — mogelijk lokbedrag",
-      "rank": 1425,
+      "rank": 1426,
       "alert_candidate": false
     },
     {
@@ -19463,7 +19465,7 @@
       "pricing_confidence": "geen",
       "deal_score": -77.02,
       "deal_label": "Prijs eerst controleren — mogelijk lokbedrag",
-      "rank": 1426,
+      "rank": 1427,
       "alert_candidate": false
     },
     {
@@ -19509,7 +19511,7 @@
       "pricing_confidence": "geen",
       "deal_score": -77.02,
       "deal_label": "Prijs eerst controleren — mogelijk lokbedrag",
-      "rank": 1427,
+      "rank": 1428,
       "alert_candidate": false
     },
     {
@@ -19553,7 +19555,7 @@
       "pricing_confidence": "geen",
       "deal_score": -77.02,
       "deal_label": "Prijs eerst controleren — mogelijk lokbedrag",
-      "rank": 1428,
+      "rank": 1429,
       "alert_candidate": false
     },
     {
@@ -19597,7 +19599,7 @@
       "pricing_confidence": "geen",
       "deal_score": -77.02,
       "deal_label": "Prijs eerst controleren — mogelijk lokbedrag",
-      "rank": 1429,
+      "rank": 1430,
       "alert_candidate": false
     },
     {
@@ -19641,7 +19643,7 @@
       "pricing_confidence": "geen",
       "deal_score": -83.0,
       "deal_label": "Prijs eerst controleren — mogelijk lokbedrag",
-      "rank": 1456,
+      "rank": 1457,
       "alert_candidate": false
     },
     {
@@ -19685,7 +19687,7 @@
       "pricing_confidence": "geen",
       "deal_score": -91.14,
       "deal_label": "Prijs eerst controleren — mogelijk lokbedrag",
-      "rank": 1462,
+      "rank": 1463,
       "alert_candidate": false
     },
     {
@@ -19729,15 +19731,15 @@
       "pricing_confidence": "geen",
       "deal_score": -122.0,
       "deal_label": "Prijs eerst controleren — mogelijk lokbedrag",
-      "rank": 1463,
+      "rank": 1464,
       "alert_candidate": false
     }
   ],
   "requests_done": 28,
   "facebook_status": {
-    "status": "bewaarde_resultaten",
+    "status": "geen_passende_advertenties",
     "count": 0,
-    "checked_at": "2026-11-08T08:06:31+00:00",
+    "checked_at": "2026-11-08T14:46:05+00:00",
     "provider": "gratis openbare zoekmachine-index, geen Facebook-API",
     "queries": 8,
     "failed_queries": 0,
