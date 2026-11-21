@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T03:56:54+00:00",
+  "generated_at": "2026-11-21T04:59:32+00:00",
   "source_status": "OK",
   "stale": false,
   "errors": [],
@@ -1027,7 +1027,7 @@
       "damage_note": "Schade/gebrek genoemd; reparatiekosten eerst bepalen",
       "seller_name": "",
       "is_bid": true,
-      "comparables": 16,
+      "comparables": 17,
       "comparable_asking_prices": [
         650.0,
         1244.0,
@@ -1035,16 +1035,16 @@
         1250.0,
         1250.0
       ],
-      "resale_low": 993.38,
-      "resale_high": 1165.56,
-      "profit_low": -81.62,
-      "profit_high": 90.56,
-      "profit_note": "Vraagprijsmediaan 16 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "resale_low": 1012.5,
+      "resale_high": 1188.0,
+      "profit_low": -62.5,
+      "profit_high": 113.0,
+      "profit_note": "Vraagprijsmediaan 17 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
       "estimated_repair": 250,
       "estimated_other_costs": 175,
       "total_investment": 1075.0,
       "pricing_confidence": "redelijk",
-      "deal_score": 83.81,
+      "deal_score": 84.26,
       "deal_label": "Mogelijke marge, onzeker",
       "rank": 21,
       "alert_candidate": false
@@ -6878,10 +6878,8 @@
       "damage_note": "",
       "seller_name": "",
       "is_bid": true,
-      "comparables": 1,
-      "comparable_asking_prices": [
-        625.0
-      ],
+      "comparables": 0,
+      "comparable_asking_prices": [],
       "resale_low": null,
       "resale_high": null,
       "profit_low": null,
@@ -11901,6 +11899,53 @@
       "alert_candidate": false
     },
     {
+      "id": "mp:m2467993383",
+      "source": "Marktplaats",
+      "title": "Fiat Panda 1.2 44KW 60PK 2008",
+      "description": "Te koop fiat panda emotion uit 2008. Apk gekeurd tot 1 september 2027, heeft tijdens de keuring ook een kleine beurt gehad waarbij alle vloeistoffen zijn vervangen. Kilom",
+      "make": "Fiat",
+      "model": "Panda",
+      "year": 2008,
+      "mileage": 117500,
+      "price": 1650.0,
+      "price_kind": "MIN_BID",
+      "fuel": "Benzine",
+      "transmission": "Handgeschakeld",
+      "city": "Rotterdam",
+      "postcode": "",
+      "url": "https://www.marktplaats.nl/v/auto-s/fiat/m2467993383-fiat-panda-1-2-44kw-60pk-2008",
+      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/551fe46a-cc04-4675-86f3-23bd08039081?rule=ecg_mp_eps$_83.jpg",
+      "image_urls": [
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/551fe46a-cc04-4675-86f3-23bd08039081?rule=ecg_mp_eps$_83.jpg",
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/b791b5fa-bc62-415e-90f9-07cbaa7d9cf5?rule=ecg_mp_eps$_83.jpg"
+      ],
+      "damage": false,
+      "high_risk": false,
+      "price_unverified": false,
+      "price_warning": "",
+      "damage_note": "",
+      "seller_name": "",
+      "is_bid": true,
+      "comparables": 2,
+      "comparable_asking_prices": [
+        1249.0,
+        1250.0
+      ],
+      "resale_low": null,
+      "resale_high": null,
+      "profit_low": null,
+      "profit_high": null,
+      "profit_note": "Geen betrouwbare doorverkoopschatting: te weinig vergelijkbare auto's met bouwjaar en km-stand.",
+      "estimated_repair": 250,
+      "estimated_other_costs": 175,
+      "total_investment": 2075.0,
+      "pricing_confidence": "geen",
+      "deal_score": 34.79,
+      "deal_label": "Niet voldoende vergelijkingsgegevens",
+      "rank": 265,
+      "alert_candidate": false
+    },
+    {
       "id": "mp:m2468132624",
       "source": "Marktplaats",
       "title": "Skoda Fabia Combi 1.2 Tsi NIEUW APK",
@@ -11941,7 +11986,7 @@
       "pricing_confidence": "geen",
       "deal_score": 34.5,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 265,
+      "rank": 266,
       "alert_candidate": false
     },
     {
@@ -11985,7 +12030,7 @@
       "pricing_confidence": "geen",
       "deal_score": 34.43,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 266,
+      "rank": 267,
       "alert_candidate": false
     },
     {
@@ -12029,7 +12074,7 @@
       "pricing_confidence": "geen",
       "deal_score": 33.93,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 267,
+      "rank": 268,
       "alert_candidate": false
     },
     {
@@ -12073,7 +12118,7 @@
       "pricing_confidence": "geen",
       "deal_score": 33.9,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 268,
+      "rank": 269,
       "alert_candidate": false
     },
     {
@@ -12119,7 +12164,7 @@
       "pricing_confidence": "geen",
       "deal_score": 33.79,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 269,
+      "rank": 270,
       "alert_candidate": false
     },
     {
@@ -12163,7 +12208,7 @@
       "pricing_confidence": "geen",
       "deal_score": 33.72,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 270,
+      "rank": 271,
       "alert_candidate": false
     },
     {
@@ -12207,7 +12252,7 @@
       "pricing_confidence": "geen",
       "deal_score": 33.72,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 271,
+      "rank": 272,
       "alert_candidate": false
     },
     {
@@ -12251,7 +12296,7 @@
       "pricing_confidence": "geen",
       "deal_score": 33.43,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 272,
+      "rank": 273,
       "alert_candidate": false
     },
     {
@@ -12295,7 +12340,7 @@
       "pricing_confidence": "geen",
       "deal_score": 33.36,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 273,
+      "rank": 274,
       "alert_candidate": false
     },
     {
@@ -12339,7 +12384,7 @@
       "pricing_confidence": "geen",
       "deal_score": 32.44,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 274,
+      "rank": 275,
       "alert_candidate": false
     },
     {
@@ -12383,7 +12428,7 @@
       "pricing_confidence": "geen",
       "deal_score": 32.21,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 275,
+      "rank": 276,
       "alert_candidate": false
     },
     {
@@ -12427,7 +12472,7 @@
       "pricing_confidence": "geen",
       "deal_score": 32.21,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 276,
+      "rank": 277,
       "alert_candidate": false
     },
     {
@@ -12471,7 +12516,7 @@
       "pricing_confidence": "geen",
       "deal_score": 31.79,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 277,
+      "rank": 278,
       "alert_candidate": false
     },
     {
@@ -12515,7 +12560,7 @@
       "pricing_confidence": "geen",
       "deal_score": 31.74,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 278,
+      "rank": 279,
       "alert_candidate": false
     },
     {
@@ -12559,7 +12604,7 @@
       "pricing_confidence": "geen",
       "deal_score": 31.57,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 279,
+      "rank": 280,
       "alert_candidate": false
     },
     {
@@ -12603,7 +12648,7 @@
       "pricing_confidence": "geen",
       "deal_score": 31.5,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 280,
+      "rank": 281,
       "alert_candidate": false
     },
     {
@@ -12649,7 +12694,7 @@
       "pricing_confidence": "geen",
       "deal_score": 30.72,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 281,
+      "rank": 282,
       "alert_candidate": false
     },
     {
@@ -12693,7 +12738,7 @@
       "pricing_confidence": "geen",
       "deal_score": 30.15,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 282,
+      "rank": 283,
       "alert_candidate": false
     },
     {
@@ -12737,7 +12782,7 @@
       "pricing_confidence": "geen",
       "deal_score": 30.07,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 283,
+      "rank": 284,
       "alert_candidate": false
     },
     {
@@ -12781,7 +12826,7 @@
       "pricing_confidence": "geen",
       "deal_score": 28.71,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 284,
+      "rank": 285,
       "alert_candidate": false
     },
     {
@@ -12825,7 +12870,7 @@
       "pricing_confidence": "geen",
       "deal_score": 28.43,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 285,
+      "rank": 286,
       "alert_candidate": false
     },
     {
@@ -12869,7 +12914,7 @@
       "pricing_confidence": "geen",
       "deal_score": 28.39,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 286,
+      "rank": 287,
       "alert_candidate": false
     },
     {
@@ -12915,7 +12960,7 @@
       "pricing_confidence": "geen",
       "deal_score": 28.36,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 287,
+      "rank": 288,
       "alert_candidate": false
     },
     {
@@ -12959,7 +13004,7 @@
       "pricing_confidence": "geen",
       "deal_score": 28.21,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 288,
+      "rank": 289,
       "alert_candidate": false
     },
     {
@@ -13003,7 +13048,7 @@
       "pricing_confidence": "geen",
       "deal_score": 28.14,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 289,
+      "rank": 290,
       "alert_candidate": false
     },
     {
@@ -13047,7 +13092,7 @@
       "pricing_confidence": "geen",
       "deal_score": 28.14,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 290,
+      "rank": 291,
       "alert_candidate": false
     },
     {
@@ -13091,7 +13136,7 @@
       "pricing_confidence": "geen",
       "deal_score": 28.07,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 291,
+      "rank": 292,
       "alert_candidate": false
     },
     {
@@ -13135,7 +13180,7 @@
       "pricing_confidence": "geen",
       "deal_score": 28.0,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 292,
+      "rank": 293,
       "alert_candidate": false
     },
     {
@@ -13181,7 +13226,7 @@
       "pricing_confidence": "geen",
       "deal_score": 27.93,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 293,
+      "rank": 294,
       "alert_candidate": false
     },
     {
@@ -13225,7 +13270,7 @@
       "pricing_confidence": "geen",
       "deal_score": 27.93,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 294,
+      "rank": 295,
       "alert_candidate": false
     },
     {
@@ -13269,7 +13314,7 @@
       "pricing_confidence": "geen",
       "deal_score": 27.93,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 295,
+      "rank": 296,
       "alert_candidate": false
     },
     {
@@ -13313,7 +13358,7 @@
       "pricing_confidence": "geen",
       "deal_score": 27.93,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 296,
+      "rank": 297,
       "alert_candidate": false
     },
     {
@@ -13357,7 +13402,7 @@
       "pricing_confidence": "geen",
       "deal_score": 27.89,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 297,
+      "rank": 298,
       "alert_candidate": false
     },
     {
@@ -13401,7 +13446,7 @@
       "pricing_confidence": "geen",
       "deal_score": 27.79,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 298,
+      "rank": 299,
       "alert_candidate": false
     },
     {
@@ -13445,7 +13490,7 @@
       "pricing_confidence": "geen",
       "deal_score": 27.79,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 299,
+      "rank": 300,
       "alert_candidate": false
     },
     {
@@ -13492,7 +13537,7 @@
       "pricing_confidence": "geen",
       "deal_score": 27.72,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 300,
+      "rank": 301,
       "alert_candidate": false
     },
     {
@@ -13536,7 +13581,7 @@
       "pricing_confidence": "geen",
       "deal_score": 27.71,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 301,
+      "rank": 302,
       "alert_candidate": false
     },
     {
@@ -13580,7 +13625,7 @@
       "pricing_confidence": "geen",
       "deal_score": 27.57,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 302,
+      "rank": 303,
       "alert_candidate": false
     },
     {
@@ -13624,7 +13669,7 @@
       "pricing_confidence": "geen",
       "deal_score": 27.29,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 303,
+      "rank": 304,
       "alert_candidate": false
     },
     {
@@ -13668,7 +13713,7 @@
       "pricing_confidence": "geen",
       "deal_score": 24.0,
       "deal_label": "Niet voldoende vergelijkingsgegevens",
-      "rank": 304,
+      "rank": 305,
       "alert_candidate": false
     },
     {
@@ -13718,7 +13763,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 9.97,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 305,
+      "rank": 306,
       "alert_candidate": false
     },
     {
@@ -13749,7 +13794,7 @@
       "damage_note": "",
       "seller_name": "",
       "is_bid": false,
-      "comparables": 29,
+      "comparables": 28,
       "comparable_asking_prices": [
         650.0,
         650.0,
@@ -13761,14 +13806,14 @@
       "resale_high": 1100.0,
       "profit_low": -186.5,
       "profit_high": -24.0,
-      "profit_note": "Vraagprijsmediaan 29 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "profit_note": "Vraagprijsmediaan 28 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
       "estimated_repair": 250,
       "estimated_other_costs": 175,
       "total_investment": 1124.0,
       "pricing_confidence": "redelijk",
       "deal_score": 9.84,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 306,
+      "rank": 307,
       "alert_candidate": false
     },
     {
@@ -13817,56 +13862,6 @@
       "total_investment": 825.0,
       "pricing_confidence": "redelijk",
       "deal_score": 9.77,
-      "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 307,
-      "alert_candidate": false
-    },
-    {
-      "id": "mp:m2467549583",
-      "source": "Marktplaats",
-      "title": "Fiat Panda 1.1 Actual",
-      "description": "Algemene informatie aantal deuren: 5 kleur: paars technische informatie vermogen: 40 kw (54 pk) transmissie: 5 versnellingen, handgeschakeld bandenmaat: 155/80 r13 accele",
-      "make": "Fiat",
-      "model": "Panda",
-      "year": 2008,
-      "mileage": 128952,
-      "price": 625.0,
-      "price_kind": "FIXED",
-      "fuel": "Benzine",
-      "transmission": "Handgeschakeld",
-      "city": "Sliedrecht",
-      "postcode": "",
-      "url": "https://www.marktplaats.nl/v/auto-s/fiat/m2467549583-fiat-panda-1-1-actual",
-      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/f58b943b-5f8f-4b30-a7ac-fc9cba52bcf1?rule=ecg_mp_eps$_83.jpg",
-      "image_urls": [
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/f58b943b-5f8f-4b30-a7ac-fc9cba52bcf1?rule=ecg_mp_eps$_83.jpg",
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/8d2f4f2b-c6e0-44cb-aa10-a68abad20521?rule=ecg_mp_eps$_83.jpg"
-      ],
-      "damage": false,
-      "high_risk": false,
-      "price_unverified": false,
-      "price_warning": "",
-      "damage_note": "",
-      "seller_name": "",
-      "is_bid": false,
-      "comparables": 9,
-      "comparable_asking_prices": [
-        699.0,
-        999.0,
-        999.0,
-        1099.0,
-        1150.0
-      ],
-      "resale_low": 862.5,
-      "resale_high": 1012.0,
-      "profit_low": -187.5,
-      "profit_high": -38.0,
-      "profit_note": "Vraagprijsmediaan 9 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
-      "estimated_repair": 250,
-      "estimated_other_costs": 175,
-      "total_investment": 1050.0,
-      "pricing_confidence": "redelijk",
-      "deal_score": 9.75,
       "deal_label": "Geen positieve onderbouwde marge",
       "rank": 308,
       "alert_candidate": false
@@ -14470,6 +14465,56 @@
       "alert_candidate": false
     },
     {
+      "id": "mp:m2466649980",
+      "source": "Marktplaats",
+      "title": "Toyota Aygo 1.0 12V Vvt-i 5DRS 2008 Blauw",
+      "description": "Toyota aygo bj 2008 273000 gelopen 10 maanden apk carplay scherm elektrische ramen airco (moet worden bijgevuld) let op koppeling moet worden vervangen voor de rest rijd ",
+      "make": "Toyota",
+      "model": "Aygo",
+      "year": 2008,
+      "mileage": 272000,
+      "price": 750.0,
+      "price_kind": "MIN_BID",
+      "fuel": "Benzine",
+      "transmission": "Handgeschakeld",
+      "city": "Kerkdriel",
+      "postcode": "",
+      "url": "https://www.marktplaats.nl/v/auto-s/toyota/m2466649980-toyota-aygo-1-0-12v-vvt-i-5drs-2008-blauw",
+      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/0b928381-d9b7-4036-91c9-e33719711f5d?rule=ecg_mp_eps$_83.jpg",
+      "image_urls": [
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/0b928381-d9b7-4036-91c9-e33719711f5d?rule=ecg_mp_eps$_83.jpg",
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/3c58c904-a6c6-4085-91db-95f7304c2804?rule=ecg_mp_eps$_83.jpg"
+      ],
+      "damage": false,
+      "high_risk": false,
+      "price_unverified": false,
+      "price_warning": "",
+      "damage_note": "",
+      "seller_name": "",
+      "is_bid": true,
+      "comparables": 44,
+      "comparable_asking_prices": [
+        650.0,
+        650.0,
+        699.0,
+        795.0,
+        895.0
+      ],
+      "resale_low": 937.5,
+      "resale_high": 1100.0,
+      "profit_low": -237.5,
+      "profit_high": -75.0,
+      "profit_note": "Vraagprijsmediaan 44 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "estimated_repair": 250,
+      "estimated_other_costs": 175,
+      "total_investment": 1175.0,
+      "pricing_confidence": "redelijk",
+      "deal_score": 9.5,
+      "deal_label": "Geen positieve onderbouwde marge",
+      "rank": 321,
+      "alert_candidate": false
+    },
+    {
       "id": "mp:m2459761240",
       "source": "Marktplaats",
       "title": "Volkswagen Golf 1.6 FSI Trendline MEENEEMPRIJS/HANDELSPRIJS/",
@@ -14616,7 +14661,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 8.93,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 346,
+      "rank": 348,
       "alert_candidate": false
     },
     {
@@ -14666,7 +14711,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 8.91,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 347,
+      "rank": 349,
       "alert_candidate": false
     },
     {
@@ -14716,7 +14761,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 8.82,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 352,
+      "rank": 354,
       "alert_candidate": false
     },
     {
@@ -14766,7 +14811,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 8.77,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 354,
+      "rank": 355,
       "alert_candidate": false
     },
     {
@@ -14816,7 +14861,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 8.77,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 355,
+      "rank": 356,
       "alert_candidate": false
     },
     {
@@ -14866,7 +14911,57 @@
       "pricing_confidence": "redelijk",
       "deal_score": 8.32,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 407,
+      "rank": 406,
+      "alert_candidate": false
+    },
+    {
+      "id": "mp:m2467625790",
+      "source": "Marktplaats",
+      "title": "Toyota Aygo 1.0-12V RIJDTGOED/INRUILKOOP/5DRS/AIRCO/APK 5-27",
+      "description": "Algemene informatie aantal deuren: 5 kleur: blauw technische informatie vermogen: 50 kw (68 pk) transmissie: 5 versnellingen, handgeschakeld bandenmaat: 155/65 r14 accele",
+      "make": "Toyota",
+      "model": "Aygo",
+      "year": 2009,
+      "mileage": 313000,
+      "price": 1000.0,
+      "price_kind": "MIN_BID",
+      "fuel": "Benzine",
+      "transmission": "Handgeschakeld",
+      "city": "Soest",
+      "postcode": "",
+      "url": "https://www.marktplaats.nl/v/auto-s/toyota/m2467625790-toyota-aygo-1-0-12v-rijdtgoed-inruilkoop-5drs-airco-apk-5-27",
+      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/4dc3e892-f8e0-47c1-8779-101f738e8506?rule=ecg_mp_eps$_83.jpg",
+      "image_urls": [
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/4dc3e892-f8e0-47c1-8779-101f738e8506?rule=ecg_mp_eps$_83.jpg",
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/ba02e659-b00a-4536-b316-623cc4bae3d6?rule=ecg_mp_eps$_83.jpg"
+      ],
+      "damage": false,
+      "high_risk": false,
+      "price_unverified": false,
+      "price_warning": "",
+      "damage_note": "",
+      "seller_name": "",
+      "is_bid": true,
+      "comparables": 22,
+      "comparable_asking_prices": [
+        895.0,
+        1000.0,
+        1199.0,
+        1244.0,
+        1250.0
+      ],
+      "resale_low": 993.38,
+      "resale_high": 1165.56,
+      "profit_low": -431.62,
+      "profit_high": -259.44,
+      "profit_note": "Vraagprijsmediaan 22 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "estimated_repair": 250,
+      "estimated_other_costs": 175,
+      "total_investment": 1425.0,
+      "pricing_confidence": "redelijk",
+      "deal_score": 8.27,
+      "deal_label": "Geen positieve onderbouwde marge",
+      "rank": 414,
       "alert_candidate": false
     },
     {
@@ -14917,56 +15012,6 @@
       "deal_score": 8.11,
       "deal_label": "Geen positieve onderbouwde marge",
       "rank": 430,
-      "alert_candidate": false
-    },
-    {
-      "id": "mp:m2467625790",
-      "source": "Marktplaats",
-      "title": "Toyota Aygo 1.0-12V RIJDTGOED/INRUILKOOP/5DRS/AIRCO/APK 5-27",
-      "description": "Algemene informatie aantal deuren: 5 kleur: blauw technische informatie vermogen: 50 kw (68 pk) transmissie: 5 versnellingen, handgeschakeld bandenmaat: 155/65 r14 accele",
-      "make": "Toyota",
-      "model": "Aygo",
-      "year": 2009,
-      "mileage": 313000,
-      "price": 1000.0,
-      "price_kind": "MIN_BID",
-      "fuel": "Benzine",
-      "transmission": "Handgeschakeld",
-      "city": "Soest",
-      "postcode": "",
-      "url": "https://www.marktplaats.nl/v/auto-s/toyota/m2467625790-toyota-aygo-1-0-12v-rijdtgoed-inruilkoop-5drs-airco-apk-5-27",
-      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/4dc3e892-f8e0-47c1-8779-101f738e8506?rule=ecg_mp_eps$_83.jpg",
-      "image_urls": [
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/4dc3e892-f8e0-47c1-8779-101f738e8506?rule=ecg_mp_eps$_83.jpg",
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/ba02e659-b00a-4536-b316-623cc4bae3d6?rule=ecg_mp_eps$_83.jpg"
-      ],
-      "damage": false,
-      "high_risk": false,
-      "price_unverified": false,
-      "price_warning": "",
-      "damage_note": "",
-      "seller_name": "",
-      "is_bid": true,
-      "comparables": 22,
-      "comparable_asking_prices": [
-        895.0,
-        1000.0,
-        1199.0,
-        1244.0,
-        1250.0
-      ],
-      "resale_low": 955.88,
-      "resale_high": 1121.56,
-      "profit_low": -469.12,
-      "profit_high": -303.44,
-      "profit_note": "Vraagprijsmediaan 22 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
-      "estimated_repair": 250,
-      "estimated_other_costs": 175,
-      "total_investment": 1425.0,
-      "pricing_confidence": "redelijk",
-      "deal_score": 7.98,
-      "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 449,
       "alert_candidate": false
     },
     {
@@ -15464,7 +15509,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 7.1,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 607,
+      "rank": 609,
       "alert_candidate": false
     },
     {
@@ -15514,7 +15559,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 7.1,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 608,
+      "rank": 610,
       "alert_candidate": false
     },
     {
@@ -15564,7 +15609,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 6.45,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 755,
+      "rank": 757,
       "alert_candidate": false
     },
     {
@@ -15664,7 +15709,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 5.98,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 991,
+      "rank": 992,
       "alert_candidate": false
     },
     {
@@ -15714,7 +15759,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 5.94,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 997,
+      "rank": 998,
       "alert_candidate": false
     },
     {
@@ -15764,7 +15809,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 5.65,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 1082,
+      "rank": 1083,
       "alert_candidate": false
     },
     {
@@ -15814,7 +15859,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 5.17,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 1185,
+      "rank": 1182,
       "alert_candidate": false
     },
     {
@@ -15864,7 +15909,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 5.01,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 1214,
+      "rank": 1211,
       "alert_candidate": false
     },
     {
@@ -15914,7 +15959,7 @@
       "pricing_confidence": "redelijk",
       "deal_score": 4.94,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 1219,
+      "rank": 1218,
       "alert_candidate": false
     },
     {
@@ -15962,7 +16007,7 @@
       "pricing_confidence": "beperkt",
       "deal_score": 4.77,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 1229,
+      "rank": 1227,
       "alert_candidate": false
     },
     {
@@ -16316,54 +16361,6 @@
       "alert_candidate": false
     },
     {
-      "id": "mp:m2467993383",
-      "source": "Marktplaats",
-      "title": "Fiat Panda 1.2 44KW 60PK 2008",
-      "description": "Te koop fiat panda emotion uit 2008. Apk gekeurd tot 1 september 2027, heeft tijdens de keuring ook een kleine beurt gehad waarbij alle vloeistoffen zijn vervangen. Kilom",
-      "make": "Fiat",
-      "model": "Panda",
-      "year": 2008,
-      "mileage": 117500,
-      "price": 1650.0,
-      "price_kind": "MIN_BID",
-      "fuel": "Benzine",
-      "transmission": "Handgeschakeld",
-      "city": "Rotterdam",
-      "postcode": "",
-      "url": "https://www.marktplaats.nl/v/auto-s/fiat/m2467993383-fiat-panda-1-2-44kw-60pk-2008",
-      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/551fe46a-cc04-4675-86f3-23bd08039081?rule=ecg_mp_eps$_83.jpg",
-      "image_urls": [
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/551fe46a-cc04-4675-86f3-23bd08039081?rule=ecg_mp_eps$_83.jpg",
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/b791b5fa-bc62-415e-90f9-07cbaa7d9cf5?rule=ecg_mp_eps$_83.jpg"
-      ],
-      "damage": false,
-      "high_risk": false,
-      "price_unverified": false,
-      "price_warning": "",
-      "damage_note": "",
-      "seller_name": "",
-      "is_bid": true,
-      "comparables": 3,
-      "comparable_asking_prices": [
-        625.0,
-        1249.0,
-        1250.0
-      ],
-      "resale_low": 936.75,
-      "resale_high": 1099.12,
-      "profit_low": -1138.25,
-      "profit_high": -975.88,
-      "profit_note": "Vraagprijsmediaan 3 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
-      "estimated_repair": 250,
-      "estimated_other_costs": 175,
-      "total_investment": 2075.0,
-      "pricing_confidence": "beperkt",
-      "deal_score": 3.49,
-      "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 1288,
-      "alert_candidate": false
-    },
-    {
       "id": "mp:m2454518370",
       "source": "Marktplaats",
       "title": "Volkswagen Polo 1.4 55KW 2004 Grijs APK 14/10/2027 RIJ KLAAR",
@@ -16541,18 +16538,17 @@
       "damage_note": "",
       "seller_name": "",
       "is_bid": true,
-      "comparables": 4,
+      "comparables": 3,
       "comparable_asking_prices": [
-        625.0,
         1150.0,
         1199.0,
         1248.0
       ],
-      "resale_low": 880.88,
-      "resale_high": 1033.56,
-      "profit_low": -2289.12,
-      "profit_high": -2136.44,
-      "profit_note": "Vraagprijsmediaan 4 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "resale_low": 899.25,
+      "resale_high": 1055.12,
+      "profit_low": -2270.75,
+      "profit_high": -2114.88,
+      "profit_note": "Vraagprijsmediaan 3 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
       "estimated_repair": 250,
       "estimated_other_costs": 175,
       "total_investment": 3170.0,
@@ -16662,6 +16658,56 @@
       "alert_candidate": false
     },
     {
+      "id": "mp:m2433744794",
+      "source": "Marktplaats",
+      "title": "toyota Aygo 2008 geen apk",
+      "description": "Merk toyota model aygo bwjr 2008 afkeur op de achterdorpels las werkzaamheden",
+      "make": "Toyota",
+      "model": "Aygo",
+      "year": 2008,
+      "mileage": 189000,
+      "price": 750.0,
+      "price_kind": "MIN_BID",
+      "fuel": "Benzine",
+      "transmission": "Handgeschakeld",
+      "city": "Arnhem",
+      "postcode": "",
+      "url": "https://www.marktplaats.nl/v/auto-s/peugeot/m2433744794-toyota-aygo-2008-geen-apk",
+      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/9fff838d-bee3-46b9-8c4d-b3c5811d50ad?rule=ecg_mp_eps$_83.jpg",
+      "image_urls": [
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/9fff838d-bee3-46b9-8c4d-b3c5811d50ad?rule=ecg_mp_eps$_83.jpg",
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/bf7ed207-798b-423e-a84a-21eea5b0d024?rule=ecg_mp_eps$_83.jpg"
+      ],
+      "damage": true,
+      "high_risk": false,
+      "price_unverified": false,
+      "price_warning": "",
+      "damage_note": "Schade/gebrek genoemd; reparatiekosten eerst bepalen",
+      "seller_name": "",
+      "is_bid": true,
+      "comparables": 18,
+      "comparable_asking_prices": [
+        650.0,
+        699.0,
+        795.0,
+        999.0,
+        999.0
+      ],
+      "resale_low": 991.88,
+      "resale_high": 1163.8,
+      "profit_low": -183.12,
+      "profit_high": -11.2,
+      "profit_note": "Vraagprijsmediaan 18 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "estimated_repair": 250,
+      "estimated_other_costs": 175,
+      "total_investment": 1175.0,
+      "pricing_confidence": "redelijk",
+      "deal_score": 1.93,
+      "deal_label": "Geen positieve onderbouwde marge",
+      "rank": 1318,
+      "alert_candidate": false
+    },
+    {
       "id": "mp:m2466823143",
       "source": "Marktplaats",
       "title": "Kia Picanto 1.1 EX",
@@ -16708,56 +16754,6 @@
       "pricing_confidence": "redelijk",
       "deal_score": 1.91,
       "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 1318,
-      "alert_candidate": false
-    },
-    {
-      "id": "mp:m2433744794",
-      "source": "Marktplaats",
-      "title": "toyota Aygo 2008 geen apk",
-      "description": "Merk toyota model aygo bwjr 2008 afkeur op de achterdorpels las werkzaamheden",
-      "make": "Toyota",
-      "model": "Aygo",
-      "year": 2008,
-      "mileage": 189000,
-      "price": 750.0,
-      "price_kind": "MIN_BID",
-      "fuel": "Benzine",
-      "transmission": "Handgeschakeld",
-      "city": "Arnhem",
-      "postcode": "",
-      "url": "https://www.marktplaats.nl/v/auto-s/peugeot/m2433744794-toyota-aygo-2008-geen-apk",
-      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/9fff838d-bee3-46b9-8c4d-b3c5811d50ad?rule=ecg_mp_eps$_83.jpg",
-      "image_urls": [
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/9fff838d-bee3-46b9-8c4d-b3c5811d50ad?rule=ecg_mp_eps$_83.jpg",
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/bf7ed207-798b-423e-a84a-21eea5b0d024?rule=ecg_mp_eps$_83.jpg"
-      ],
-      "damage": true,
-      "high_risk": false,
-      "price_unverified": false,
-      "price_warning": "",
-      "damage_note": "Schade/gebrek genoemd; reparatiekosten eerst bepalen",
-      "seller_name": "",
-      "is_bid": true,
-      "comparables": 19,
-      "comparable_asking_prices": [
-        650.0,
-        699.0,
-        795.0,
-        999.0,
-        999.0
-      ],
-      "resale_low": 971.25,
-      "resale_high": 1139.6,
-      "profit_low": -203.75,
-      "profit_high": -35.4,
-      "profit_note": "Vraagprijsmediaan 19 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
-      "estimated_repair": 250,
-      "estimated_other_costs": 175,
-      "total_investment": 1175.0,
-      "pricing_confidence": "redelijk",
-      "deal_score": 1.76,
-      "deal_label": "Geen positieve onderbouwde marge",
       "rank": 1319,
       "alert_candidate": false
     },
@@ -16792,10 +16788,10 @@
       "comparables": 25,
       "comparable_asking_prices": [
         599.0,
-        625.0,
         699.0,
         699.0,
-        750.0
+        750.0,
+        795.0
       ],
       "resale_low": 749.25,
       "resale_high": 879.12,
@@ -17456,6 +17452,56 @@
       "alert_candidate": false
     },
     {
+      "id": "mp:m2455184429",
+      "source": "Marktplaats",
+      "title": "! Geen APK! Toyota Aygo 1.0 12V Vvt-i 5DRS 2006 Grijs",
+      "description": "Ik heb heeeeel veel reacties gehad. Komen niet opdagen, of lezen advertentie niet goed. Auto is van m'n moeder en die gaat niet meer rijden. Verkoop hem voor haar. Apk er",
+      "make": "Toyota",
+      "model": "Aygo",
+      "year": 2006,
+      "mileage": 191800,
+      "price": 1100.0,
+      "price_kind": "MIN_BID",
+      "fuel": "Benzine",
+      "transmission": "Handgeschakeld",
+      "city": "Elst Ut",
+      "postcode": "",
+      "url": "https://www.marktplaats.nl/v/auto-s/toyota/m2455184429-geen-apk-toyota-aygo-1-0-12v-vvt-i-5drs-2006-grijs",
+      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/e9ac4a18-4c4e-48b4-8a36-2a0ff0150a3b?rule=ecg_mp_eps$_83.jpg",
+      "image_urls": [
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/e9ac4a18-4c4e-48b4-8a36-2a0ff0150a3b?rule=ecg_mp_eps$_83.jpg",
+        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/0e83a88a-a325-4fca-84f5-7af061275649?rule=ecg_mp_eps$_83.jpg"
+      ],
+      "damage": true,
+      "high_risk": false,
+      "price_unverified": false,
+      "price_warning": "",
+      "damage_note": "Schade/gebrek genoemd; reparatiekosten eerst bepalen",
+      "seller_name": "",
+      "is_bid": true,
+      "comparables": 21,
+      "comparable_asking_prices": [
+        650.0,
+        650.0,
+        699.0,
+        795.0,
+        999.0
+      ],
+      "resale_low": 971.25,
+      "resale_high": 1139.6,
+      "profit_low": -553.75,
+      "profit_high": -385.4,
+      "profit_note": "Vraagprijsmediaan 21 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
+      "estimated_repair": 250,
+      "estimated_other_costs": 175,
+      "total_investment": 1525.0,
+      "pricing_confidence": "redelijk",
+      "deal_score": -0.57,
+      "deal_label": "Geen positieve onderbouwde marge",
+      "rank": 1334,
+      "alert_candidate": false
+    },
+    {
       "id": "mp:m2462359648",
       "source": "Marktplaats",
       "title": "Volkswagen Polo airco,4 deurs Versnellingsbak hoorbaar kapot",
@@ -17501,56 +17547,6 @@
       "total_investment": 1275.0,
       "pricing_confidence": "redelijk",
       "deal_score": -0.66,
-      "deal_label": "Geen positieve onderbouwde marge",
-      "rank": 1334,
-      "alert_candidate": false
-    },
-    {
-      "id": "mp:m2455184429",
-      "source": "Marktplaats",
-      "title": "! Geen APK! Toyota Aygo 1.0 12V Vvt-i 5DRS 2006 Grijs",
-      "description": "Ik heb heeeeel veel reacties gehad. Komen niet opdagen, of lezen advertentie niet goed. Auto is van m'n moeder en die gaat niet meer rijden. Verkoop hem voor haar. Apk er",
-      "make": "Toyota",
-      "model": "Aygo",
-      "year": 2006,
-      "mileage": 191800,
-      "price": 1100.0,
-      "price_kind": "MIN_BID",
-      "fuel": "Benzine",
-      "transmission": "Handgeschakeld",
-      "city": "Elst Ut",
-      "postcode": "",
-      "url": "https://www.marktplaats.nl/v/auto-s/toyota/m2455184429-geen-apk-toyota-aygo-1-0-12v-vvt-i-5drs-2006-grijs",
-      "image_url": "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/e9ac4a18-4c4e-48b4-8a36-2a0ff0150a3b?rule=ecg_mp_eps$_83.jpg",
-      "image_urls": [
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/e9ac4a18-4c4e-48b4-8a36-2a0ff0150a3b?rule=ecg_mp_eps$_83.jpg",
-        "https://images.marktplaats.com/api/v1/hz-mp-pro-listing/images/0e83a88a-a325-4fca-84f5-7af061275649?rule=ecg_mp_eps$_83.jpg"
-      ],
-      "damage": true,
-      "high_risk": false,
-      "price_unverified": false,
-      "price_warning": "",
-      "damage_note": "Schade/gebrek genoemd; reparatiekosten eerst bepalen",
-      "seller_name": "",
-      "is_bid": true,
-      "comparables": 22,
-      "comparable_asking_prices": [
-        650.0,
-        650.0,
-        699.0,
-        795.0,
-        999.0
-      ],
-      "resale_low": 954.38,
-      "resale_high": 1119.8,
-      "profit_low": -570.62,
-      "profit_high": -405.2,
-      "profit_note": "Vraagprijsmediaan 22 vergelijkbare auto's, 75–88% als voorzichtig scenario; geen gerealiseerde verkoopprijzen. Reparatie €250 en overige kosten €175 zijn aannames.",
-      "estimated_repair": 250,
-      "estimated_other_costs": 175,
-      "total_investment": 1525.0,
-      "pricing_confidence": "redelijk",
-      "deal_score": -0.7,
       "deal_label": "Geen positieve onderbouwde marge",
       "rank": 1335,
       "alert_candidate": false
